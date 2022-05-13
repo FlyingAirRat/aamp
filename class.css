@@ -19,6 +19,7 @@ body, html{height: 100%; position: relative;}
   display: flex;
   padding: 20px 20px;
 }
+#list_body .list_box img{width: 30px; height: 30px;}
 #list_body .list_box .hambg{
   margin-right: 15px;
   margin-top: 5px;
@@ -44,4 +45,5 @@ body, html{height: 100%; position: relative;}
   font-size: medium;
   display: block;
   margin: 0 auto;
+  background-color: white;
 }
