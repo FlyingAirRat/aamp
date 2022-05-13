@@ -1,23 +1,3 @@
 #aamp
 
-new contents incoming!
-
-test
-
-jenkins webhook test
-asdf
-
-another test
-
-
-ULTIMATE TEST
-
-
-lksdaf;lkjsadf
-
-
-another asdfffffff
-
-ㅁㄴㅇ라ㅓㄴㅁㅇㄹ;ㅏㅣㅓㄴㅁㄹㅇ;ㅓ
-ㅊㅊㅊㅊㅊㅊ
-ccccccccc
+AAMP, 자율 출석 관리 플랫폼
