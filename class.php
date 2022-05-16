@@ -47,9 +47,9 @@
     </div>
   </main>
   <script>
-    var star = document.querySelector('.star');
-    star.onclick = function(){
-      star.setattribute('src', './img/star_y.png')
+    var star = document.querySelectorAll('.star');
+    star.onclick = function(e){
+      e.setattribute('src', './img/star_y.png');
     }
   </script>
 </body>
