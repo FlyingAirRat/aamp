@@ -24,7 +24,6 @@
       강의목록
       <hr>
     </div>
-
     <div id="list_body">
       <?php
         while($row = mysqli_fetch_assoc($result)){
@@ -43,11 +42,13 @@
         }
       ?>
     </div>
-
     <div id="req">
       <a href=""><button>새로운 수업 추가 요청</button></a>
     </div>
   </main>
-  
+  <script>
+    var star = document.querySelector('.star');
+    star.onclick
+  </script>
 </body>
 </html>
