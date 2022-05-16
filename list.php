@@ -15,6 +15,9 @@
     <title>목록</title>
 </head>
 <body>
+    <div class="prevPage">
+        <a href="class.php">◀ 수업목록</a>
+    </div>
     <div class="container">
         <?php
             foreach($list as $item){

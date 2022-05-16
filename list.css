@@ -43,8 +43,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 250px;
+    width: 400px;
+    height: 300px;
     border: 1px solid black;
     margin: 10px;
 }
@@ -52,5 +52,5 @@
     text-align: center;
 }
 .stuWrap ul li img {
-    width: 150px;
+    width: 250px;
 }
