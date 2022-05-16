@@ -32,6 +32,6 @@
     box-sizing: border-box;
 }
 
-ul {
+.container ul li {
     list-style: none;
 }

@@ -19,10 +19,12 @@
         <?php
             foreach($list as $item){
         ?>
-            <ul>
-                <li><img src="<?=$item['imgsrc']?>"></li>
-                <li><?=$item['user_nm']?></li>
-            </ul>
+            <div class="stuWrap">
+                <ul>
+                    <li><img src="<?=$item['imgsrc']?>"></li>
+                    <li><?=$item['user_nm']?></li>
+                </ul>
+            </div>
         <?php } ?>
     </div>
 </body>
