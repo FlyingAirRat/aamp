@@ -36,7 +36,7 @@
                 <span>$class_nm<br></span>
                 <span class='text_s'>총 인원수 ${people}명</span>
               </div>
-              <img src='./img/star_b.png' class='star' onclick="chg_img()">
+              <img src='./img/star_b.png' class='star' onclick='chg_img()'>
             </div>
           ";
         }
