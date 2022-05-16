@@ -20,6 +20,7 @@
   ?>
   <head>
     <title>My Favorite Sport</title>
+    <link rel="stylesheet" href="./photo.css">
 </head>
 
 <body>
@@ -46,10 +47,10 @@
       <input type="number" name="img_id">
       <button type="submit">이미지 조회</button>
     </form>
-    <form name="deleteImage" method="POST" action="deleteImage.php">
+    <!-- <form name="deleteImage" method="POST" action="deleteImage.php">
       <legend>삭제할 이미지의 id를 입력하세요.</legend>
       <input type="number" name="del_img_id">
-      <button type="submit">이미지 삭제</button>
+      <button type="submit">이미지 삭제</button> -->
     </form>
     </div>
     
@@ -139,7 +140,7 @@
                 clearphoto();
             }
             photoBase64 = data;
-            document.getElementById('u_no').value = 1;
+            document.getElementById('u_no').value = <?=$u_no?>;
             document.getElementById('imgsrc').value = data;
             console.log(data);
 

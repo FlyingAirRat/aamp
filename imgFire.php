@@ -2,13 +2,14 @@
 
 function imgFire(&$param) {
     $imgsrc = $param["imgsrc"];
+    $u_no = $param["u_no"];
 
     $conn = get_conn();
     $sql = 
     "   INSERT INTO stu_img 
         (u_no, imgsrc)
         VALUES
-        (1, '$imgsrc')
+        ('$u_no', '$imgsrc')
     ";        
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
