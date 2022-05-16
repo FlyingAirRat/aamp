@@ -30,5 +30,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style: none;
+    list-style-type: none;
+}
+
+.stuWrap {
+    border: 4px solid red;
 }
