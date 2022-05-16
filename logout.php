@@ -2,4 +2,4 @@
   session_start();
   session_destroy();
   
-  header("Location: list.php");
+  header("Location: index.html");
