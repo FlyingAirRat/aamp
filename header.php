@@ -28,6 +28,7 @@
   }
 
 ?>
+<link rel="stylesheet" href="./header.css">
 <header>
   <div id="log">
     <?=$user_nm?>(<?=$lv_nm?>), 안녕하세요.
