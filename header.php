@@ -32,6 +32,6 @@
 <header>
   <div id="log">
     <?=$user_nm?>(<?=$lv_nm?>), 안녕하세요.
-    <a href=""><button>로그아웃</button></a>
+    <a href="logout.php"><button>로그아웃</button></a>
   </div>
 </header>
