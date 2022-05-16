@@ -21,16 +21,17 @@
     echo 
     " <script>
         alert('로그인 해주세요.');
-        location.href='index.php';
+        location.href='index.html';
       </script>
     ";
     exit;
   }
 
 ?>
+<link rel="stylesheet" href="./header.css">
 <header>
   <div id="log">
     <?=$user_nm?>(<?=$lv_nm?>), 안녕하세요.
-    <a href=""><button>로그아웃</button></a>
+    <a href="logout.php"><button>로그아웃</button></a>
   </div>
 </header>

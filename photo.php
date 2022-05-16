@@ -11,9 +11,9 @@
     echo 
     " <script>
         alert('로그인 해주세요.');
-        location.href='index.php';
+        location.href='index.html';
       </script>
     ";
     exit;
   }
-  echo $u_no, $u_lv, $uid, $upw, $user_nm;
+  echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";

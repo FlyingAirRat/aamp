@@ -1,8 +1,3 @@
-<?php
-  session_start();
-  $login_user = $_SESSION['login_user'];
-  $user_nm = $login_user['user_nm'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
