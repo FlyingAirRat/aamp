@@ -6,8 +6,7 @@
     $sql = 
     " SELECT u_no, u_lv, uid, upw, user_nm
       FROM info_user
-      WHERE uid = '$uid'
-    ";
+      WHERE uid = '$uid'";
 
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
