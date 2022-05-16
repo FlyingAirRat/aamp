@@ -1,19 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>수업별 출결현황</title>
+  <title>메인화면</title>
   <link rel="stylesheet" href="./class.css">
 </head>
 <body>
-  <header>
-    <div id="log">
-      ~~~선생님 반갑습니다
-      <a href=""><button>로그아웃</button></a>
-    </div>
-  </header>
+  <?php include_once "header.php";?> 
   <main>
     <div id="list_head">
       강의목록

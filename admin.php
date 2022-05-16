@@ -1,8 +1,3 @@
-<?php
-  session_start();
-  $login_user = $_SESSION['login_user'];
-  $user_nm = $login_user['user_nm'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +8,5 @@
 </head>
 <body>
   <?php include_once "header.php";?>
-  <main>
-    <a href="photo.php"><button>사진 찍으러 가기</button></a>
-  </main>
 </body>
 </html>
