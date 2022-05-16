@@ -1,5 +1,5 @@
 <?php
-  include_once "db/db_user.php";
+  include_once "./db/db_user.php";
   $uid = $_POST['uid'];
   $upw = $_POST['upw'];
 
