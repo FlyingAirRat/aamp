@@ -1,5 +1,5 @@
 <?php
-  define("URL", "airrat.xyz");
+  define("URL", "localhost");
   define("USERNAME", "ga243");
   define("PASSWORD", "ga243!@ga243!@");
   define("DBNAME", "aamp");
