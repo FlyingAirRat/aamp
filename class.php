@@ -49,7 +49,7 @@
   <script>
     var star = document.querySelectorAll('.star');
     star[0].onclick = function(e){
-      e.setAttribute('src', './img/star_y.png');
+      e.src = './img/star_y.png';
     }
   </script>
 </body>
