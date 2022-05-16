@@ -3,7 +3,7 @@
   define("USERNAME", "ga243");
   define("PASSWORD", "ga243!@ga243!@");
   define("DBNAME", "aamp");
-  define("PORT", "3389");
+  define("PORT", "3306");
 
   function get_conn()
   {
