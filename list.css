@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+   }
+   
+   .nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+.prevPage {
+    background-color: rgb(70, 70, 70);
+    padding: 5px;
+}
+
+.prevPage a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.prevPage a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stuWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 300px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: 3px 5px 10px -5px rgb(185, 185, 185);
+    margin: 10px;
+}
+.stuWrap ul li {
+    text-align: center;
+}
+.stuWrap ul li img {
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.stuName {
+    font-family: 'NanumBarunGothic';
+    font-size: 1.5em;
+    margin-top: 30px;
+}
