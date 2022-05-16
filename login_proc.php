@@ -17,23 +17,25 @@
   }
   
   if($result['upw'] === $upw){
-    echo "<script>
-            alert('비밀번호가 다릅니다.');
-            history.back();
-          </script>";
-  }else{
     session_start();
     $_SESSION["login_user"] = $result;
     echo "로그인 성공";
     // switch($result['u_lv']){
     //   case 1:
-    //     Header("Location: 메인1");
+    //     Header("Location: 메인0(관리자)");
     //     break;
     //   case 2:
-    //     Header("Location: 메인2");
+    //     Header("Location: 메인1(선생님)");
     //     break;
     //   case 3:
-    //     Header("Location: 메인3");
+    //     Header("Location: 메인2(학생)");
     //     break;
     // }
+  }else{
+    echo
+    " <script>
+        alert('비밀번호가 다릅니다.');
+        history.back();
+      </script>
+    ";
   }
