@@ -1,5 +1,5 @@
 <?php
-  include_once "db/db_class.php";
+  include_once "./db/db_class.php";
   session_start();
   $login_user = isset($_SESSION['login_user']) ? $_SESSION['login_user'] : "";
   $u_no = $login_user['u_no'];
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="./class.css">
 </head>
 <body>
-  <?php include_once "header.php";?> 
+  <?php include_once "./header.php";?> 
   <main>
     <div id="list_head">
       강의목록
