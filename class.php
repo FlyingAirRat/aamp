@@ -1,4 +1,13 @@
-
+<?php
+  include_once "db/db_class.php";
+  session_start();
+  $login_user = isset($_SESSION['login_user']) ? $_SESSION['login_user'] : "";
+  $u_no = $login_user['u_no'];
+  $param = [
+    'u_no' => $u_no
+  ];
+  $result = sel_class_list($param);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,34 +26,26 @@
     </div>
 
     <div id="list_body">
-      <div class="list_box">
-        <img src="./img/hambg.png" class="hambg">
-        <div class="text">
-          <span>ABCD EFGHIJK LMNOP 취업반<br></span>
-          <span class="text_s">총 인원수 NN명</span>
-        </div>
-        <img src="./img/star.jpeg" class="star">
-      </div>
-      <div class="list_box">
-        <img src="./img/hambg.png" class="hambg">
-        <div class="text">
-          <span>ABCD EFGHIJK LMNOP 취업반<br></span>
-          <span class="text_s">총 인원수 NN명</span>
-        </div>
-        <img src="./img/star.jpeg" class="star">
-      </div>
-      <div class="list_box">
-        <img src="./img/hambg.png" class="hambg">
-        <div class="text">
-          <span>ABCD EFGHIJK LMNOP 취업반<br></span>
-          <span class="text_s">총 인원수 NN명</span>
-        </div>
-        <img src="./img/star.jpeg" class="star">
-      </div>
+      <?php
+        while($row = mysqli_fetch_assoc($result)){
+          $class_nm = $row['class_nm'];
+          $people = $row['people'];
+          echo 
+          " <div class='list_box'>
+              <img src='./img/hambg.png' class='hambg'>
+              <div class='text'>
+                <span>$class_nm<br></span>
+                <span class='text_s'>총 인원수 ${people}명</span>
+              </div>
+              <img src='./img/star.jpeg' class='star'>
+            </div>
+          ";
+        }
+      ?>
     </div>
 
     <div id="req">
-      <button>새로운 수업 추가 요청</button>
+      <a href=""><button>새로운 수업 추가 요청</button></a>
     </div>
   </main>
   
