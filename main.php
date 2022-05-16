@@ -7,7 +7,10 @@
   <title>메인화면</title>
 </head>
 <body>
-  <?php include_once "header.php";?>
+  <?php
+    session_start();
+    include_once "header.php";
+  ?>
   <main>
     <a href="photo.php"><button>사진 찍으러 가기</button></a>
   </main>

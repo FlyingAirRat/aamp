@@ -7,6 +7,9 @@
   <title>메인화면</title>
 </head>
 <body>
-  <?php include_once "header.php";?>
+  <?php
+    session_start();
+    include_once "header.php";
+  ?>
 </body>
 </html>
