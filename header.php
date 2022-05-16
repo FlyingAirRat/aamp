@@ -1,5 +1,4 @@
 <?php
-  session_start();
   if(isset($_SESSION['login_user'])){
     $login_user = $_SESSION['login_user'];
     $u_lv = $login_user['u_lv'];
