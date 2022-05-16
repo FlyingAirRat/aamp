@@ -1,4 +1,4 @@
-node('master') {
+node('main') {
   checkout scm
   stage('Build') {
     withMaven(maven: 'M3'){
