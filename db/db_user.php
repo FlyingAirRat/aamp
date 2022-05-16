@@ -1,5 +1,5 @@
 <?php
-  include_once "./db.php";
+  include_once "db.php";
 
   function ins_user(&$param){
     $u_lv = $param['u_lv'];
