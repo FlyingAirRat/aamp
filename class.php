@@ -36,7 +36,7 @@
                 <span>$class_nm<br></span>
                 <span class='text_s'>총 인원수 ${people}명</span>
               </div>
-              <img src='./img/star.jpeg' class='star'>
+              <img src='./img/star_b.png' class='star'>
             </div>
           ";
         }
@@ -48,7 +48,9 @@
   </main>
   <script>
     var star = document.querySelector('.star');
-    star.onclick
+    star.onclick = function(){
+      star.setattribute('src', './img/star_y.png')
+    }
   </script>
 </body>
 </html>
