@@ -21,7 +21,7 @@
     echo 
     " <script>
         alert('로그인 해주세요.');
-        location.href='index.php';
+        location.href='index.html';
       </script>
     ";
     exit;

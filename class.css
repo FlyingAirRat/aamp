@@ -1,18 +1,5 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 body, html{height: 100%; position: relative;}
-#log{
-  padding: 30px 10px;
-  position: relative;
-}
-#log button{
-  position: absolute;
-  right: 10px;
-  background-color: rgb(176, 195, 230);
-  border: 0;
-  padding: 3px 10px;
-  color: white;
-  border-radius: 5px;
-}
 #list_head{padding: 0px 15px;}
 #list_body{position: relative;}
 #list_body .list_box{
@@ -46,4 +33,5 @@ body, html{height: 100%; position: relative;}
   display: block;
   margin: 0 auto;
   background-color: white;
+  cursor: pointer;
 }
