@@ -23,7 +23,7 @@
                     <input type="submit" value="로그인">
                 </div>
             </form>
-            <div class="join"><a href="join.php">회원가입</a></div>
+            <div class="join"><a href="join_pre.php">회원가입</a></div>
         </div>
     </div>
 </body>
