@@ -6,8 +6,8 @@
   $people = $_GET['people'];
   
   $param = [
-    'class_no' = $class_no;
-  ]
+    'class_no' => $class_no
+  ];
   $result = sel_timetable($param);
 ?>
 <!DOCTYPE html>
