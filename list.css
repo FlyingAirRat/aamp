@@ -70,7 +70,8 @@
 .stuWrap ul li {
     text-align: center;
 }
-.stuWrap ul li img {
+
+.attImg img {
     width: 240px;
     height: 320px;
     object-fit: cover;

@@ -2,7 +2,11 @@
     session_start();
     include_once "header.php";
     include_once "db/db_img.php";
-    $list = sel_list();
+    $param = [
+        'class_no' => $_POST['class_no'],
+        'att_no' => $_POST['att_no']
+    ];
+    $list = sel_student_list($param);
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +29,7 @@
         ?>
             <div class="stuWrap">
                 <ul>
-                    <li><img src="<?=$item['imgsrc']?>"></li>
+                    <li class="attImg"></li>
                     <li class="stuName"><?=$item['user_nm']?></li>
                 </ul>
             </div>
