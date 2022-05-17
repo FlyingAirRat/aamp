@@ -18,5 +18,5 @@
     " SELECT imgsrc
       FROM stu_img
        
-    "
+    ";
   }
