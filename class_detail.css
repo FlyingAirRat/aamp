@@ -24,6 +24,8 @@ main #cls_box img{
   position: absolute;
   right: 30px;
   top: 5px;
+  width: 30px;
+  height: 30px;
 }
 main #t_table{
   position: relative;

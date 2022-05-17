@@ -13,14 +13,14 @@
 </head>
 <body>
   <header>
-    <div id="cls_info"><a href=""><</a> <span>수업정보</span></div>
+    <div id="cls_info"><a href="./class.php"><</a> <span>수업정보</span></div>
   </header>
   
   <main>
     <div id="cls_box">
       <span>수업이름<br></span>
       <span id="text_s">정원: ㅇㅇ명</span>
-      <img src="./img/star.jpeg" width=30 height=30>
+      <img src="./img/star_b.png">
     </div>
     <div id="t_table">
         <table>
