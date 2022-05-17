@@ -31,7 +31,7 @@
         ?>
             <div class="stuWrap">
                 <ul>
-                    <li class="attImg"></li>
+                    <li class="attImg"><img src="./img/profile.png"></li>
                     <li class="stuName"><?=$item['user_nm']?></li>
                     <li class="stuName"><?=$item['uploaded_time']?></li>
                 </ul>
