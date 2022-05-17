@@ -13,11 +13,6 @@
         <div class="container">
             <h1>회원가입</h1>
             <form name="joinForm" action="join_proc.php" method="post">
-                <div class="level">
-                    <label><input type="radio" name="level" value="1" checked> 선생님</label>
-                    <label><input type="radio" name="level" value="2"> 학생</label>
-                    <label><input type="radio" name="level" value="0"> 관리자</label>
-                </div>
                 <div class="uid">
                     <h2>아이디</h2> 
                     <input type="email" name="uid" maxlength="50" required>
@@ -33,6 +28,22 @@
                 <div class="nm">
                     <h2>이름</h2>
                     <input type="text" name="nm" maxlength="20" required>
+                </div>
+                <div class="class">
+                <?php
+                    include_once "./db/db_class.php";
+                    $level = $_POST['level'];
+                    if($level === 2){
+                        $result = sel_all_class();
+                        print "<select name='class'>";
+                        while($row = mysqli_fetch_assoc($result)){
+                            $class_no = $row['class_no'];
+                            $class_nm = $row['class_nm'];
+                            print "<option value='$class_no'>$class_nm</option>";
+                        }
+                        print "</select>";
+                    }
+                ?>
                 </div>
                 <div class="submit">
                     <input type="submit" value="가입하기" name="btnSubmit">

@@ -41,7 +41,6 @@
               $att_no = $row['att_no'];
               $start_time = $row['start_time'];
               $end_time = $row['end_time'];
-  //교시수, 클래스 넘버 전송
               echo 
               " <tr>
                   <td>$att_no</td>

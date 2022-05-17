@@ -1,6 +1,17 @@
 <?php
   include_once "db.php";
 
+  function sel_all_class(){
+    $sql = 
+    " SELECT class_no, class_nm
+      FROM class
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    return $result;
+  }
+
   function sel_class_list(&$param){
     $u_no = $param['u_no'];
     $sql = 
