@@ -30,7 +30,7 @@
         ?>
             <div class="stuWrap">
                 <ul>
-                    <li class="attImg"><img src=""></li>
+                    <li class="attImg"></li>
                     <li class="stuName"><?=$item['user_nm']?></li>
                     <li class="stuName"><?=$item['uploaded_time']?></li>
                 </ul>
