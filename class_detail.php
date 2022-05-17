@@ -49,8 +49,8 @@
                   <td>
                     출석한 인원/$people
                     <form id='class' action='./list.php' method='POST'>
-                      <input type='hidden' value='$class_no'>
-                      <input type='hidden' value='$att_no'>
+                      <input type='hidden' name='class_no' value='$class_no'>
+                      <input type='hidden' name='att_no' value='$att_no'>
                       <input type='submit' value='>'>
                     </form>
                   </td>
