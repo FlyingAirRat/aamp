@@ -17,6 +17,7 @@
 <body>
     <div class="prevPage">
         <a href="class.php">◀ 수업목록</a>
+        <a href="#">알림 시간 수정</a>
     </div>
     <div class="container">
         <?php
