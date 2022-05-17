@@ -19,18 +19,16 @@
         <a href="class.php">◀ 수업목록</a>
     </div>
     <div class="container">
-        <div class="containerWrap">
-            <?php
-                foreach($list as $item){
-            ?>
-                <div class="stuWrap">
-                    <ul>
-                        <li><img src="<?=$item['imgsrc']?>"></li>
-                        <li class="stuName"><?=$item['user_nm']?></li>
-                    </ul>
-                </div>
-            <?php } ?>
-        </div>
+        <?php
+            foreach($list as $item){
+        ?>
+            <div class="stuWrap">
+                <ul>
+                    <li><img src="<?=$item['imgsrc']?>"></li>
+                    <li class="stuName"><?=$item['user_nm']?></li>
+                </ul>
+            </div>
+        <?php } ?>
     </div>
 </body>
 </html>
