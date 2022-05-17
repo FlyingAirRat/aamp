@@ -2,7 +2,6 @@
     session_start();
     include_once "header.php";
     include_once "db/db_img.php";
-    $list = sel_list();
     $class_nm = $_POST['class_nm'];
     $class_no = $_POST['class_no'];
     $people = $_POST['people'];
