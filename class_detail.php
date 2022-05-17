@@ -43,7 +43,7 @@
               $end_time = $row['end_time'];
   //교시수, 클래스 넘버 전송
               echo 
-              " <form action='./list.php' method='POST'>
+              " <form name='class' action='./list.php' method='POST'>
                   <tr>
                     <input type='hidden' value='$class_no'>
                     <input type='hidden' value='$att_no'>
@@ -51,7 +51,7 @@
                     <td>$start_time ~ $end_time</td>
                     <td>
                       출석한 인원/$people
-                      <input type='submit' value='>'>  
+                      <a href='javascript:this.form.submit();'>submit</a>
                     </td>
                   </tr>
                 </form>
