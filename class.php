@@ -33,8 +33,10 @@
           " <div class='list_box'>
               <img src='./img/hambg.png' class='hambg'>
               <div class='text'>
-                <span>$class_nm<br></span>
-                <span class='text_s'>총 인원수 ${people}명</span>
+                <a href='./class_detail.php'>
+                  <span>$class_nm<br></span>
+                  <span class='text_s'>총 인원수 ${people}명</span>
+                </a>
               </div>
               <img src='./img/star_b.png' class='star' onclick='chg_img()'>
             </div>
