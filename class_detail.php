@@ -47,7 +47,7 @@
               " <tr>
                   <td>$att_no</td>
                   <td>$start_time ~ $end_time</td>
-                  <td>29/30(임시) <a href=''>></a></td>
+                  <td>출석한 인원/$people <a href=''>></a></td>
                 </tr>
               ";
             }
