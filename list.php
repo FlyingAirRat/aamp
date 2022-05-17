@@ -3,6 +3,9 @@
     include_once "header.php";
     include_once "db/db_img.php";
     $list = sel_list();
+    $class_nm = $_POST['class_nm'];
+    $class_no = $_POST['class_no'];
+    $people = $_POST['people'];
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +19,7 @@
 </head>
 <body>
     <div class="prevPage">
-        <a href="class_detail.php">◀ 알림목록</a>
+        <a href="class_detail.php?class_no=<?=$class_no?>&class_nm=<?=$class_nm?>&people=<?=$people?>">◀ 알림목록</a>
         <a href="#">알림 시간 수정</a>
     </div>
     <div class="container">
