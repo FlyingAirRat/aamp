@@ -47,7 +47,7 @@
     color: rgb(205, 205, 205);
 }
 
-.containerWrap {
+.container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
