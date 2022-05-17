@@ -3,9 +3,10 @@
     include_once "header.php";
     include_once "db/db_class.php";
 
-    $class_nm = $_POST['class_nm'];
-    $class_no = $_POST['class_no'];
-    $people = $_POST['people'];
+    $param = [
+        'class_no' => $_POST['class_no'],
+        'att_no' => $_POST['att_no']
+    ];
 
     $list = sel_att_img($param);
 ?>
