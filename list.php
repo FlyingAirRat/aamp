@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    include_once "header.php";
     include_once "db/db_img.php";
     $list = sel_list();
 ?>
@@ -9,17 +11,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./list.css">
     <title>목록</title>
 </head>
 <body>
-    <div>
+    <div class="prevPage">
+        <a href="class.php">◀ 수업목록</a>
+        <a href="#">알림 시간 수정</a>
+    </div>
+    <div class="container">
         <?php
             foreach($list as $item){
         ?>
-            <ul>
-                <li><img src="<?=$item['imgsrc']?>"></li>
-                <li><?=$item['user_nm']?></li>
-            </ul>
+            <div class="stuWrap">
+                <ul>
+                    <li><img src="<?=$item['imgsrc']?>"></li>
+                    <li class="stuName"><?=$item['user_nm']?></li>
+                </ul>
+            </div>
         <?php } ?>
     </div>
 </body>

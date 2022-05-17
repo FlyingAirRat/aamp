@@ -36,7 +36,7 @@
                 <span>$class_nm<br></span>
                 <span class='text_s'>총 인원수 ${people}명</span>
               </div>
-              <img src='./img/star.jpeg' class='star'>
+              <img src='./img/star_b.png' class='star' onclick='chg_img()'>
             </div>
           ";
         }
@@ -47,8 +47,9 @@
     </div>
   </main>
   <script>
-    var star = document.querySelector('.star');
-    star.onclick
+    function chg_img(e){
+      e.src = './img/star_y.png';
+    }
   </script>
 </body>
 </html>
