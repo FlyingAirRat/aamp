@@ -1,10 +1,14 @@
 <?php
     session_start();
     include_once "header.php";
-    include_once "db/db_img.php";
-    $class_nm = $_POST['class_nm'];
-    $class_no = $_POST['class_no'];
-    $people = $_POST['people'];
+    include_once "db/db_class.php";
+
+    $param = [
+        'class_no' => $_POST['class_no'],
+        'att_no' => $_POST['att_no']
+    ];
+
+    $list = sel_att_img($param);
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +31,7 @@
         ?>
             <div class="stuWrap">
                 <ul>
-                    <li class="attImg"><img src=""></li>
+                    <li class="attImg"><img src="./img/profile.png"></li>
                     <li class="stuName"><?=$item['user_nm']?></li>
                     <li class="stuName"><?=$item['uploaded_time']?></li>
                 </ul>
