@@ -51,7 +51,7 @@
                     <td>$start_time ~ $end_time</td>
                     <td>
                       출석한 인원/$people
-                      <a href='' onclick='subform()'>></a>
+                      <a href='' onclick='return subform()'>></a>
                     </td>
                   </tr>
                 </form>
