@@ -1,6 +1,14 @@
 <?php
+  include_once "./db/db_class.php";
+  //교시수, 어떤 클래스
   $class_no = $_GET['class_no'];
-  echo $class_no;
+  $class_nm = $_GET['class_nm'];
+  $people = $_GET['people'];
+  
+  $param = [
+    'class_no' = $class_no;
+  ]
+  $result = sel_timetable($param);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,32 +26,32 @@
   
   <main>
     <div id="cls_box">
-      <span>수업이름<br></span>
-      <span id="text_s">정원: ㅇㅇ명</span>
+      <span><?=$class_nm?><br></span>
+      <span id="text_s">정원: <?=$people?>명</span>
       <img src="./img/star_b.png">
     </div>
     <div id="t_table">
         <table>
           <tr>
+            <th>교시</th>
             <th>푸시 알림 유효 시간</th>
             <th>출석 인원</th>
           </tr>
-          <tr>
-            <td>09:20 ~ 09:25</td>
-            <td>29/30 <a href="">></a></td>
-          </tr>
-          <tr>
-          <td>10:20 ~ 10:25</td>
-            <td>29/30 <a href="">></a></td>
-          </tr>
-          <tr>
-            <td>11:20 ~ 11:25</td>
-            <td>29/30 <a href="">></a></td>
-          </tr>
-          <tr>
-            <td>12:20 ~ 12:25</td>
-            <td>29/30 <a href="">></a></td>
-          </tr>
+          <?php
+            while($row = mysqli_fetch_assoc($result)){
+              $att_no = $row['att_no'];
+              $start_time = $row['start_time'];
+              $end_time = $row['end_time'];
+
+              echo 
+              " <tr>
+                  <td>$att_no</td>
+                  <td>$start_time ~ $end_time</td>
+                  <td>29/30(임시)</td>
+                </tr>
+              ";
+            }
+          ?>
         </table>
       </div>
     </div>

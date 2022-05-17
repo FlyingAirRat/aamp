@@ -34,7 +34,7 @@
           " <div class='list_box'>
               <img src='./img/hambg.png' class='hambg'>
               <div class='text'>
-                <a href='./class_detail.php?class_no=$class_no'>
+                <a href='./class_detail.php?class_no=$class_no&class_nm=$class_nm&people=$people'>
                   <span>$class_nm<br></span>
                   <span class='text_s'>총 인원수 ${people}명</span>
                 </a>
