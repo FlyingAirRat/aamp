@@ -41,20 +41,19 @@
               $att_no = $row['att_no'];
               $start_time = $row['start_time'];
               $end_time = $row['end_time'];
-  //교시수, 클래스 넘버 전송
               echo 
-              " <form id='class' action='./list.php' method='POST'>
-                  <tr>
-                    <input type='hidden' value='$class_no'>
-                    <input type='hidden' value='$att_no'>
-                    <td>$att_no</td>
-                    <td>$start_time ~ $end_time</td>
-                    <td>
-                      출석한 인원/$people
-                      <a href='#' onclick='document.getElementById('class').submit(); return false;'>></a>
-                    </td>
-                  </tr>
-                </form>
+              " <tr>
+                  <td>$att_no</td>
+                  <td>$start_time ~ $end_time</td>
+                  <td>
+                    출석한 인원/$people
+                    <form id='class' action='./list.php' method='POST'>
+                      <input type='hidden' name='class_no' value='$class_no'>
+                      <input type='hidden' name='att_no' value='$att_no'>
+                      <input type='submit' value='>'>
+                    </form>
+                  </td>
+                </tr>
               ";
             }
           ?>
