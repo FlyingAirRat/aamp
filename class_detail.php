@@ -51,7 +51,7 @@
                     <td>$start_time ~ $end_time</td>
                     <td>
                       출석한 인원/$people
-                      <a href='' onclick='return subform()'>></a>
+                      <a href='' onclick='document.getElementById('class').submit(); return false;'>></a>
                     </td>
                   </tr>
                 </form>
@@ -66,10 +66,8 @@
       <a href=""><button>+</button></a>
     </div>
   </main>
-  <script>
-    function subform(){
-      document.getElementById('class').submit();
-    }
+  <script type="text/javascript">
+
   </script>
 </body>
 </html>
