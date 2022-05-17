@@ -1,5 +1,6 @@
 <?php
-  
+  $class_no = $_GET['class_no'];
+  echo $class_no;
 ?>
 <!DOCTYPE html>
 <html lang="en">

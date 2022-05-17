@@ -29,11 +29,12 @@
         while($row = mysqli_fetch_assoc($result)){
           $class_nm = $row['class_nm'];
           $people = $row['people'];
+          $class_no = $row['class_no'];
           echo 
           " <div class='list_box'>
               <img src='./img/hambg.png' class='hambg'>
               <div class='text'>
-                <a href='./class_detail.php'>
+                <a href='./class_detail.php?class_no=$class_no'>
                   <span>$class_nm<br></span>
                   <span class='text_s'>총 인원수 ${people}명</span>
                 </a>
