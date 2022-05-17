@@ -20,7 +20,7 @@
 </head>
 <body>
   <header>
-    <div id="cls_info"><a href="./class.php"><</a> <span>수업정보</span></div>
+    <div id="cls_info"><a href="./class.php"><</a> <span>수업 정보</span></div>
   </header>
   
   <main>
@@ -43,7 +43,7 @@
               $end_time = $row['end_time'];
   //교시수, 클래스 넘버 전송
               echo 
-              " <form name='class' action='./list.php' method='POST'>
+              " <form id='class' action='./list.php' method='POST'>
                   <tr>
                     <input type='hidden' value='$class_no'>
                     <input type='hidden' value='$att_no'>
@@ -51,7 +51,7 @@
                     <td>$start_time ~ $end_time</td>
                     <td>
                       출석한 인원/$people
-                      <input type='submit' value='>'>
+                      <a href='' onclick='subform()'>
                     </td>
                   </tr>
                 </form>
@@ -66,6 +66,10 @@
       <a href=""><button>+</button></a>
     </div>
   </main>
-  
+  <script>
+    function subform(){
+      document.getElementById('class').submit();
+    }
+  </script>
 </body>
 </html>
