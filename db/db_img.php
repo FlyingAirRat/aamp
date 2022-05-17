@@ -7,6 +7,7 @@
         FROM stu_img A
         INNER JOIN info_user B
             ON A.u_no = B.u_no
+        WHERE uploaded_time BETWEEN 
     ";
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
