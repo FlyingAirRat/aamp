@@ -33,7 +33,9 @@
                 <?php
                     include_once "./db/db_class.php";
                     $level = $_POST['level'];
+                    print $level;
                     if($level === 2){
+                        print "222";
                         $result = sel_all_class();
                         print "<select name='class'>";
                         while($row = mysqli_fetch_assoc($result)){
