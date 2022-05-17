@@ -29,14 +29,14 @@
                     <h2>이름</h2>
                     <input type="text" name="nm" maxlength="20" required>
                 </div>
-                <div class="class">
+                <div class="class_no">
                 <?php
                     include_once "./db/db_class.php";
-                    $level = $_POST['level'];
-                    if($level == 2){
+                    $u_lv = $_POST['u_lv'];
+                    if($u_lv == 2){
                         $result = sel_all_class();
                         print "<h2>수업</h2>";
-                        print "<select name='class'>";
+                        print "<select name='class_no'>";
                         while($row = mysqli_fetch_assoc($result)){
                             $class_no = $row['class_no'];
                             $class_nm = $row['class_nm'];
@@ -46,6 +46,7 @@
                     }
                 ?>
                 </div>
+                <input type="hidden" name="u_lv" value="<?=$u_lv?>">
                 <div class="submit">
                     <input type="submit" value="가입하기" name="btnSubmit">
                 </div>

@@ -13,10 +13,10 @@
         <div class="container">
             <h1>회원구분</h1>
             <form name="joinForm" action="join.php" method="post">
-                <div class="level">
-                    <label><input type="radio" name="level" value="1" checked> 선생님</label>
-                    <label><input type="radio" name="level" value="2"> 학생</label>
-                    <label><input type="radio" name="level" value="0"> 관리자</label>
+                <div class="u_lv">
+                    <label><input type="radio" name="u_lv" value="1" checked> 선생님</label>
+                    <label><input type="radio" name="u_lv" value="2"> 학생</label>
+                    <label><input type="radio" name="u_lv" value="0"> 관리자</label>
                 </div>
                 <div class="submit">
                     <input type="submit" value="다음" name="btnSubmit">
