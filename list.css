@@ -48,11 +48,14 @@
 }
 
 .container {
+    width: 1680px;
+}
+
+.containerWrap {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
-    /* width: 1680px; */
 }
 
 .stuWrap {
