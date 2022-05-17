@@ -11,12 +11,11 @@
     " INSERT INTO info_user
       (u_lv, uid, upw, user_nm)
       VALUES
-      ('$u_lv', '$uid', '$upw', '$nm')
+      ($u_lv, '$uid', '$upw', '$nm')
     ";
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
-
     return $result;
   }
 

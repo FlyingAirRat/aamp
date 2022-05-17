@@ -38,7 +38,7 @@
                     <input type="submit" value="가입하기" name="btnSubmit">
                 </div>
             </form>
-            <div class="login"><a href="login.php">로그인</a></div>
+            <div class="login"><a href="index.php">로그인</a></div>
         </div>
     </div>
     <script src="./join_form.js"></script>
