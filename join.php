@@ -34,7 +34,7 @@
                     include_once "./db/db_class.php";
                     $level = $_POST['level'];
                     print $level;
-                    if($level === 2){
+                    if($level == 2){
                         print "222";
                         $result = sel_all_class();
                         print "<select name='class'>";
