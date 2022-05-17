@@ -28,7 +28,7 @@
         ?>
             <div class="stuWrap">
                 <ul>
-                    <li class="attImg"><img src="<?=$item['imgsrc']?>"></li>
+                    <li class="attImg"><img src=""></li>
                     <li class="stuName"><?=$item['user_nm']?></li>
                     <li class="stuName"><?=$item['uploaded_time']?></li>
                 </ul>
