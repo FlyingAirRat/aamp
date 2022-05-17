@@ -31,7 +31,7 @@
 
   function sel_att_img(&$param) {
     $sql =
-    " SELECT A.imgsrc, B.user_nm, A.uploaded
+    " SELECT A.imgsrc, B.user_nm, A.uploaded_time
       FROM stu_img A
         INNER JOIN info_user B
               ON A.u_no = B.u_no

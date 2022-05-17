@@ -31,6 +31,7 @@
                 <ul>
                     <li class="attImg"><img src="<?=$item['imgsrc']?>"></li>
                     <li class="stuName"><?=$item['user_nm']?></li>
+                    <li class="stuName"><?=$item['uploaded_time']?></li>
                 </ul>
             </div>
         <?php } ?>
