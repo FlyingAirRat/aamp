@@ -1,10 +1,13 @@
 <?php
     session_start();
     include_once "header.php";
-    include_once "db/db_img.php";
+    include_once "db/db_class.php";
+
     $class_nm = $_POST['class_nm'];
     $class_no = $_POST['class_no'];
     $people = $_POST['people'];
+
+    $list = sel_att_img($param);
 ?>
 
 <!DOCTYPE html>
