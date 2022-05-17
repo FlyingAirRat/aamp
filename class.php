@@ -46,7 +46,7 @@
       ?>
     </div>
     <div id="req">
-      <a href=""><button>새로운 수업 추가 요청</button></a>
+      <a href=""><button>새로운 수업 추가</button></a>
     </div>
   </main>
   <script>

@@ -1,6 +1,5 @@
 <?php
   include_once "./db/db_class.php";
-  //교시수, 어떤 클래스
   $class_no = $_GET['class_no'];
   $class_nm = $_GET['class_nm'];
   $people = $_GET['people'];
@@ -34,7 +33,7 @@
         <table>
           <tr>
             <th>교시</th>
-            <th>푸시 알림 유효 시간</th>
+            <th>출석 유효 시간</th>
             <th>출석 인원</th>
           </tr>
           <?php
@@ -42,12 +41,19 @@
               $att_no = $row['att_no'];
               $start_time = $row['start_time'];
               $end_time = $row['end_time'];
-
+  //교시수, 클래스 넘버 전송
               echo 
               " <tr>
                   <td>$att_no</td>
                   <td>$start_time ~ $end_time</td>
-                  <td>출석한 인원/$people <a href=''>></a></td>
+                  <td>
+                    출석한 인원/$people
+                    <form action='./list.php' method='POST'>
+                      <input type='hidden' value='$class_no'>
+                      <input type='hidden' value='$att_no'>
+                      <input type='submit' value='>'>
+                    </form>
+                  </td>
                 </tr>
               ";
             }

@@ -11,7 +11,6 @@
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
-
     return $result;
   }
 
