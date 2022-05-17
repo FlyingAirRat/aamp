@@ -51,7 +51,7 @@
                     <td>$start_time ~ $end_time</td>
                     <td>
                       출석한 인원/$people
-                      <a href='javascript:class.submit();'>></a>
+                      <a href='#' onclick='document.getElementById('class').submit();'>></a>
                     </td>
                   </tr>
                 </form>
