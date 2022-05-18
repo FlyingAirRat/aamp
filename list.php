@@ -34,7 +34,7 @@
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
                 $att = sel_att_img($param);
-                if(isset($att)
+                if(isset($att))
                 { $imgsrc = $att["imgsrc"]; }
                 echo $imgsrc;
         ?>
