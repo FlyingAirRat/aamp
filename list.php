@@ -1,10 +1,18 @@
 <?php
+    session_start();
     include_once "header.php";
-    include_once "db/db_img.php";
-    $list = sel_list();
-    $class_nm = $_POST['class_nm'];
+    include_once "db/db_class.php";
+
     $class_no = $_POST['class_no'];
+    $class_nm = $_POST['class_nm'];
     $people = $_POST['people'];
+
+    $param = [
+        'class_no' => $class_no,
+        'att_no' => $_POST['att_no']
+    ];
+
+    $list = sel_stu_list($param);
 ?>
 
 <!DOCTYPE html>
@@ -24,14 +32,47 @@
     <div class="container">
         <?php
             foreach($list as $item){
+                $param['u_no'] = $item['u_no'];
+                $att = sel_att_img($param);
         ?>
             <div class="stuWrap">
                 <ul>
-                    <li><img src="<?=$item['imgsrc']?>"></li>
+                    <li class="attImg"></li>
                     <li class="stuName"><?=$item['user_nm']?></li>
+                    <li class="uploadTime"></li>
                 </ul>
             </div>
         <?php } ?>
     </div>
+
+    <script>
+        // document.querySelectorAll('.attImg').forEach(function(item){
+        //     item.innerHTML = '<img src="./img/profile.png">';
+        // });
+        // document.querySelectorAll('.uploadTime').forEach(function(item){
+        //     item.innerHTML = '0000-00-00 00:00:00';
+        // });
+
+        // document.querySelectorAll('.attImg').forEach(function(item){
+        // item.innerHTML = '<?php
+        //         if($att !== ""){
+        //             $imgsrc = $att['imgsrc'];
+        //             echo "<img src='$imgsrc'>";
+        //         } else {
+        //                 echo "<img src='./img/profile.png'>";
+        //             }
+        //     ?>';
+        // });
+        // document.querySelectorAll('.uploadTime').forEach(function(item){
+        //     item.innerText = <?php
+        //         if($att !== ""){
+        //             $uploaded_time = $att['uploaded_time'];
+        //             echo $uploaded_time;
+        //         } else {
+        //             echo '0000-00-00 00:00:00';
+        //         }
+        //         ?>
+        // });
+    </script>        
 </body>
 </html>

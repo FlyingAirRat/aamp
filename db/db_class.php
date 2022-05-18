@@ -54,12 +54,14 @@
     return $result;
   }
 
-  function sel_class_nm(&$param){
+  function sel_class_set(&$param){
     $class_no = $param['class_no'];
     $sql = 
-    " SELECT class_nm
-      FROM class
-      WHERE class_no = $class_no
+    " SELECT A.class_nm, B.user_nm
+      FROM class A
+      INNER JOIN info_user B
+      ON A.u_no = B.u_no
+      WHERE A.class_no = $class_no;
     ";
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
