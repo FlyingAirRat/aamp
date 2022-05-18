@@ -65,3 +65,13 @@
     mysqli_close($conn);
     return mysqli_fetch_assoc($result);
   }
+
+  function sel_class_set(&$param){
+    $class_no = $param['class_no'];
+    $sql = 
+    " SELECT A.class_nm, B.user_nm
+      FROM class A
+      INNER JOIN info_user B
+      ON A.u_no = B.u_no
+      WHERE A.class_no = $class_no";
+  }
