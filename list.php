@@ -12,7 +12,8 @@
         'att_no' => $_POST['att_no']
     ];
 
-    $list = sel_att_img($param);
+    $list = sel_stu_list($param);
+    $img_list = sel_att_img($param);
 ?>
 
 <!DOCTYPE html>
@@ -32,15 +33,18 @@
     <div class="container">
         <?php
             foreach($list as $item){
+                $user_nm = $item['user_nm'];
         ?>
             <div class="stuWrap">
                 <ul>
                     <li class="attImg"><img src="./img/profile.png"></li>
-                    <li class="stuName"><?=$item['user_nm']?></li>
-                    <li class="stuName"><?=$item['uploaded_time']?></li>
+                    <li class="stuName"><?=$user_nm?></li>
+                    <li class="uploadTime"></li>
                 </ul>
             </div>
         <?php } ?>
     </div>
 </body>
 </html>
+
+<script src=""></script>
