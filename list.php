@@ -34,8 +34,7 @@
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
                 $att = sel_att_img($param);
-                $test = $att['imgsrc'];
-                echo $test;
+                echo $att;
         ?>
             <div class="stuWrap">
                 <ul>
@@ -57,7 +56,7 @@
         document.querySelectorAll('.attImg').forEach(function(item){
         item.innerHTML = "<?php
                 if(empty($att)){
-                    $imgsrc = $att['imgsrc'];
+                    $imgsrc = $att;
                     echo "<img src='$imgsrc'>";
                 } else {
                         echo "<img src='./img/profile.png'>";
