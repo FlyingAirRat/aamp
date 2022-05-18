@@ -42,14 +42,14 @@
                 </ul>
             </div>
         <?php } ?>
+    <script>
+        let attImg = document.querySelectorAll('.attImg');
+        let uploadTime = document.querySelectorAll('.uploadTime');
+        let stuWrap = document.querySelectorAll('.stuWrap')
+        for(let i=0; i<length.stuWrap; i++){
+            attImg[i].innerHTML = '<img src="./img/profile.png">';
+        }
+    </script>
     </div>
 </body>
-<script>
-    let attImg = document.querySelectorAll('.attImg');
-    let uploadTime = document.querySelectorAll('.uploadTime');
-    let stuWrap = document.querySelectorAll('.stuWrap')
-    for(let i=0; i<length.stuWrap; i++){
-        attImg[i].innerHTML = '<img src="./img/profile.png">';
-    }
-</script>
 </html>
