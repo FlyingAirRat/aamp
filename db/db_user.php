@@ -39,6 +39,7 @@
     " SELECT u_no, user_nm
       FROM info_user
       WHERE u_lv = 2
+      AND class_no = null
       ORDER BY user_nm
     ";
     $conn = get_conn();
