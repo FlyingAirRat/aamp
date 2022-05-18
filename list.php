@@ -54,14 +54,14 @@
         //     item.innerHTML = '0000-00-00 00:00:00';
         // });
         document.querySelectorAll('.attImg').forEach(function(item){
-        "<?php
+        <?php
                 if(empty($att)){
                     $imgsrc = $att;
                     echo "item.innerHTML = <img src='$imgsrc'>";
                 } else {
                         echo "item.innerHTML = <img src='./img/profile.png'>";
                     }
-            ?>";
+            ?>;
         });
         document.querySelectorAll('.uploadTime').forEach(function(item){
             <?php
