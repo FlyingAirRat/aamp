@@ -62,7 +62,8 @@
       INNER JOIN info_user B
       ON A.u_no = B.u_no
       WHERE A.class_no = $class_no";
-      
+  }
+
   function sel_stu_list(&$param) {
     $sql =
     " SELECT user_nm
