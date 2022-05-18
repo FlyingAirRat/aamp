@@ -54,22 +54,22 @@
         //     item.innerHTML = '0000-00-00 00:00:00';
         // });
         document.querySelectorAll('.attImg').forEach(function(item){
-        item.innerHTML = "<?php
+        "<?php
                 if(empty($att)){
                     $imgsrc = $att;
-                    echo "<img src='$imgsrc'>";
+                    echo "item.innerHTML = <img src='$imgsrc'>";
                 } else {
-                        echo "<img src='./img/profile.png'>";
+                        echo "item.innerHTML = <img src='./img/profile.png'>";
                     }
             ?>";
         });
         document.querySelectorAll('.uploadTime').forEach(function(item){
-            item.innerText = <?php
+            <?php
                 if($att != ""){
                     $uploaded_time = $att['uploaded_time'];
-                    echo $uploaded_time;
+                    echo 'item.innerText = $uploaded_time';
                 } else {
-                    echo '0000-00-00 00:00:00';
+                    echo 'item.innerHTML = 0000-00-00 00:00:00';
                 }
                 ?>
         });
