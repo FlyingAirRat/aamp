@@ -48,7 +48,7 @@
       ?>
     </div>
     <div id="req">
-      <a href=""><button>새로운 수업 추가</button></a>
+      <a href="./class_add.php"><button>새로운 수업 추가</button></a>
     </div>
   </main>
   <script>

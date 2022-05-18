@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>수업 추가</title>
+</head>
+<body>
+    <div class="login_wrap">
+        <div class="container">
+            <h1>수업 추가</h1>
+            <form action="class_add_proc.php" method="post">
+                <div class="class_nm">
+                    <h2>수업명</h2> 
+                    <input type="text" name="class_nm" placeholder="수업명을 입력해주세요" maxlength="50" required></div>
+                <div class="people">
+                    <h2>수업 정원</h2>
+                    <input type="number" name="people" placeholder="수업 정원을 입력해주세요" required></div>
+                <div class="submit">
+                    <input type="submit" value="추가">
+                </div>
+            </form>
+            <div class="back"><a href="class.php">돌아가기</a></div>
+        </div>
+    </div>
+</body>
+</html>
