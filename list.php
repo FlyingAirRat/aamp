@@ -30,8 +30,10 @@
         <a href="#">알림 시간 수정</a>
     </div>
     <div class="container">
+        <script>
+            let i = 0;
+        </script>
         <?php
-            $i = 0;
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
         ?>
@@ -45,8 +47,8 @@
             <script>
                 let attImg = document.querySelectorAll('.attImg');
                 let uploadTime = document.querySelectorAll('.uploadTime');
-                let i = 0;
                 attImg[i].innerHTML = '<img src="./img/profile.png">';
+                i++;
             </script>
         <?php $i++; } ?>
     </div>
