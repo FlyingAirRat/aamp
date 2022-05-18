@@ -52,27 +52,28 @@
         // document.querySelectorAll('.uploadTime').forEach(function(item){
         //     item.innerHTML = '0000-00-00 00:00:00';
         // });
-        document.querySelectorAll('.attImg').forEach(function(item){
-            <?php
-                if($att !== ""){
-                    $imgsrc = $att['imgsrc'];
-                    echo "item.innerHTML = <img src='$imgsrc'>";
-                } else {
-                        echo "item.innerHTML = <img src='./img/profile.png'>";
-                    }
-            ?>';
-        });
-        document.querySelectorAll('.uploadTime').forEach(function(item){
-            <?php
-                if($att !== ""){
-                    $uploaded_time = $att['uploaded_time'];
-                    echo "item.innerText = $uploaded_time";
-                } else {
-                    echo 'item.innerText = 0000-00-00 00:00:00';
-                }
-                ?>
-        });
+        <?php echo 'let att = $att'; ?>
+        console.log(att);
+        // document.querySelectorAll('.attImg').forEach(function(item){
+        // item.innerHTML = '<?php
+        //         if($att !== ""){
+        //             $imgsrc = $att['imgsrc'];
+        //             echo "<img src='$imgsrc'>";
+        //         } else {
+        //                 echo "<img src='./img/profile.png'>";
+        //             }
+        //     ?>';
+        // });
+        // document.querySelectorAll('.uploadTime').forEach(function(item){
+        //     item.innerText = <?php
+        //         if($att !== ""){
+        //             $uploaded_time = $att['uploaded_time'];
+        //             echo $uploaded_time;
+        //         } else {
+        //             echo '0000-00-00 00:00:00';
+        //         }
+        //         ?>
+        // });
     </script>        
 </body>
 </html>
-
