@@ -36,7 +36,7 @@
                 $att = sel_att_img($param);
                 $imgsrc = $att['imgsrc'];
                 print_r($att);
-                print_r($imgsrc);
+                print($imgsrc);
                 if(is_string($imgsrc)){
                     echo "yes";
                 }else{
