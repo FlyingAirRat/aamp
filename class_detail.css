@@ -41,10 +41,8 @@ main #t_table td{
   text-align: center;
   padding: 10px;
 }
-#class{
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
+main #t_table #class{
+  background-color: black;
 }
 main #plus_btn{
   position: absolute;
