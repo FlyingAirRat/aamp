@@ -39,6 +39,8 @@
                     $att = mysqli_fetch_assoc($result);
                     $imgsrc = $att['imgsrc'];
                     $uploaded_time = $att['uploaded_time'];
+                } else {
+                    continue;
                 }
         ?>
             <div class="stuWrap">
