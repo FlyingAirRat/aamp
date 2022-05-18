@@ -2,9 +2,11 @@
     session_start();
     include_once "header.php";
     include_once "db/db_class.php";
+
     $class_no = $_POST['class_no'];
     $class_nm = $_POST['class_nm'];
     $people = $_POST['people'];
+
     $param = [
         'class_no' => $class_no,
         'att_no' => $_POST['att_no']
