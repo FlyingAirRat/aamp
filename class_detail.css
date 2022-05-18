@@ -41,11 +41,8 @@ main #t_table td{
   text-align: center;
   padding: 10px;
 }
-main #t_table a{
-  text-decoration: none;
-  color: black;
-  font-size: large;
-  font-weight: bold;
+main #t_table #class{
+  display: inline;
 }
 main #plus_btn{
   position: absolute;
