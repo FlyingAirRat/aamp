@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include_once "header.php";
     include_once "db/db_img.php";
     $list = sel_list();

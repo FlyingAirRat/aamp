@@ -1,4 +1,5 @@
 <?php
+  include_once "./header.php";
   include_once "./db/db_class.php";
   if(isset($_GET['class_no'])){
     $class_no = $_GET['class_no'];
@@ -22,7 +23,6 @@
 </head>
 <body>
   <header>
-    <?php include_once "./header.php"; ?>
     <div id="cls_info"><a href="./class.php"><</a> <span>수업 정보</span></div>
   </header>
   

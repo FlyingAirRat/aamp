@@ -1,10 +1,10 @@
 <?php
+  include_once "./header.php";
   include_once "./db/db_class.php";
-  session_start();
   if(isset($_SESSION['login_user'])){
     $login_user = $_SESSION['login_user'];
     $u_no = $login_user['u_no'];
-    
+
     $param = [
       'u_no' => $u_no
     ];
@@ -21,7 +21,6 @@
   <link rel="stylesheet" href="./class.css">
 </head>
 <body>
-  <?php include_once "./header.php";?> 
   <main>
     <div id="list_head">
       강의목록
