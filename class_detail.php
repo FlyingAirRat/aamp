@@ -1,13 +1,15 @@
 <?php
   include_once "./db/db_class.php";
-  $class_no = $_GET['class_no'];
-  $class_nm = $_GET['class_nm'];
-  $people = $_GET['people'];
-  
-  $param = [
-    'class_no' => $class_no
-  ];
-  $result = sel_timetable($param);
+  if(isset($_GET['class_no'])){
+    $class_no = $_GET['class_no'];
+    $class_nm = $_GET['class_nm'];
+    $people = $_GET['people'];
+    
+    $param = [
+      'class_no' => $class_no
+    ];
+    $result = sel_timetable($param);
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +22,7 @@
 </head>
 <body>
   <header>
+    <?php include_once "./header.php"; ?>
     <div id="cls_info"><a href="./class.php"><</a> <span>수업 정보</span></div>
   </header>
   
