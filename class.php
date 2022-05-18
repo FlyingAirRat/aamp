@@ -1,12 +1,15 @@
 <?php
+  include_once "./header.php";
   include_once "./db/db_class.php";
-  session_start();
-  $login_user = isset($_SESSION['login_user']) ? $_SESSION['login_user'] : "";
-  $u_no = $login_user['u_no'];
-  $param = [
-    'u_no' => $u_no
-  ];
-  $result = sel_class_list($param);
+  if(isset($_SESSION['login_user'])){
+    $login_user = $_SESSION['login_user'];
+    $u_no = $login_user['u_no'];
+
+    $param = [
+      'u_no' => $u_no
+    ];
+    $result = sel_class_list($param);
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +21,6 @@
   <link rel="stylesheet" href="./class.css">
 </head>
 <body>
-  <?php include_once "./header.php";?> 
   <main>
     <div id="list_head">
       강의목록
@@ -46,7 +48,7 @@
       ?>
     </div>
     <div id="req">
-      <a href=""><button>새로운 수업 추가</button></a>
+      <a href="./class_add.php"><button>새로운 수업 추가</button></a>
     </div>
   </main>
   <script>
