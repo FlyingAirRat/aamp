@@ -55,14 +55,14 @@
     ";
     $conn = get_conn();
     $result1 = mysqli_query($conn, $sql1);
-    print_r($result1);
-    // $class_no = $result1['class_no'];
+    $result1_arr = mysqli_fetch_assoc($result1);
+    $class_no = $result1['class_no'];
 
-    // $sql2 = 
-    // " UPDATE info_user
-    //   SET class_no = $class_no
-    //   WHERE u_no = $u_no
-    // ";
-    // mysqli_query($conn, $sql2);
-    // mysqli_close($conn);
+    $sql2 = 
+    " UPDATE info_user
+      SET class_no = $class_no
+      WHERE u_no = $u_no
+    ";
+    mysqli_query($conn, $sql2);
+    mysqli_close($conn);
   }
