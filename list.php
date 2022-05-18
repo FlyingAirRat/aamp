@@ -35,9 +35,7 @@
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
                 $att = sel_att_img($param);
-                if($att == ""){
-                    continue;
-                } else {
+                if($att !== ""){
                     $imgsrc = $att['imgsrc'];
                     $uploaded_time = $att['uploaded_time'];
                 }
