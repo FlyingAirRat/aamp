@@ -47,25 +47,11 @@
 
     <script>
         document.querySelectorAll('.attImg').forEach(function(item){
-            item.innerHTML = '<?php
-                    if($att !== ""){
-                        $imgsrc = $att['imgsrc'];
-                        echo "<img src='$imgsrc'>";
-                    } else {
-                            echo "<img src='./img/profile.png'>";
-                        }
-                ?>';
-            });
-            document.querySelectorAll('.uploadTime').forEach(function(item){
-                item.innerText = <?php
-                    if($att !== ""){
-                        $uploaded_time = $att['uploaded_time'];
-                        echo $uploaded_time;
-                    } else {
-                        echo '0000-00-00 00:00:00';
-                    }
-                    ?>
-            });
+            item.innerHTML = '<img src="./img/profile.png">';
+        });
+        document.querySelectorAll('.uploadTime').forEach(function(item){
+            item.innerHTML = '0000-00-00 00:00:00';
+        })
     </script>        
 </body>
 </html>
