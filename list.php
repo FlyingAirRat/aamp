@@ -45,7 +45,7 @@
     <script>
         let attImg = document.querySelectorAll('.attImg');
         let uploadTime = document.querySelectorAll('.uploadTime');
-        let stuWrap = document.querySelectorAll('.stuWrap')
+        let stuWrap = document.querySelectorAll('.stuWrap');
         for(let i=0; i<length.stuWrap; i++){
             attImg[i].innerHTML = '<img src="./img/profile.png">';
         }
