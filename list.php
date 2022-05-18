@@ -52,7 +52,7 @@
         // document.querySelectorAll('.uploadTime').forEach(function(item){
         //     item.innerHTML = '0000-00-00 00:00:00';
         // });
-        <?php echo 'let att = $att'; ?>
+        <?php echo 'let att ='. $att; ?>
         console.log(att);
         // document.querySelectorAll('.attImg').forEach(function(item){
         // item.innerHTML = '<?php
