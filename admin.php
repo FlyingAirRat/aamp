@@ -1,3 +1,6 @@
+<?php
+  include_once "header.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +10,5 @@
   <title>메인화면</title>
 </head>
 <body>
-  <?php
-    session_start();
-    include_once "header.php";
-  ?>
 </body>
 </html>
