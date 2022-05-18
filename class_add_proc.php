@@ -1,5 +1,6 @@
 <?php
   include_once "./db/db_class.php";
+  include_once "./db/db_user.php";
   $class_nm = $_POST['class_nm'];
   $stu_list = $_POST['stu'];
   $u_no = $_POST['u_no'];
