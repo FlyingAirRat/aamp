@@ -33,3 +33,16 @@
 
     return mysqli_fetch_assoc($result);
   }
+
+  function sel_stu(){
+    $sql = 
+    " SELECT u_no, user_nm
+      FROM info_user
+      WHERE u_lv = 2
+      ORDER BY user_nm
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    return $result;
+  }

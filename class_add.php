@@ -1,4 +1,5 @@
 <?php
+  include_once "./db/db_user.php";  
   session_start();
   if(isset($_SESSION['login_user'])){
     $login_user = $_SESSION['login_user'];
@@ -12,6 +13,7 @@
     ";
     exit;
   }
+  $result = sel_stu();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,8 +33,14 @@
                     <h2>수업명</h2> 
                     <input type="text" name="class_nm" placeholder="수업명을 입력해주세요" maxlength="50" required></div>
                 <div class="people">
-                    <h2>수업 정원</h2>
-                    <input type="number" name="people" placeholder="수업 정원을 입력해주세요" required></div>
+                    <h2>수강 인원</h2>
+                    <?php
+                        while($row = mysqli_fetch_assoc($result)){
+                            $u_no = $row['u_no'];
+                            $user_nm = $row['user_nm'];
+                            print "<label><input type='checkbox' name='stu[]' value='$u_no'>$user_nm</label>";
+                        }
+                    ?>
                 <input type="hidden" name="u_no" value="<?=$u_no?>">
                 <div class="submit">
                     <input type="submit" value="추가">
