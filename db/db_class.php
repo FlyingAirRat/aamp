@@ -1,6 +1,21 @@
 <?php
   include_once "db.php";
 
+  function ins_class(&$param){
+    $class_nm = $param['class_nm'];
+    $people = $param['people'];
+    $u_no = $param['u_no'];
+    $sql = 
+    " INSERT INTO class
+      (class_nm, u_no, people)
+      VALUES
+      ('$class_nm', $people, $u_no)
+    ";
+    $conn = get_conn();
+    mysqli_query($conn, $sql);
+    mysqli_close($conn);
+  }
+
   function sel_all_class(){
     $sql = 
     " SELECT class_no, class_nm

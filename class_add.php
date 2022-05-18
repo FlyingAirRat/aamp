@@ -1,3 +1,18 @@
+<?php
+  session_start();
+  if(isset($_SESSION['login_user'])){
+    $login_user = $_SESSION['login_user'];
+    $u_no = $login_user['u_no'];
+  }else{
+    echo 
+    " <script>
+        alert('로그인 해주세요.');
+        location.href='index.php';
+      </script>
+    ";
+    exit;
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +33,7 @@
                 <div class="people">
                     <h2>수업 정원</h2>
                     <input type="number" name="people" placeholder="수업 정원을 입력해주세요" required></div>
+                <input type="hidden" name="u_no" value="<?=$u_no?>">
                 <div class="submit">
                     <input type="submit" value="추가">
                 </div>
