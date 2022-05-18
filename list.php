@@ -41,7 +41,6 @@
                     $imgsrc = "./img/profile.png"; 
                     $uploaded_time = '0000-00-00 00:00:00';
                 }
-                echo $imgsrc;
         ?>
             <div class="stuWrap">
                 <ul>
