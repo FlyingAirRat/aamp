@@ -9,7 +9,7 @@
     " INSERT INTO class
       (class_nm, u_no, people)
       VALUES
-      ('$class_nm', $people, $u_no)
+      ('$class_nm', '$people', '$u_no')
     ";
     $conn = get_conn();
     mysqli_query($conn, $sql);
