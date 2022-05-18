@@ -51,7 +51,7 @@
         });
         document.querySelectorAll('.uploadTime').forEach(function(item){
             item.innerHTML = '0000-00-00 00:00:00';
-        })
+        });
     </script>        
 </body>
 </html>
