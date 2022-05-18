@@ -65,7 +65,7 @@
     border: 1px solid gray;
     border-radius: 5px;
     box-shadow: 3px 5px 10px -5px rgb(185, 185, 185);
-    margin: 10px;
+    margin: 0.5em;
 }
 .stuWrap ul li {
     text-align: center;
@@ -81,12 +81,12 @@
 
 .stuName {
     font-family: 'NanumBarunGothic';
-    font-size: 1em;
-    margin-top: 10px;
+    font-size: 1.1em;
+    margin-top: 0.8em;
 }
 
 .uploadTime {
     font-family: 'NanumBarunGothic';
-    font-size: 0.6em;
-    margin-top: 5px;
+    font-size: 0.8em;
+    margin-top: 0.5em;
 }
