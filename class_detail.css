@@ -41,7 +41,7 @@ main #t_table td{
   text-align: center;
   padding: 10px;
 }
-main #t_table #class{
+#class{
   display: flex;
   flex-flow: row wrap;
   align-items: center;
