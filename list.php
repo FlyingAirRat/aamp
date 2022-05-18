@@ -55,7 +55,7 @@
         // });
         document.querySelectorAll('.attImg').forEach(function(item){
         item.innerHTML = "<?php
-                if(!empty($att)){
+                if(empty($att)){
                     $imgsrc = $att['imgsrc'];
                     echo "<img src='$imgsrc'>";
                 } else {
