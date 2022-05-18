@@ -47,3 +47,21 @@
     mysqli_close($conn);
     return $result;
   }
+
+  function upd_stu(&$u_no){
+    $sql1 =
+    " SELECT MAX(class_no) as 'class_no'
+      FROM class
+    ";
+    $conn = get_conn();
+    $result1 = mysqli_query($conn, $sql1);
+    $class_no = $result1['class_no'];
+
+    $sql2 = 
+    " UPDATE info_user
+      SET class_no = $class_no
+      WHERE u_no = $u_no
+    ";
+    mysqli_query($conn, $sql2);
+    mysqli_close($conn);
+  }

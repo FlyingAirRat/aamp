@@ -14,6 +14,7 @@
     $conn = get_conn();
     mysqli_query($conn, $sql);
     mysqli_close($conn);
+    
   }
 
   function sel_all_class(){
