@@ -43,7 +43,7 @@
     " SELECT user_nm, u_no
       FROM info_user
       WHERE class_no = {$param['class_no']}
-      ORDER BY user_nm ASC
+      ORDER BY user_nm
     ";
 
     $conn = get_conn();
