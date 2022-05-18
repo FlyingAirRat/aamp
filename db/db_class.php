@@ -53,8 +53,6 @@
   }
 
   function sel_att_img(&$param) {
-
-
     $sql =
     " SELECT A.imgsrc, B.user_nm, A.uploaded_time
       FROM stu_img A
