@@ -47,7 +47,8 @@
             <script>
                 let attImg = document.querySelectorAll('.attImg');
                 let uploadTime = document.querySelectorAll('.uploadTime');
-                attImg[i++].innerHTML = '<img src="./img/profile.png">';
+                attImg[i].innerHTML = '<img src="./img/profile.png">';
+                i = i + 1;
             </script>
         <?php } ?>
     </div>
