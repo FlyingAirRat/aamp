@@ -31,6 +31,7 @@
     </div>
     <div class="container">
         <?php
+            $i = 0;
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
         ?>
@@ -41,15 +42,13 @@
                     <li class="uploadTime"></li>
                 </ul>
             </div>
-        <?php } ?>
-    <script>
-        let attImg = document.querySelectorAll('.attImg');
-        let uploadTime = document.querySelectorAll('.uploadTime');
-        let stuWrap = document.querySelectorAll('.stuWrap');
-        for(let i=0; i<length.stuWrap; i++){
-            attImg[i].innerHTML = '<img src="./img/profile.png">';
-        }
-    </script>
+            <script>
+                let attImg = document.querySelectorAll('.attImg');
+                let uploadTime = document.querySelectorAll('.uploadTime');
+                let stuWrap = document.querySelectorAll('.stuWrap');
+                attImg[<?php echo $i; ?>].innerHTML = '<img src="./img/profile.png">';
+            </script>
+        <?php $i++; } ?>
     </div>
 </body>
 </html>
