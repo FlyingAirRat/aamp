@@ -33,6 +33,7 @@
         <?php
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
+                $att = sel_att_img($param);
         ?>
             <div class="stuWrap">
                 <ul>
@@ -43,11 +44,28 @@
             </div>
         <?php } ?>
     </div>
+
     <script>
         document.querySelectorAll('.attImg').forEach(function(item){
-            item.innerHTML = '<img src="./img/profile.png">';
-        });
-        document.querySelectorAll('.uploadTime')
-    </script>
+            item.innerHTML = '<img src="<?php
+                    if($att !== ""){
+                        $imgsrc = $att['imgsrc'];
+                        echo $imgsrc;} else {
+                            echo "./img/profile.png";
+                        }
+                ?>
+                ">';
+            });
+            document.querySelectorAll('.uploadTime').forEach(function(item){
+                item.innerText = <?php
+                    if($att !== ""){
+                        $uploaded_time = $att['uploaded_time'];
+                        echo $uploaded_time;
+                    } else {
+                        echo '0000-00-00 00:00:00';
+                    }
+                    ?>
+            });
+    </script>        
 </body>
 </html>
