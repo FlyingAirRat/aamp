@@ -17,4 +17,4 @@
     upd_stu($stu_list[$i]);
   }
   
-  Header("Location: ./class.php");
+  //Header("Location: ./class.php");
