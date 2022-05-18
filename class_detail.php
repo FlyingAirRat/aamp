@@ -67,7 +67,7 @@
     </div>
     <div id="plus_btn">
       <span>알림 시간 추가</span>
-      <a href=""><button>+</button></a>
+      <a href="./add_time.php"><button>+</button></a>
     </div>
   </main>
   <script type="text/javascript">

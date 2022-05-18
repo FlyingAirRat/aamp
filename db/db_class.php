@@ -14,7 +14,7 @@
     $conn = get_conn();
     mysqli_query($conn, $sql);
     mysqli_close($conn);
-    
+
   }
 
   function sel_all_class(){
@@ -52,4 +52,17 @@
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
     return $result;
+  }
+
+  function sel_class_nm(&$param){
+    $class_no = $param['class_no'];
+    $sql = 
+    " SELECT class_nm
+      FROM class
+      WHERE class_no = $class_no
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    return mysqli_fetch_assoc($result);
   }

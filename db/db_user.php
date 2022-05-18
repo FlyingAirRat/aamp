@@ -22,7 +22,7 @@
   function sel_user(&$param){
     $uid = $param['uid'];
     $sql = 
-    " SELECT u_no, u_lv, uid, upw, user_nm
+    " SELECT u_no, u_lv, uid, upw, user_nm, class_no, class_no_alt
       FROM info_user
       WHERE uid = '$uid'";
 
