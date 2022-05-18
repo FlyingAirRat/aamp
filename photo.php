@@ -19,29 +19,27 @@
   echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
   ?>
   <head>
-    <title>My Favorite Sport</title>
     <link rel="stylesheet" href="./photo.css">
 </head>
 
 <body>
     <div class="contentarea">
-        <h1>
-            자바스크립트로 사진 캡쳐하기
-        </h1>
         <div class="camera">
             <video id="video">Video stream not available.</video>
         </div>
-        <div><button id="startbutton">Take photo</button></div>
+        <div><button id="startbutton">사진 찍기</button></div>
         <canvas id="canvas"></canvas>
         <div class="output">
             <img id="photo" alt="The screen capture will appear in this box.">
         </div>
         <form name="img" method="POST" action="imgFire.php">
-      <button class='buttons' id='sendbutton' type="submit" onclick="submitScore()">SUBMIT</button>
+      <button class='buttons' id='sendbutton' type="submit" onclick="submitScore()">전송</button>
       <input type="hidden" id="u_no" name="u_no">
       <input type="hidden" id="imgsrc" name="imgsrc">
     </form>
-    <br><br>
+    <br>
+    
+    <br>
     <form name="showImage" method="POST" action="showImage.php">
       <legend>조회할 이미지의 id를 입력하세요.</legend>
       <input type="number" name="img_id">
@@ -89,7 +87,7 @@
                     video.play();
                 })
                 .catch(function(err) {
-                    console.log("An error occurred: " + err);
+                    console.log("에러가 발생했습니다: " + err);
                 });
 
             video.addEventListener('canplay', function(ev) {
@@ -153,7 +151,6 @@
 
         window.addEventListener('load', startup, false);
     })();
-    console.log(photoBase64);
     </script>
 </body>
 
