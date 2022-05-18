@@ -35,7 +35,7 @@
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
                 $result = sel_att_img($param);
-                if($result != ""){
+                if($result != 0){
                     $att = mysqli_fetch_assoc($result);
                     $imgsrc = $att['imgsrc'];
                     $uploaded_time = $att['uploaded_time'];
