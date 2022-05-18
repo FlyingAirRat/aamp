@@ -67,7 +67,7 @@ body {
     width: 175px;
     height: 285px;
     border: 1px solid gray;
-    border-radius: 5px;
+    background-color: #fff;
     margin: 0.5em;
 }
 .stuWrap ul li {
