@@ -42,7 +42,9 @@ main #t_table td{
   padding: 10px;
 }
 main #t_table #class{
-  display: inline;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
 main #plus_btn{
   position: absolute;
