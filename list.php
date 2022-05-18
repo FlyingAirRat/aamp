@@ -50,7 +50,7 @@
                 attImg[i].innerHTML = '<img src="./img/profile.png">';
                 i++;
             </script>
-        <?php $i++; } ?>
+        <?php } ?>
     </div>
 </body>
 </html>
