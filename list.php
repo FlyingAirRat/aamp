@@ -36,6 +36,7 @@
                 $att = sel_att_img($param);
                 if(isset($att))
                 { $imgsrc = $att["imgsrc"]; }
+                else { $imgsrc = "./img/profile.png"; }
                 echo $imgsrc;
         ?>
             <div class="stuWrap">
