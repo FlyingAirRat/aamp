@@ -61,7 +61,7 @@
     justify-content: center;
     align-items: center;
     width: 175px;
-    height: 250px;
+    height: 275px;
     border: 1px solid gray;
     border-radius: 5px;
     box-shadow: 3px 5px 10px -5px rgb(185, 185, 185);
@@ -82,11 +82,11 @@
 .stuName {
     font-family: 'NanumBarunGothic';
     font-size: 1.1em;
-    margin-top: 0.8em;
+    padding: 0.8em 0;
 }
 
 .uploadTime {
     font-family: 'NanumBarunGothic';
     font-size: 0.8em;
-    margin-top: 0.5em;
+    margin-bottom: 0.8em;
 }
