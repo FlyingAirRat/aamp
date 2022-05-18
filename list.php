@@ -46,7 +46,7 @@
                 let attImg = document.querySelectorAll('.attImg');
                 let uploadTime = document.querySelectorAll('.uploadTime');
                 let i = <?php echo $i ?>;
-                attImg.innerHtml = '<img src="./img/profile.png">';
+                attImg.innerHTML = '<img src="./img/profile.png">';
 
 
             </script>
