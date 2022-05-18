@@ -42,7 +42,7 @@ main #t_table td{
   padding: 10px;
 }
 main #t_table #class{
-  background-color: black;
+  display: inline;
 }
 main #plus_btn{
   position: absolute;
