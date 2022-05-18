@@ -47,14 +47,14 @@
 
     <script>
         document.querySelectorAll('.attImg').forEach(function(item){
-            item.innerHTML = '<img src="<?php
+            item.innerHTML = '<?php
                     if($att !== ""){
                         $imgsrc = $att['imgsrc'];
-                        echo $imgsrc;} else {
-                            echo "./img/profile.png";
+                        echo "<img src='$imgsrc'>";
+                    } else {
+                            echo "<img src='./img/profile.png'>";
                         }
-                ?>
-                ">';
+                ?>';
             });
             document.querySelectorAll('.uploadTime').forEach(function(item){
                 item.innerText = <?php
