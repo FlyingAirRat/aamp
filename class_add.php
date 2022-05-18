@@ -38,7 +38,7 @@
                         while($row = mysqli_fetch_assoc($result)){
                             $u_no_stu = $row['u_no'];
                             $user_nm = $row['user_nm'];
-                            print "<label><input type='checkbox' name='stu[]' value='$u_no_stu'>$user_nm</label> ";
+                            print "<label><input type='checkbox' name='stu[]' value='$u_no_stu'>$user_nm($u_no_stu)</label> ";
                         }
                     ?>
                 <input type="hidden" name="u_no" value="<?=$u_no?>">
