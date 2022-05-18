@@ -64,7 +64,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 175px;
+    width: 170px;
     height: 285px;
     border: 1px solid gray;
     background-color: #fff;
@@ -78,7 +78,7 @@ body {
     width: 150px;
     height: 200px;
     object-fit: cover;
-    border: 1px solid black;
+    border: 1px solid #eee;
 }
 
 .stuName {
