@@ -34,7 +34,7 @@
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
                 $att = sel_att_img($param);
-                echo $att;
+                print_r($att);
         ?>
             <div class="stuWrap">
                 <ul>
