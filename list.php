@@ -44,12 +44,10 @@
         <?php } ?>
     </div>
     <script>
-        let attImg = document.querySelectorAll('.attImg');
-        let uploadTime = document.querySelectorAll('.uploadTime');
-        
-        for(let i=0; i<length.attImg; i++){
-            attImg[i].innerHTML = '<img src="./img/profile.png">';
-        }
+        document.querySelectorAll('.attImg').forEach(function(item){
+            item.innerHTML = '<img src="./img/profile.png">';
+        });
+        document.querySelectorAll('.uploadTime')
     </script>
 </body>
 </html>
