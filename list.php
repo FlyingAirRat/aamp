@@ -30,9 +30,6 @@
         <a href="#">알림 시간 수정</a>
     </div>
     <div class="container">
-        <script>
-            let i = 0;
-        </script>
         <?php
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
@@ -44,13 +41,15 @@
                     <li class="uploadTime"></li>
                 </ul>
             </div>
-            <script>
-                let attImg = document.querySelectorAll('.attImg');
-                let uploadTime = document.querySelectorAll('.uploadTime');
-                attImg[i].innerHTML = '<img src="./img/profile.png">';
-                i = i + 1;
-            </script>
         <?php } ?>
     </div>
 </body>
 </html>
+<script>
+    let attImg = document.querySelectorAll('.attImg');
+    let uploadTime = document.querySelectorAll('.uploadTime');
+    let stuWrap = document.querySelectorAll('.stuWrap')
+    for(let i=0; i<length.stuWrap; i++){
+        attImg[i].innerHTML = '<img src="./img/profile.png">';
+    }
+</script>
