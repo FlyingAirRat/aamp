@@ -64,10 +64,10 @@
       WHERE A.class_no = $class_no;
   function sel_stu_list(&$param) {
     $sql =
-    " SELECT user_nm
+    " SELECT user_nm, u_no
       FROM info_user
       WHERE class_no = {$param['class_no']}
-      ORDER BY user_nm ASC
+      ORDER BY user_nm
     ";
 
     $conn = get_conn();
@@ -77,15 +77,12 @@
   }
 
   function sel_att_img(&$param) {
-
-
     $sql =
-    " SELECT A.imgsrc, B.user_nm, A.uploaded_time
-      FROM stu_img A
-        INNER JOIN info_user B
-              ON A.u_no = B.u_no
-      WHERE A.class_no = {$param['class_no']} 
-        AND A.att_no = {$param['att_no']}
+    " SELECT imgsrc, uploaded_time
+      FROM stu_img 
+      WHERE class_no = {$param['class_no']} 
+        AND att_no = {$param['att_no']}
+        AND u_no = {$param['u_no']}
     ";
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
