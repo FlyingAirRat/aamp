@@ -34,6 +34,7 @@
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
                 $att = sel_att_img($param);
+                echo empty($att);
         ?>
             <div class="stuWrap">
                 <ul>
@@ -53,14 +54,14 @@
         //     item.innerHTML = '0000-00-00 00:00:00';
         // });
         document.querySelectorAll('.attImg').forEach(function(item){
-        item.innerHTML = '<?php
+        item.innerHTML = "<?php
                 if(!empty($att)){
                     $imgsrc = $att['imgsrc'];
                     echo "<img src='$imgsrc'>";
                 } else {
                         echo "<img src='./img/profile.png'>";
                     }
-            ?>';
+            ?>";
         });
         document.querySelectorAll('.uploadTime').forEach(function(item){
             item.innerText = <?php
