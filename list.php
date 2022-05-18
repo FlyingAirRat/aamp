@@ -35,12 +35,12 @@
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
                 $result = sel_att_img($param);
-                if($result){
+                if($result == 0){
+                    continue;
+                } else {
                     $att = mysqli_fetch_assoc($result);
                     $imgsrc = $att['imgsrc'];
                     $uploaded_time = $att['uploaded_time'];
-                } else {
-                    continue;
                 }
         ?>
             <div class="stuWrap">
@@ -54,13 +54,13 @@
                 let attImg = document.querySelectorAll('.attImg');
                 let uploadTime = document.querySelectorAll('.uploadTime');
 
-                if(<?php $att ?> == "") {
-                    attImg[<?php $i ?>].innerHTML = '<img src="./img/profile.png">';
-                    uploadTime[<?php $i ?>].innerHTML = '0000-00-00 00:00:00';
-                } else {
-                    attImg[<?php $i ?>].innerHTML = '<img src="<?php $imgsrc?>">';
-                    uploadTime[<?php $i ?>].innerHTML = '<?php $uploaded_time ?>';
-                }
+                // if(<?php $att ?> == "") {
+                //     attImg[<?php $i ?>].innerHTML = '<img src="./img/profile.png">';
+                //     uploadTime[<?php $i ?>].innerHTML = '0000-00-00 00:00:00';
+                // } else {
+                //     attImg[<?php $i ?>].innerHTML = '<img src="<?php $imgsrc?>">';
+                //     uploadTime[<?php $i ?>].innerHTML = '<?php $uploaded_time ?>';
+                // }
             </script>
         <?php $i++; } ?>
     </div>
