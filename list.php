@@ -13,7 +13,6 @@
     ];
 
     $list = sel_stu_list($param);
-    $img_list = sel_att_img($param);
 ?>
 
 <!DOCTYPE html>
@@ -32,19 +31,34 @@
     </div>
     <div class="container">
         <?php
+            $i = 0;
             foreach($list as $item){
-                $user_nm = $item['user_nm'];
+                $param['u_no'] = $item['u_no'];
+                $result = sel_att_img($param);
+                $att = mysqli_fetch_assoc($result);
+                $imgsrc = $att['imgsrc'];
+                $uploaded_time = $att['uploaded_time'];
         ?>
             <div class="stuWrap">
                 <ul>
-                    <li class="attImg"><img src="./img/profile.png"></li>
-                    <li class="stuName"><?=$user_nm?></li>
+                    <li class="attImg"></li>
+                    <li class="stuName"><?=$item['user_nm']?></li>
                     <li class="uploadTime"></li>
                 </ul>
             </div>
-        <?php } ?>
+            <script>
+                let attImg = document.querySelectorAll('.attImg');
+                let uploadTime = document.querySelectorAll('.uploadTime');
+
+                if(<?php $att ?> == "") {
+                    attImg[<?php $i ?>].innerHTML = '<img src="./img/profile.png">';
+                    uploadTime[<?php $i ?>].innerHTML = '0000-00-00 00:00:00';
+                } else {
+                    attImg[<?php $i ?>].innerHTML = '<img src="<?php $imgsrc?>">';
+                    uploadTime[<?php $i ?>].innerHTML = '<?php $uploaded_time ?>';
+                }
+            </script>
+        <?php $i++; } ?>
     </div>
 </body>
 </html>
-
-<script src=""></script>
