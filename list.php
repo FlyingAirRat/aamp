@@ -34,7 +34,12 @@
             foreach($list as $item){
                 $param['u_no'] = $item['u_no'];
                 $att = sel_att_img($param);
-                print_r($att);
+                $imgsrc = $att['imgsrc'];
+                if(is_string($imgsrc)){
+                    echo "yes";
+                }else{
+                    echo "no";
+                }
         ?>
             <div class="stuWrap">
                 <ul>
