@@ -26,10 +26,6 @@ body {
     border-bottom: 1px solid gray;
 }
 
-.topbar .modPushtime {
-    margin-right: 30px;
-}
-
 .topbar a {
     text-decoration: none;
     color: rgb(20, 20, 20);
@@ -37,6 +33,10 @@ body {
 
 .topbar a:hover {
     color: rgb(55, 60, 66);
+}
+
+.modPushtime {
+    appearance: none;
 }
 
 .container {

@@ -27,7 +27,7 @@
             <a href="class_detail.php?class_no=<?=$class_no?>&class_nm=<?=$class_nm?>&people=<?=$people?>">◀ 알림목록</a>
         </div>
         <div class="modPushtime">
-            <a href="#">알림 시간 수정</a>
+            <a href="#" tabindex="-1"><button>알림 시간 수정</button></a>
         </div>
     </div>
     <div class="container">
