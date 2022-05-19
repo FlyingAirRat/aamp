@@ -26,10 +26,6 @@ body {
     border-bottom: 1px solid gray;
 }
 
-.topbar .prevPage {
-    margin-left: 15px;
-}
-
 .topbar .modPushtime {
     margin-right: 30px;
 }
