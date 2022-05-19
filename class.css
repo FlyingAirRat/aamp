@@ -13,10 +13,9 @@ body, html{height: 100%; position: relative;}
   margin-top: 5px;
 }
 #list_body .list_box .star{
-  justify-content: flex-end;
-  /* position: absolute;
-  right: 25px;
-  margin-top: 5px; */
+  position: absolute;
+  right: 30px;
+  margin-top: 5px;
 }
 #list_body .list_box .text a{
   color: black;
