@@ -2,6 +2,7 @@
   include_once "./db/db_user.php";
   $uid = $_POST['uid'];
   $upw = $_POST['upw'];
+  $auto_login = isset($_POST['auto_login']) ? $_POST['auto_login'] : 0;
 
   $param = [
     'uid' => $uid
@@ -19,6 +20,12 @@
   }
   
   if($result['upw'] === $upw){
+    if($auto_login == "1"){
+      $duration = 24 * 60 * 60 * 30;  // 30일
+      ini_set('session.gc_maxlifetime', $duration);
+      session_set_cookie_params($duration);
+      session_start();
+    }
     session_start();
     $_SESSION["login_user"] = $result;
     

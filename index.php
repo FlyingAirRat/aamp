@@ -1,7 +1,4 @@
 <?php
-    $duration = 24 * 60 * 60 * 30;  // 30일
-    ini_set('session.gc_maxlifetime', $duration);
-    session_set_cookie_params($duration);
     session_start();
     if(isset($_SESSION['login_user']) && $_SESSION['login_user']['u_lv'] == 2){
         header("location: photo.php");
@@ -28,6 +25,9 @@
                 <div class="upw">
                     <h2>비밀번호</h2>
                     <input type="password" name="upw" placeholder="비밀번호를 입력해주세요" minlength="8" maxlength="20"></div>
+                <div class="auto_login">
+                    <input type="checkbox" name="auto_login" value="1" checked>
+                </div>
                 <div class="submit">
                     <input type="submit" value="로그인">
                 </div>
