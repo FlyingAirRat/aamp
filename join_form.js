@@ -34,22 +34,14 @@ joinForm.upw.onchange = function() {
 
 
 function check(){
-    if(joinForm.uid.value == "") {
-        alert("아이디를 입력해 주세요.");
-        joinForm.uid.focus();
-        return false;
-      }
-    else if(joinForm.upw.value == "") {
-        alert("비밀번호를 입력해 주세요.");    
-        joinForm.uid.focus();
-        return false;
-    }
-    else if(isEqual == false){
+    if(isEqual == false){
         alert("비밀번호가 일치하지 않습니다.");
         joinForm.upw.value = "";
         joinForm.upwConfirm.value = "";
         joinForm.upw.focus();
-        return false
+        return false;
     }
-    else return true;
+    else {
+        return true
+    };
 }
