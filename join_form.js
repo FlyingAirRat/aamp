@@ -5,12 +5,10 @@ joinForm.upwConfirm.onchange(upwCheck());
 joinForm.upw.onchange(upwCheck());
 
 function upwCheck(){
-    let upw = joinForm.upw.value;
-    let upwConfirm = joinForm.upw.value;
     let checkUpw = document.getElementById("checkUpw");
     let str = "";
 
-    if(upw != upwConfirm) {
+    if(joinForm.upw.value != joinForm.upwConfirm.value) {
         str = "비밀번호가 일치하지 않습니다";
         checkUpw.style.color = "red";
         isEqual = false;
