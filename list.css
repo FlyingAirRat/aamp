@@ -25,8 +25,12 @@ body {
     justify-content: space-between;
 }
 
-.topbar div {
-    margin: 0 30px;
+.topbar .prevPage {
+    margin-left: 15px;
+}
+
+.topbar .modPushtime {
+    margin-right: 30px;
 }
 
 .topbar a {
