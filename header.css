@@ -6,13 +6,15 @@
 }
 body, html{height: 100%; position: relative;}
 
+header {
+  padding: 20px;
+}
+
 #log{
-  padding: 30px 10px;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 #log button{
-  position: absolute;
-  right: 10px;
   background-color: rgb(176, 195, 230);
   border: 0;
   padding: 3px 10px;
