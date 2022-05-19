@@ -2,7 +2,6 @@
 body, html{height: 100%; position: relative;}
 header #cls_info{
   padding: 20px;
-  /* background-color: rgb(233, 233, 233); */
   border-bottom: 1px solid gray;
 }
 header #cls_info a{
@@ -11,11 +10,7 @@ header #cls_info a{
   text-decoration: none;
   color: black;
 }
-header #cls_info span{
-  margin-bottom: 5px;
-  /* position: relative;
-  bottom: 2px; */
-}
+
 main #cls_box{
   position: relative;
   padding: 0 30px;
