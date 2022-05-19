@@ -19,12 +19,38 @@
     exit;
   }
   echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
-
+  date_default_timezone_set('Asia/Seoul');
   $att_container = get_att($login_user);
+  
+  
+  $att_no = 0;
+  echo "<br>";echo "<br>";echo "<br>";
   foreach($att_container as $item){
-      //추가예정
+    $current_time = date("H:i:s");
+    echo "<br>";
+    echo $current_time;
+    echo "<br>";
+    echo $item['att_no'];
+    echo "<br>";
+    echo $item['start_time'];
+    echo "<br>";
+    echo $item['end_time'];
+    echo "<br>";
+      if($item['start_time'] <= $current_time &&
+      $current_time <= $item['end_time']){
+        $att_no = $item['att_no'];
+        echo $item['att_no'];
+        echo "<br>성공!<br>";
+        break;
+      }
+      else{
+          echo "교시 탐색 실패!<br>";
+      }
   }
-//   $att_bool = if($att_container['start_time'] > );
+  if($att_no === 0){
+      echo "현재 출석체크 시간이 아닙니다.<br>";
+  };
+    echo "현재 $class_no 번 수업 수강중. "."현재교시: ".$att_no;
 
   ?>
   <head>
@@ -45,19 +71,8 @@
       <button class='buttons' id='sendbutton' type="submit" onclick="submitScore()">전송</button>
       <input type="hidden" id="u_no" name="u_no">
       <input type="hidden" id="imgsrc" name="imgsrc">
-    </form>
-    <br>
-    
-    <br>
-    <form name="showImage" method="POST" action="showImage.php">
-      <legend>조회할 이미지의 id를 입력하세요.</legend>
-      <input type="number" name="img_id">
-      <button type="submit">이미지 조회</button>
-    </form>
-    <!-- <form name="deleteImage" method="POST" action="deleteImage.php">
-      <legend>삭제할 이미지의 id를 입력하세요.</legend>
-      <input type="number" name="del_img_id">
-      <button type="submit">이미지 삭제</button> -->
+      <input type="hidden" id="att_no" name="att_no">
+      <input type="hidden" id="class_no" name="class_no">
     </form>
     </div>
     
@@ -149,6 +164,8 @@
             photoBase64 = data;
             document.getElementById('u_no').value = <?=$u_no?>;
             document.getElementById('imgsrc').value = data;
+            document.getElementById('att_no').value = <?=$att_no?>;
+            document.getElementById('class_no').value = <?=$class_no?>;
             console.log(data);
 
 
