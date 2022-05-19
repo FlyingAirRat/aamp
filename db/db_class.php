@@ -6,7 +6,24 @@
     $start_time = $param['start_time'];
     $end_time = $param['end_time'];
     $class_no = $param['class_no'];
-    echo $start_time, $end_time, $class_no;
+    
+    $sql1 = 
+    " SELECT max(att_no) + 1 as new_att
+      FROM class_timetable
+      WHERE class_no = '$class_no'
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql1);
+    $att_no = mysqli_fetch_assoc($result);
+    $new_att = $att_no['new_att'];
+
+    $sql2 =
+    " INSERT INTO class_timetable
+      (class_no, att_no, start_time, end_time)
+      VALUES
+      ('$class_no', '$new_att', '$start_time', '$end_time')
+    ";
+    mysqli_query($conn, $sql2);
   }
 
   function sel_all_class(){
