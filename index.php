@@ -26,7 +26,7 @@
                     <h2>비밀번호</h2>
                     <input type="password" name="upw" placeholder="비밀번호를 입력해주세요" minlength="8" maxlength="20"></div>
                 <div class="auto_login">
-                    <input type="checkbox" name="auto_login" value="1" checked>
+                    <label>자동 로그인<input type="checkbox" name="auto_login" value="1" checked></label>
                 </div>
                 <div class="submit">
                     <input type="submit" value="로그인">
