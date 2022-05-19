@@ -1,6 +1,6 @@
 <?php
-  if(isset($_GET('class_no'))){
-    $class_no = $_GET('class_no');
+  if(isset($_GET['class_no'])){
+    $class_no = $_GET['class_no'];
   }
 ?>
 <!DOCTYPE html>
