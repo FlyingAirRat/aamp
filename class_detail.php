@@ -29,11 +29,6 @@
   </header>
   
   <main>
-    <div id="cls_box">
-      <span><?=$class_nm?><br></span>
-      <span id="text_s">정원: <?=$people?>명</span>
-      <img src="./img/star_b.png">
-    </div>
     <div id="t_table">
         <table>
           <tr>

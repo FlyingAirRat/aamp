@@ -13,11 +13,6 @@
         <div class="container">
             <h1>회원가입</h1>
             <form name="joinForm" action="join_proc.php" method="post">
-                <div class="u_lv">
-                    <label><input type="radio" name="u_lv" value="1" checked> 선생님</label>
-                    <label><input type="radio" name="u_lv" value="2"> 학생</label>
-                    <label><input type="radio" name="u_lv" value="0"> 관리자</label>
-                </div>
                 <div class="uid">
                     <h2>아이디</h2> 
                     <input type="email" name="uid" maxlength="50" required>
