@@ -75,3 +75,17 @@
       ON A.u_no = B.u_no
       WHERE A.class_no = $class_no";
   }
+
+  //class_detail
+  function sel_class_info(&$param){
+    $class_no = $param['class_no'];
+    $sql =
+    " SELECT class_nm, people
+      FROM class
+      WHERE class_no = $class_no
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    return mysqli_fetch_assoc($result);
+  }

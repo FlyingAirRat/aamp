@@ -3,13 +3,12 @@
   include_once "./db/db_class.php";
   if(isset($_GET['class_no'])){
     $class_no = $_GET['class_no'];
-    $class_nm = $_GET['class_nm'];
-    $people = $_GET['people'];
     
     $param = [
       'class_no' => $class_no
     ];
     $result = sel_timetable($param);
+    $class_info = sel_class_info($param);
   }
 ?>
 <!DOCTYPE html>
@@ -28,8 +27,8 @@
   
   <main>
     <div id="cls_box">
-      <span><?=$class_nm?><br></span>
-      <span id="text_s">정원: <?=$people?>명</span>
+      <span><?=$class_info['class_nm']?><br></span>
+      <span id="text_s">정원: <?=$class_info['people']?>명</span>
       <img src="./img/star_b.png">
     </div>
     <div id="t_table">
