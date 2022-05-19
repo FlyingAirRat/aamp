@@ -8,6 +8,7 @@
       'class_no' => $class_no
     ];
     $result = sel_timetable($param);
+
     $class_info = sel_class_info($param);
     $class_nm = $class_info['class_nm'];
     $people = $class_info['people'];

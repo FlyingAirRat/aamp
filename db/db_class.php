@@ -1,6 +1,14 @@
 <?php
   include_once "db.php";
 
+  //add_time_proc 추가
+  function ins_time(&$param){
+    $start_time = $param['start_time'];
+    $end_time = $param['end_time'];
+    $class_no = $param['class_no'];
+    echo $start_time, $end_time, $class_no;
+  }
+
   function sel_all_class(){
     $sql = 
     " SELECT class_no, class_nm
@@ -76,7 +84,7 @@
       WHERE A.class_no = $class_no";
   }
 
-  //class_detail
+  //class_detail 추가
   function sel_class_info(&$param){
     $class_no = $param['class_no'];
     $sql =
