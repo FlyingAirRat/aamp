@@ -30,7 +30,7 @@
         Header("Location: class.php");
         break;
       case 2:
-        Header("Location: main.php");
+        Header("Location: photo.php");
         break;
     }
   }else{

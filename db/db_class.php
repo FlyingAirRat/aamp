@@ -21,7 +21,7 @@
     " INSERT INTO class_timetable
       (class_no, att_no, start_time, end_time)
       VALUES
-      ('$class_no', '$new_att', '$start_time', '$end_time')
+      ('$class_no', $new_att, '$start_time', '$end_time')
     ";
     mysqli_query($conn, $sql2);
   }
