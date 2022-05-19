@@ -12,15 +12,16 @@
     $upw = $login_user['upw'];
     $user_nm = $login_user['user_nm'];
     $class_no = $login_user['class_no'];
-  }else{
-    echo 
-    " <script>
-        alert('로그인 해주세요.');
-        location.href='index.php';
-      </script>
-    ";
-    exit;
   }
+//   else{
+//     echo 
+//     " <script>
+//         alert('로그인 해주세요.');
+//         location.href='index.php';
+//       </script>
+//     ";
+//     exit;
+//   }
   // echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
 
   $att_container = get_att($login_user);
