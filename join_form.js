@@ -1,34 +1,44 @@
 let joinForm = document.joinForm;
 let isEqual = false;
 
-joinForm.upwConfirm.onchange = function(){
+joinForm.upwConfirm.onchange = upwCheck();
+joinForm.upw.onchange = upwCheck();
+
+function upwCheck(){
+    let upw = document.getElementById("upw").value;
+    let upwConfirm = document.getElementById("upwConfirm").value;
     let checkUpw = document.getElementById("checkUpw");
     let str = "";
 
-    if(joinForm.upw.value != joinForm.upwConfirm.value) {
-        str = "비밀번호가 일치하지 않습니다";
-        checkUpw.style.color = "red";
-        isEqual = false;
-    } else{
+    if(upw == upwConfirm) {
         str = "비밀번호가 일치합니다";
         checkUpw.style.color = "green";
         isEqual = true;
+    } else{
+        str = "비밀번호가 일치하지 않습니다";
+        checkUpw.style.color = "red";
+        isEqual = false;
     }
     checkUpw.innerHTML = str;
 }
 
-joinForm.btnSubmit.onclick = function() {
-    if(isEqual == false) {
-        alert("비밀번호가 일치하지 않습니다");
+function check(){
+    if(joinForm.uid.value == "") {
+        alert("아이디를 입력해 주세요.");
+        joinForm.uid.focus();
+        return false;
+      }
+    else if(joinForm.upw.value == "") {
+        alert("비밀번호를 입력해 주세요.");    
+        joinForm.uid.focus();
+        return false;
+    }
+    else if(isEqual == false){
+        alert("비밀번호가 일치하지 않습니다.");
         joinForm.upw.value = "";
         joinForm.upwConfirm.value = "";
         joinForm.upw.focus();
-    } else {
-        let join = confirm("가입하시겠습니까?");
-        if(join == true) {
-            alert("회원가입 성공!");
-        } else {
-            location.reload();
-        }
+        return false
     }
+    else return true;
 }

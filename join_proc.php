@@ -14,5 +14,9 @@
     ];
 
     $result = ins_user($param);
+?>
 
-    header("location: index.php");
+    <script type="text/javascript">
+        alret("회원가입 성공!");
+        location.href="index.php";
+    </script>
