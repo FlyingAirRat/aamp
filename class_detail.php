@@ -48,7 +48,7 @@
               $end_time = $row['end_time'];
               echo 
               " <tr>
-                  <td>{$att_no++}</td>
+                  <td>$att_no</td>
                   <td>$start_time ~ $end_time</td>
                   <td>
                     출석한 인원/$people
@@ -62,6 +62,7 @@
                   </td>
                 </tr>
               ";
+              $att_no++;
             }
           ?>
         </table>
