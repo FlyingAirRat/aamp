@@ -2,7 +2,7 @@
   include_once "./header.php";
   include_once "db/db_class.php";
   if($_COOKIE['uid']){
-      $_SESSION['login_user'] = $_COOKIE['uid'];
+      $_SESSION['uid'] = $_COOKIE['uid'];
   }
   if(isset($_SESSION['login_user'])){
     $login_user = $_SESSION['login_user'];
