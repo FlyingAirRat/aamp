@@ -20,8 +20,8 @@ body {
 }
 
 .prevPage {
-    background-color: rgb(70, 70, 70);
-    padding: 15px;
+    background-color: #434E65;
+    padding: 25px;
     display: flex;
     justify-content: space-between;
 }
