@@ -35,10 +35,6 @@ body {
     color: rgb(55, 60, 66);
 }
 
-.modPushtime button {
-    appearance: none;
-}
-
 .container {
     display: flex;
     justify-content: center;

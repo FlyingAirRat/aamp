@@ -24,10 +24,12 @@
 <body>
     <div class="topbar">
         <div class="prevPage">
-            <a href="class_detail.php?class_no=<?=$class_no?>&class_nm=<?=$class_nm?>&people=<?=$people?>">◀ 알림목록</a>
+            <img src="./img/left-arrow.png">
+            <a href="class_detail.php?class_no=<?=$class_no?>&class_nm=<?=$class_nm?>&people=<?=$people?>">알림목록</a>
         </div>
         <div class="modPushtime">
-            <a href="#" tabindex="-1"><button>알림 시간 수정</button></a>
+            <img src="./img/editing.png">
+            <a href="#">알림 시간 수정</a>
         </div>
     </div>
     <div class="container">
