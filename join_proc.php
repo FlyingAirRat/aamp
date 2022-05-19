@@ -14,9 +14,10 @@
     ];
 
     $result = ins_user($param);
+    
+    echo "<script type='text/javascript'>
+        alret('회원가입 성공!');
+        location.href='index.php';
+    </script>";
 ?>
 
-    <script type="text/javascript">
-        alret("회원가입 성공!");
-        location.href="index.php";
-    </script>
