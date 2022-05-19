@@ -1,5 +1,5 @@
 <?php
-  include_once "./header.php";
+//   include_once "./header.php";
   include_once "db/db_class.php";
   if($_COOKIE['uid']){
       $_SESSION['uid'] = $_COOKIE['uid'];
