@@ -5,19 +5,19 @@ joinForm.upwConfirm.onchange(upwCheck());
 joinForm.upw.onchange(upwCheck());
 
 function upwCheck(){
-    let upw = document.getElementById("upw").value;
-    let upwConfirm = document.getElementById("upwConfirm").value;
+    let upw = joinForm.upw.value;
+    let upwConfirm = joinForm.upw.value;
     let checkUpw = document.getElementById("checkUpw");
     let str = "";
 
-    if(upw == upwConfirm) {
-        str = "비밀번호가 일치합니다";
-        checkUpw.style.color = "green";
-        isEqual = true;
-    } else{
+    if(upw != upwConfirm) {
         str = "비밀번호가 일치하지 않습니다";
         checkUpw.style.color = "red";
         isEqual = false;
+    } else{
+        str = "비밀번호가 일치합니다";
+        checkUpw.style.color = "green";
+        isEqual = true;
     }
     checkUpw.innerHTML = str;
 }
