@@ -41,7 +41,7 @@ function check(){
         joinForm.upw.focus();
         return false;
     }
-    else if(joinForm.upw.length < 8){
+    else if(joinForm.upw.value.length < 8){
         alert("비밀번호가 너무 짧습니다.");
         joinForm.upw.value = "";
         joinForm.upwConfirm.value = "";
