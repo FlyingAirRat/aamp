@@ -25,6 +25,10 @@ body {
     justify-content: space-between;
 }
 
+.topbar div {
+    margin: 0 30px;
+}
+
 .topbar a {
     text-decoration: none;
     color: rgb(20, 20, 20);
