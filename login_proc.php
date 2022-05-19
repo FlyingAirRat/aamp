@@ -38,6 +38,7 @@
       case 2:
         Header("Location: photo.php");
         break;
+    }
   }else{
     echo
     " <script>
