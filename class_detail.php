@@ -9,6 +9,8 @@
     ];
     $result = sel_timetable($param);
     $class_info = sel_class_info($param);
+    $class_nm = $class_info['class_nm'];
+    $people = $class_info['people'];
   }
 ?>
 <!DOCTYPE html>
@@ -27,8 +29,8 @@
   
   <main>
     <div id="cls_box">
-      <span><?=$class_info['class_nm']?><br></span>
-      <span id="text_s">정원: <?=$class_info['people']?>명</span>
+      <span><?=$class_nm?><br></span>
+      <span id="text_s">정원: <?=$people?>명</span>
       <img src="./img/star_b.png">
     </div>
     <div id="t_table">
@@ -66,7 +68,7 @@
     </div>
     <div id="plus_btn">
       <span>알림 시간 추가</span>
-      <a href="./add_time.php"><button>+</button></a>
+      <a href="./add_time.php?class_no=<?=$class_no?>"><button>+</button></a>
     </div>
   </main>
   <script type="text/javascript">
