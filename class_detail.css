@@ -13,10 +13,10 @@ header #cls_info a{
 }
 
 main #cls_box{
-  width: 80%;
+  width: 82%;
   position: relative;
   padding: 0 30px;
-  margin: 15px 0;
+  margin: 15px auto;
 }
 main #cls_box #text_s{font-size: small;}
 main #cls_box img{
