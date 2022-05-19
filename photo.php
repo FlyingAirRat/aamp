@@ -1,4 +1,5 @@
 <?php
+  include_once "./header.php";
   include_once "db/db_class.php";
   session_start();
   if(isset($_SESSION['login_user'])){
@@ -18,7 +19,7 @@
     ";
     exit;
   }
-  echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
+  // echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
 
   $att_container = get_att($login_user);
   foreach($att_container as $item){
@@ -26,12 +27,21 @@
   }
 //   $att_bool = if($att_container['start_time'] > );
 
+    $param = [
+    'class_no' => $class_no,
+    ];
+    $result = sel_class_set($param);
+    $class_nm = $result['class_nm'];
+    $teacher_nm = $result['user_nm'];
   ?>
   <head>
     <link rel="stylesheet" href="./photo.css">
 </head>
 
 <body>
+    <div class="class">
+      수강중인 수업: <?=$class_nm?> (<?=$teacher_nm?> 선생님)
+    </div>
     <div class="contentarea">
         <div class="camera">
             <video id="video">Video stream not available.</video>
