@@ -14,15 +14,15 @@
     $user_nm = $login_user['user_nm'];
     $class_no = $login_user['class_no'];
   }
-  else{
-    echo 
-    " <script>
-        alert('로그인 해주세요.');
-        location.href='index.php';
-      </script>
-    ";
-    exit;
-  }
+//   else{
+//     echo 
+//     " <script>
+//         alert('로그인 해주세요.');
+//         location.href='index.php';
+//       </script>
+//     ";
+//     exit;
+//   }
 
     // $param = [
     // 'class_no' => $class_no,
