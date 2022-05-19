@@ -8,9 +8,8 @@ header #cls_info a{
   text-decoration: none;
   color: black;
 }
-header #cls_info a span{
+header #cls_info span{
   margin-bottom: 5px;
-  font-size: xx-large;
   position: relative;
   bottom: 2px;
 }
