@@ -6,11 +6,11 @@ header #cls_info{
 }
 header #cls_info a{
   text-decoration: none;
-  font-size: xx-large;
   color: black;
 }
 header #cls_info a span{
   margin-bottom: 5px;
+  font-size: xx-large;
   position: relative;
   bottom: 2px;
 }
