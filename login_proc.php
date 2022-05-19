@@ -21,7 +21,8 @@
   
   if($result['upw'] === $upw){
     if($auto_login == "1"){
-      setcookie('login_user', $result, time() + 86400 * 30);
+      setcookie('uid', $result['uid'], time() + 86400 * 30);
+      setcookie('upw', $result['upw'], time() + 86400 * 30);
     }else{
       session_start();
     $_SESSION["login_user"] = $result;
