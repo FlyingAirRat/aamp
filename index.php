@@ -1,6 +1,8 @@
 <?php
     if(isset($_COOKIE['uid']) && isset($_COOKIE['upw'])){
-        header("location: photo.php");
+        post('./login_proc.php', $_COOKIE['uid']);
+        post('./login_proc.php', $_COOKIE['upw']);
+        header("Location:./login_proc.php");
     }
     // if(isset($_SESSION['login_user']) && $_SESSION['login_user']['u_lv'] == 2){
     //     header("location: photo.php");
