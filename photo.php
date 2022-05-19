@@ -14,29 +14,22 @@
     $user_nm = $login_user['user_nm'];
     $class_no = $login_user['class_no'];
   }
-//   else{
-//     echo 
-//     " <script>
-//         alert('로그인 해주세요.');
-//         location.href='index.php';
-//       </script>
-//     ";
-//     exit;
-//   }
-  // echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
-
-  $att_container = get_att($login_user);
-  foreach($att_container as $item){
-      //추가예정
+  else{
+    echo 
+    " <script>
+        alert('로그인 해주세요.');
+        location.href='index.php';
+      </script>
+    ";
+    exit;
   }
-//   $att_bool = if($att_container['start_time'] > );
 
-    $param = [
-    'class_no' => $class_no,
-    ];
-    $result = sel_class_set($param);
-    $class_nm = $result['class_nm'];
-    $teacher_nm = $result['user_nm'];
+    // $param = [
+    // 'class_no' => $class_no,
+    // ];
+    // $result = sel_class_set($param);
+    // $class_nm = $result['class_nm'];
+    // $teacher_nm = $result['user_nm'];
   ?>
   <head>
     <link rel="stylesheet" href="./photo.css">
