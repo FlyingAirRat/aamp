@@ -24,7 +24,6 @@
   <main>
     <div id="list_head">
       강의목록
-      <hr>
     </div>
     <div id="list_body">
       <?php
