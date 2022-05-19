@@ -37,10 +37,6 @@ body {
     color: rgb(55, 60, 66);
 }
 
-a img {
-    margin-right: 3px;
-}
-
 .container {
     display: flex;
     justify-content: center;
