@@ -3,6 +3,8 @@ body, html{height: 100%; position: relative;}
 header #cls_info{
   background-color: rgb(233, 233, 233);
   padding-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 header #cls_info a{
   text-decoration: none;
@@ -10,8 +12,8 @@ header #cls_info a{
 }
 header #cls_info span{
   margin-bottom: 5px;
-  position: relative;
-  bottom: 2px;
+  /* position: relative;
+  bottom: 2px; */
 }
 main #cls_box{
   position: relative;
