@@ -25,7 +25,7 @@
 </head>
 <body>
   <header>
-    <div id="cls_info"><a href="./class.php"><img src="./img/editing.png"><span>수업 정보</span></a></div>
+    <div id="cls_info"><a href="./class.php"><img src="./img/left.png"><span>수업 정보</span></a></div>
   </header>
   
   <main>
