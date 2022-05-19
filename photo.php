@@ -24,12 +24,12 @@
     exit;
   }
 
-    $param = [
-    'class_no' => $class_no,
-    ];
-    $result = sel_class_set($param);
-    $class_nm = $result['class_nm'];
-    $teacher_nm = $result['user_nm'];
+    // $param = [
+    // 'class_no' => $class_no,
+    // ];
+    // $result = sel_class_set($param);
+    // $class_nm = $result['class_nm'];
+    // $teacher_nm = $result['user_nm'];
   ?>
   <head>
     <link rel="stylesheet" href="./photo.css">
@@ -39,8 +39,9 @@
     <div class="class">
     <div class='text'>
         <a href='./class_detail.php?class_no=$class_no'>
+            <!--
             <span><?=$class_nm?><br></span>
-            <span class='text_s'><?=$teacher_nm?> 선생님<br></span>
+            <span class='text_s'><?=$teacher_nm?> 선생님<br></span> -->
             <span>현재 교시 진행 중</span>
         </a>
     </div>
