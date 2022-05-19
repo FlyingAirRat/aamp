@@ -49,13 +49,14 @@
     mysqli_close($conn);
     return $result;
   }
-
+  //수정
   function sel_timetable(&$param){
     $class_no = $param['class_no'];
     $sql = 
-    " SELECT att_no, start_time, end_time
+    " SELECT start_time, end_time
       FROM class_timetable
       WHERE class_no = $class_no
+      ORDER BY start_time
     ";
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);

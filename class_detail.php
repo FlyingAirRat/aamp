@@ -42,13 +42,13 @@
             <th>출석 인원</th>
           </tr>
           <?php
+            $i = 1;
             while($row = mysqli_fetch_assoc($result)){
-              $att_no = $row['att_no'];
               $start_time = $row['start_time'];
               $end_time = $row['end_time'];
               echo 
               " <tr>
-                  <td>$att_no</td>
+                  <td>$i++</td>
                   <td>$start_time ~ $end_time</td>
                   <td>
                     출석한 인원/$people

@@ -10,3 +10,4 @@
     'class_no' => $class_no 
   ];
   ins_time($param);
+  header("Location: class_detail.php?class_no=<?=$class_no?>");
