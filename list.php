@@ -24,7 +24,7 @@
 <body>
     <div class="topbar">
         <div class="prevPage">
-            <a href="class_detail.php?class_no=<?=$class_no?>&class_nm=<?=$class_nm?>&people=<?=$people?>"><img src="./img/left-arrow.png"> 알림목록</a>
+            <a href="class_detail.php?class_no=<?=$class_no?>&class_nm=<?=$class_nm?>&people=<?=$people?>"><img src="./img/left.png"> 알림목록</a>
         </div>
         <div class="modPushtime">
             <a href="#"><img src="./img/editing.png"> 알림 시간 수정</a>
