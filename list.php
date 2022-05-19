@@ -10,10 +10,8 @@
         'class_no' => $class_no,
         'att_no' => $_POST['att_no']
     ];
-
     $list = sel_stu_list($param);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,4 +49,4 @@
         <?php } ?>
     </div>
 </body>
-</html>
+</html> 
