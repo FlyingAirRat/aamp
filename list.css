@@ -1,52 +1,37 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
 @font-face {
-    font-family: 'NanumBarunGothic';
+    font-family: 'SLEIGothicTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
-    font-weight: 400;
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
-   }
-   
-   @font-face {
-    font-family: 'NanumBarunGothic';
-    font-style: normal;
-    font-weight: 700;
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
-   }
-   
-   @font-face {
-    font-family: 'NanumBarunGothic';
-    font-style: normal;
-    font-weight: 300;
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
-   }
-   
-   .nanumbarungothic * {
-    font-family: 'NanumBarunGothic', sans-serif;
-   }
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style-type: none;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+body {
+    background-color: #eee;
 }
 
 .prevPage {
-    background-color: rgb(70, 70, 70);
-    padding: 15px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
 }
 
 .prevPage a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(20, 20, 20);
 }
 
 .prevPage a:hover {
-    color: rgb(205, 205, 205);
+    color: rgb(55, 60, 66);
 }
 
 .container {
@@ -60,33 +45,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 280px;
-    height: 450px;
+    width: 170px;
+    height: 285px;
     border: 1px solid gray;
-    border-radius: 5px;
-    box-shadow: 3px 5px 10px -5px rgb(185, 185, 185);
-    margin: 10px;
+    background-color: #fff;
+    margin: 0.5em;
 }
 .stuWrap ul li {
     text-align: center;
 }
 
 .attImg img {
-    width: 240px;
-    height: 320px;
+    width: 150px;
+    height: 200px;
     object-fit: cover;
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 1px solid #eee;
 }
 
 .stuName {
-    font-family: 'NanumBarunGothic';
-    font-size: 1.5em;
-    margin-top: 15px;
+    font-family: 'SLEIGothicTTF';
+    font-size: 1.1em;
+    padding: 0.8em 0;
 }
 
 .uploadTime {
-    font-family: 'NanumBarunGothic';
-    font-size: 1em;
-    margin-top: 10px;
+    font-size: 0.8em;
 }

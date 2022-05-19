@@ -22,9 +22,13 @@
     <title>목록</title>
 </head>
 <body>
-    <div class="prevPage">
-        <a href="class_detail.php?class_no=<?=$class_no?>&class_nm=<?=$class_nm?>&people=<?=$people?>">◀ 알림목록</a>
-        <a href="#">알림 시간 수정</a>
+    <div class="topbar">
+        <div class="prevPage">
+            <a href="class_detail.php?class_no=<?=$class_no?>&class_nm=<?=$class_nm?>&people=<?=$people?>">◀ 알림목록</a>
+        </div>
+        <div class="modPushtime">
+            <a href="#">알림 시간 수정</a>
+        </div>
     </div>
     <div class="container">
         <?php
