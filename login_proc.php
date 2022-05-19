@@ -23,10 +23,9 @@
     if($auto_login == "1"){
       setcookie('uid', $result['uid'], time() + 86400 * 30);
       setcookie('upw', $result['upw'], time() + 86400 * 30);
-    }else{
-      session_start();
-    $_SESSION["login_user"] = $result;
     }
+    session_start();
+    $_SESSION["login_user"] = $result;
     switch($result['u_lv']){
       case 0:
         Header("Location: admin.php");
