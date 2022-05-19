@@ -21,13 +21,11 @@
   
   if($result['upw'] === $upw){
     if($auto_login == "1"){
-      $duration = 24 * 60 * 60 * 30;  // 30일
-      ini_set('session.gc_maxlifetime', $duration);
-      session_set_cookie_params($duration);
-    }
-    session_start();
+      setcookie('login_user', $result, time() + 86400 * 30);
+    }else{
+      session_start();
     $_SESSION["login_user"] = $result;
-
+    }
     switch($result['u_lv']){
       case 0:
         Header("Location: admin.php");

@@ -1,11 +1,8 @@
 <?php
-    $duration = 24 * 60 * 60 * 30;  // 30일
-    ini_set('session.gc_maxlifetime', $duration);
-    session_set_cookie_params($duration);
-    session_start();
-    if(isset($_SESSION['login_user']) && $_SESSION['login_user']['u_lv'] == 2){
-        header("location: photo.php");
-    }
+
+    // if(isset($_SESSION['login_user']) && $_SESSION['login_user']['u_lv'] == 2){
+    //     header("location: photo.php");
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
