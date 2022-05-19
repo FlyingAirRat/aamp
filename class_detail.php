@@ -3,13 +3,15 @@
   include_once "./db/db_class.php";
   if(isset($_GET['class_no'])){
     $class_no = $_GET['class_no'];
-    $class_nm = $_GET['class_nm'];
-    $people = $_GET['people'];
     
     $param = [
       'class_no' => $class_no
     ];
     $result = sel_timetable($param);
+
+    $class_info = sel_class_info($param);
+    $class_nm = $class_info['class_nm'];
+    $people = $class_info['people'];
   }
 ?>
 <!DOCTYPE html>
@@ -40,8 +42,8 @@
             <th>출석 인원</th>
           </tr>
           <?php
+            $att_no = 1;
             while($row = mysqli_fetch_assoc($result)){
-              $att_no = $row['att_no'];
               $start_time = $row['start_time'];
               $end_time = $row['end_time'];
               echo 
@@ -60,6 +62,7 @@
                   </td>
                 </tr>
               ";
+              $att_no++;
             }
           ?>
         </table>
@@ -67,7 +70,7 @@
     </div>
     <div id="plus_btn">
       <span>알림 시간 추가</span>
-      <a href="./add_time.php"><button>+</button></a>
+      <a href="./add_time.php?class_no=<?=$class_no?>"><button>+</button></a>
     </div>
   </main>
   <script type="text/javascript">
