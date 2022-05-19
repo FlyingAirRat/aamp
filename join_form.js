@@ -1,8 +1,8 @@
 let joinForm = document.joinForm;
 let isEqual = false;
 
-joinForm.upwConfirm.onchange = upwCheck();
-joinForm.upw.onchange = upwCheck();
+joinForm.upwConfirm.onchange(upwCheck());
+joinForm.upw.onchange(upwCheck());
 
 function upwCheck(){
     let upw = document.getElementById("upw").value;
