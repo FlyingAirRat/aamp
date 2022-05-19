@@ -1,7 +1,6 @@
 <?php
   include_once "./header.php";
   include_once "db/db_class.php";
-  session_start();
   if(isset($_SESSION['login_user'])){
     $login_user = $_SESSION['login_user'];
     $u_no = $login_user['u_no'];
@@ -40,7 +39,12 @@
 
 <body>
     <div class="class">
-      수강중인 수업: <?=$class_nm?> (<?=$teacher_nm?> 선생님)
+    <div class='text'>
+        <a href='./class_detail.php?class_no=$class_no'>
+            <span><?=$class_nm?><br></span>
+            <span class='text_s'><?=$teacher_nm?> 선생님<br></span>
+            <span>현재 교시 진행 중</span>
+        </a>
     </div>
     <div class="contentarea">
         <div class="camera">
