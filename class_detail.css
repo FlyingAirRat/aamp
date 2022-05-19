@@ -9,7 +9,7 @@ header #cls_info a{
   font-size: xx-large;
   color: black;
 }
-header #cls_info span{
+header #cls_info a span{
   margin-bottom: 5px;
   position: relative;
   bottom: 2px;
