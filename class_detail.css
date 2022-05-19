@@ -2,8 +2,6 @@
 body, html{height: 100%; position: relative;}
 header #cls_info{
   background-color: rgb(233, 233, 233);
-  padding-bottom: 10px;
-
 }
 header #cls_info a{
   display: flex;
