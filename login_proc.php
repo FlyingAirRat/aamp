@@ -25,20 +25,21 @@
       ini_set('session.gc_maxlifetime', $duration);
       session_set_cookie_params($duration);
       session_start();
+      print "1";
     }
     session_start();
     $_SESSION["login_user"] = $result;
-    
-    switch($result['u_lv']){
-      case 0:
-        Header("Location: admin.php");
-        break;
-      case 1:
-        Header("Location: class.php");
-        break;
-      case 2:
-        Header("Location: photo.php");
-        break;
+    print "0";
+    // switch($result['u_lv']){
+    //   case 0:
+    //     Header("Location: admin.php");
+    //     break;
+    //   case 1:
+    //     Header("Location: class.php");
+    //     break;
+    //   case 2:
+    //     Header("Location: photo.php");
+    //     break;
     }
   }else{
     echo
