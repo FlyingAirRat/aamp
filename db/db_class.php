@@ -21,7 +21,7 @@
     " INSERT INTO class_timetable
       (class_no, att_no, start_time, end_time)
       VALUES
-      ('$class_no', '$new_att', '$start_time', '$end_time')
+      ('$class_no', $new_att, '$start_time', '$end_time')
     ";
     mysqli_query($conn, $sql2);
   }
@@ -114,4 +114,17 @@
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
     return mysqli_fetch_assoc($result);
+  }
+
+  //2)class_detail
+  function upd_att_no(&$param){
+    $start_time = $param['start_time'];
+    $end_time = $param['end_time'];
+    $att_no = $param['att_no'];
+    $sql = 
+    " UPDATE class_timetable
+      SET att_no = $att_no
+      WHERE start_time = '$start_time'
+      AND end_time = '$end_time'
+    "
   }

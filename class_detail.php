@@ -62,6 +62,12 @@
                   </td>
                 </tr>
               ";
+              $param = [
+                'start_time' => $start_time,
+                'end_time' => $end_time,
+                'att_no' => $att_no
+              ];
+              upd_att_no($param);
               $att_no++;
             }
           ?>
