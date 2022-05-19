@@ -1,7 +1,9 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 body, html{height: 100%; position: relative;}
 header #cls_info{
-  background-color: rgb(233, 233, 233);
+  padding: 20px;
+  /* background-color: rgb(233, 233, 233); */
+  border-bottom: 1px solid gray;
 }
 header #cls_info a{
   display: flex;
