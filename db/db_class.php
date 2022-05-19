@@ -144,5 +144,8 @@
       SET att_no = $att_no
       WHERE start_time = '$start_time'
       AND end_time = '$end_time'
-    "
+    ";
+    $conn = get_conn();
+    mysqli_query($conn, $sql);
+    mysqli_close($conn);
   }
