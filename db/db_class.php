@@ -74,4 +74,22 @@
       INNER JOIN info_user B
       ON A.u_no = B.u_no
       WHERE A.class_no = $class_no";
+      $conn = get_conn();
+      $result = mysqli_query($conn, $sql);
+      mysqli_close($conn);
+      return mysqli_fetch_assoc($result);
+  }
+  
+  function judge_att(&$param){
+    $class_no = $param['class_no'];
+    $sql = 
+    " SELECT A.class_no, A.att_no, A.start_time, A.end_time, B.class_nm
+      FROM class_timetable A
+      INNER JOIN class B
+      ON A.class_no = B.class_no
+      WHERE A.class_no = '$class_no'";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    return $result;
   }

@@ -5,7 +5,7 @@
   $param = [
     'class_no' => $class_no,
   ];
-  $result = sel_class_nm($param);
+  $result = sel_class_set($param);
   $class_nm = $result['class_nm'];
   $teacher_nm = $result['user_nm']
 
