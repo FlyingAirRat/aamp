@@ -52,7 +52,7 @@
 <body>
     <div class="class">
     <div class='text'>
-            <h2>수강중인 강의</h2>
+            <h1>수강중인 강의</h1>
             <span><?=$class_nm?><br></span>
             <span class='text_s'><?=$teacher_nm?> 선생님<br></span>
             <span><?=$att_time?></span>
@@ -61,13 +61,13 @@
         <div class="camera">
             <video id="video">Video stream not available.</video>
         </div>
-        <div><button id="startbutton">사진 찍기</button></div>
+        <div><button id="startbutton"><span>사진 찍기</span></button></div>
         <canvas id="canvas"></canvas>
         <div class="output">
             <img id="photo" alt="The screen capture will appear in this box.">
         </div>
         <form name="img" method="POST" action="imgFire.php">
-            <button class='buttons' id='sendbutton' type="submit" onclick="submitScore()">전송</button>
+            <button class='buttons' id='sendbutton' type="submit" onclick="submitScore()"><span>전송</span></button>
             <input type="hidden" id="u_no" name="u_no">
             <input type="hidden" id="imgsrc" name="imgsrc">
             <input type="hidden" id="att_no" name="att_no">
