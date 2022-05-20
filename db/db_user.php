@@ -8,9 +8,9 @@
 
     $sql =
     " INSERT INTO info_user
-      (u_lv, uid, upw, user_nm)
+      (u_lv, uid, upw, user_nm, class_no)
       VALUES
-      (2, '$uid', '$upw', '$nm')
+      (2, '$uid', '$upw', '$nm', 1)
     ";
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);

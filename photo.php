@@ -21,34 +21,18 @@
   echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
   date_default_timezone_set('Asia/Seoul');
   $att_container = get_att($login_user);
-  
-  
+   
   $att_no = 0;
-  echo "<br>";echo "<br>";echo "<br>";
   foreach($att_container as $item){
     $current_time = date("H:i:s");
-    echo "<br>";
-    echo $current_time;
-    echo "<br>";
-    echo $item['att_no'];
-    echo "<br>";
-    echo $item['start_time'];
-    echo "<br>";
-    echo $item['end_time'];
-    echo "<br>";
       if($item['start_time'] <= $current_time &&
       $current_time <= $item['end_time']){
         $att_no = $item['att_no'];
-        echo $item['att_no'];
-        echo "<br>성공!<br>";
         break;
-      }
-      else{
-          echo "교시 탐색 실패!<br>";
       }
   }
   if($att_no === 0){
-      echo "현재 출석체크 시간이 아닙니다.<br>";
+      echo "현재 $class_no 번 수업 수강중. 현재 출석체크 시간이 아닙니다.<br>";
   };
     echo "현재 $class_no 번 수업 수강중. "."현재교시: ".$att_no;
 
