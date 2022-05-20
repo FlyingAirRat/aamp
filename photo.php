@@ -1,5 +1,5 @@
 <?php
-    include_once "./header.php";
+ session_start();
   include_once "db/db_class.php";
   include_once "./db/db_user.php";
   
