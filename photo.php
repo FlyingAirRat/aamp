@@ -46,15 +46,8 @@
     // $teacher_nm = $result['user_nm'];
   ?>
   <head>
-    <link rel="stylesheet" href="./header.css">
     <link rel="stylesheet" href="./photo.css">
 </head>
-<header>
-  <div id="log">
-    <?=$user_nm?>(<?=$lv_nm?>), 안녕하세요.
-    <a href="logout.php" tabindex="-1"><button>로그아웃</button></a>
-  </div>
-</header>
 <body>
     <div class="class">
     <div class='text'>
