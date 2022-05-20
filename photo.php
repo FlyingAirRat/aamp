@@ -12,7 +12,6 @@
     $user_nm = $login_user['user_nm'];
     $class_no = $login_user['class_no'];
   }
-  echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
   date_default_timezone_set('Asia/Seoul');
   $att_container = get_att($login_user);
    
@@ -25,9 +24,9 @@
         break;
       }
   }
-  if($att_no === 0){
-      echo "현재 $class_no 번 수업 수강중. 현재 출석체크 시간이 아닙니다.<br>";
-  };
+//   if($att_no === 0){
+//       echo "현재 $class_no 번 수업 수강중. 현재 출석체크 시간이 아닙니다.<br>";
+//   };
 //   else{
 //     echo 
 //     " <script>
