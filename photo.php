@@ -69,13 +69,12 @@
             <img id="photo" alt="The screen capture will appear in this box.">
         </div>
         <form name="img" method="POST" action="imgFire.php">
-      <button class='buttons' id='sendbutton' type="submit" onclick="submitScore()">전송</button>
-      <input type="hidden" id="u_no" name="u_no">
-      <input type="hidden" id="imgsrc" name="imgsrc">
-      <input type="hidden" id="att_no" name="att_no">
-      <input type="hidden" id="class_no" name="class_no">
-      
-    </form>
+            <button class='buttons' id='sendbutton' type="submit" onclick="submitScore()">전송</button>
+            <input type="hidden" id="u_no" name="u_no">
+            <input type="hidden" id="imgsrc" name="imgsrc">
+            <input type="hidden" id="att_no" name="att_no">
+            <input type="hidden" id="class_no" name="class_no">
+        </form>
     </div>
     <script>
     //앞으로 더 추가될지도?
