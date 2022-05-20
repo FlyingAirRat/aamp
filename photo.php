@@ -78,7 +78,7 @@
     
 
     <script>
-
+    document.queryS
     var photoBase64 = 0;
 
     /* JS comes here */
