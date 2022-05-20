@@ -52,7 +52,8 @@
 </head>
 <body>
     <div class="class">
-    <div class='text'>>
+    <div class='text'>
+            <h2>수강중인 강의</h2>
             <span><?=$class_nm?><br></span>
             <span class='text_s'><?=$teacher_nm?> 선생님<br></span>
             <span><?=$att_time?></span>
