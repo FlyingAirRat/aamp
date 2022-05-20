@@ -82,8 +82,7 @@
 
     /* JS comes here */
     (function() {
-
-        var width = 320; // We will scale the photo width to this
+        var width = document.body.clientWidth*0.7;
         var height = 0; // This will be computed based on the input stream
 
         var streaming = false;
@@ -150,7 +149,7 @@
             if (width && height) {
                 canvas.width = width;
                 canvas.height = height;
-                context.drawImage(video, 0, 0, width, height);
+                context.drawImage(video, 0, 0, video.width, video.height);
 
                 var data = canvas.toDataURL('image/png');
                 photo.setAttribute('src', data);
