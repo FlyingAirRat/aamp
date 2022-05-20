@@ -2,6 +2,7 @@
   include_once "./db/db_user.php";
   $uid = $_POST['uid'];
   $upw = $_POST['upw'];
+  $auto_login = isset($_POST['auto_login']) ? $_POST['auto_login'] : 0;
 
   $param = [
     'uid' => $uid
@@ -19,9 +20,12 @@
   }
   
   if($result['upw'] === $upw){
+    if($auto_login == "1"){
+      setcookie('uid', $result['uid'], time() + 86400 * 30);
+      setcookie('upw', $result['upw'], time() + 86400 * 30);
+    }
     session_start();
     $_SESSION["login_user"] = $result;
-    
     switch($result['u_lv']){
       case 0:
         Header("Location: admin.php");

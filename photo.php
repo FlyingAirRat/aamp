@@ -1,6 +1,10 @@
 <?php
+ session_start();
+//   include_once "./header.php";
   include_once "db/db_class.php";
-  session_start();
+  if(isset($_COOKIE['uid'])){
+      $_SESSION['uid'] = $_COOKIE['uid'];
+  }
   if(isset($_SESSION['login_user'])){
     $login_user = $_SESSION['login_user'];
     $u_no = $login_user['u_no'];
@@ -9,14 +13,6 @@
     $upw = $login_user['upw'];
     $user_nm = $login_user['user_nm'];
     $class_no = $login_user['class_no'];
-  }else{
-    echo 
-    " <script>
-        alert('로그인 해주세요.');
-        location.href='index.php';
-      </script>
-    ";
-    exit;
   }
   echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
   date_default_timezone_set('Asia/Seoul');
@@ -34,14 +30,37 @@
   if($att_no === 0){
       echo "현재 $class_no 번 수업 수강중. 현재 출석체크 시간이 아닙니다.<br>";
   };
-    echo "현재 $class_no 번 수업 수강중. "."현재교시: ".$att_no;
+//   else{
+//     echo 
+//     " <script>
+//         alert('로그인 해주세요.');
+//         location.href='index.php';
+//       </script>
+//     ";
+//     exit;
+//   }
 
+    // $param = [
+    // 'class_no' => $class_no,
+    // ];
+    // $result = sel_class_set($param);
+    // $class_nm = $result['class_nm'];
+    // $teacher_nm = $result['user_nm'];
   ?>
   <head>
     <link rel="stylesheet" href="./photo.css">
 </head>
 
 <body>
+    <div class="class">
+    <div class='text'>
+        <a href='./class_detail.php?class_no=$class_no'>
+            <!--
+            <span><?=$class_nm?><br></span>
+            <span class='text_s'><?=$teacher_nm?> 선생님<br></span> -->
+            <span>현재 교시 진행 중</span>
+        </a>
+    </div>
     <div class="contentarea">
         <div class="camera">
             <video id="video">Video stream not available.</video>
