@@ -1,18 +1,43 @@
 <?php
  session_start();
-//   include_once "./header.php";
   include_once "db/db_class.php";
+  include_once "./db/db_user.php";
   
   if(isset($_SESSION['login_user'])){
     $login_user = $_SESSION['login_user'];
+    $u_lv = $login_user['u_lv'];
+    $user_nm = $login_user['user_nm'];
+  
+    $lv_nm = "";
+    switch($u_lv){
+      case 0:
+        $lv_nm = "관리자";
+        break;
+      case 1:
+        $lv_nm = "선생님";
+        break;
+      case 2:
+        $lv_nm = "학생";
+        break;
+    }
+  }else{
+      $uid = $_COOKIE['uid'];
+      $upw = $_COOKIE['upw'];
+      $param = [
+          'uid' => $uid,
+          'upw' => $upw
+      ];
+      $result = sel_user($param);
+      $_SESSION['login_user'] = $result;
+  }
     $u_no = $login_user['u_no'];
     $u_lv = $login_user['u_lv'];
     $uid = $login_user['uid'];
     $upw = $login_user['upw'];
     $user_nm = $login_user['user_nm'];
     $class_no = $login_user['class_no'];
-  }
-  echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
+    
+  //echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
   date_default_timezone_set('Asia/Seoul');
   $att_container = get_att($login_user);
    
@@ -25,9 +50,9 @@
         break;
       }
   }
-  if($att_no === 0){
-      echo "현재 $class_no 번 수업 수강중. 현재 출석체크 시간이 아닙니다.<br>";
-  };
+//   if($att_no === 0){
+//       echo "현재 $class_no 번 수업 수강중. 현재 출석체크 시간이 아닙니다.<br>";
+//   };
 //   else{
 //     echo 
 //     " <script>
@@ -46,17 +71,23 @@
     // $teacher_nm = $result['user_nm'];
   ?>
   <head>
+    <link rel="stylesheet" href="./header.css">
     <link rel="stylesheet" href="./photo.css">
 </head>
-
+<header>
+  <div id="log">
+    <?=$user_nm?>(<?=$lv_nm?>), 안녕하세요.
+    <a href="logout.php" tabindex="-1"><button>로그아웃</button></a>
+  </div>
+</header>
 <body>
     <div class="class">
     <div class='text'>
         <a href='./class_detail.php?class_no=$class_no'>
             <!--
             <span><?=$class_nm?><br></span>
-            <span class='text_s'><?=$teacher_nm?> 선생님<br></span> -->
-            <span>현재 교시 진행 중</span>
+            <span class='text_s'><?=$teacher_nm?> 선생님<br></span>
+            <span>현재 교시 진행 중</span> -->
         </a>
     </div>
     <div class="contentarea">

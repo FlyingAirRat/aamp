@@ -31,8 +31,11 @@
     if($auto_login == "1"){
       setcookie('uid', $result['uid'], time() + 86400 * 30);
       setcookie('upw', $result['upw'], time() + 86400 * 30);
-      $_COOKIE['uid'] = $_SESSION['uid'];
-      $_COOKIE['upw'] = $_SESSION['upw'];
+      setcookie('u_lv', $result['u_lv'], time() + 86400 * 30);
+      setcookie('u_no', $result['u_no'], time() + 86400 * 30);
+      setcookie('user_nm', $result['user_nm'], time() + 86400 * 30);
+      setcookie('class_no', $result['class_no'], time() + 86400 * 30);
+      setcookie('class_no_alt', $result['class_no_alt'], time() + 86400 * 30);
     }
    
     $_SESSION["login_user"] = $result;
@@ -44,7 +47,12 @@
         Header("Location: class.php");
         break;
       case 2:
-        Header("Location: photo.php");
+        if(is_null($result['class_no'])){
+          Header("Location: main.php");
+        }else{
+          Header("Location: photo.php");
+        }
+        
         break;
     }
   }else{
