@@ -13,7 +13,7 @@
   }else{
     echo 
     " <script>
-        alert('로그인 해주세요.');
+        alert('로그인을 해주세요.');
         location.href='index.php';
       </script>
     ";
