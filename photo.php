@@ -20,7 +20,6 @@
     exit;
   }
     
-  //echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
   date_default_timezone_set('Asia/Seoul');
   $att_container = get_att($login_user);
    
