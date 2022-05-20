@@ -49,8 +49,10 @@
       case 2:
         if(is_null($result['class_no'])){
           Header("Location: main.php");
+        }else{
+          Header("Location: photo.php");
         }
-        Header("Location: photo.php");
+        
         break;
     }
   }else{
