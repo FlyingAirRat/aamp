@@ -1,11 +1,18 @@
 <?php
   include_once "./db/db_user.php";
+  session_start();
+  if(isset($_COOKIE['uid']) && isset($_COOKIE['upw'])){
+    $uid = $_COOKIE['uid'];
+    $upw = $_COOKIE['upw'];
+}
+  else{
   $uid = $_POST['uid'];
   $upw = $_POST['upw'];
   $auto_login = isset($_POST['auto_login']) ? $_POST['auto_login'] : 0;
-
+}
   $param = [
-    'uid' => $uid
+    'uid' => $uid,
+    'upw' => $upw
   ];
 
   $result = sel_user($param);
@@ -18,6 +25,7 @@
     ";
     exit;
   }
+
   
   if($result['upw'] === $upw){
     if($auto_login == "1"){
@@ -29,7 +37,7 @@
       setcookie('class_no', $result['class_no'], time() + 86400 * 30);
       setcookie('class_no_alt', $result['class_no_alt'], time() + 86400 * 30);
     }
-    session_start();
+   
     $_SESSION["login_user"] = $result;
     switch($result['u_lv']){
       case 0:

@@ -1,9 +1,10 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 body, html{height: 100%; position: relative;}
-#list_head{padding: 0px 15px;}
+#list_head{padding: 20px; border-bottom: 1px solid gray;}
 #list_body{position: relative;}
 #list_body .list_box{
   display: flex;
+  width: 90%;
   padding: 20px 20px;
 }
 #list_body .list_box img{width: 30px; height: 30px;}
@@ -13,7 +14,7 @@ body, html{height: 100%; position: relative;}
 }
 #list_body .list_box .star{
   position: absolute;
-  right: 25px;
+  right: 30px;
   margin-top: 5px;
 }
 #list_body .list_box .text a{

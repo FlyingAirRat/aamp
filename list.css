@@ -19,18 +19,21 @@ body {
     background-color: #eee;
 }
 
-.prevPage {
+.topbar {
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid gray;
 }
 
-.prevPage a {
+.topbar a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: rgb(20, 20, 20);
 }
 
-.prevPage a:hover {
+.topbar a:hover {
     color: rgb(55, 60, 66);
 }
 

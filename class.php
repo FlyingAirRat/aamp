@@ -24,7 +24,6 @@
   <main>
     <div id="list_head">
       강의목록
-      <hr>
     </div>
     <div id="list_body">
       <?php
@@ -40,8 +39,8 @@
                   <span>$class_nm<br></span>
                   <span class='text_s'>총 인원수 ${people}명</span>
                 </a>
-              </div>
-              <img src='./img/star_b.png' class='star' onclick='chg_img()'>
+                </div>
+                <img src='./img/star_b.png' class='star' onclick='chg_img()'>
             </div>
           ";
         }

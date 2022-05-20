@@ -12,5 +12,8 @@
     ];
 
     $result = ins_user($param);
-
+    
     header("location: index.php");
+
+?>
+

@@ -2,9 +2,7 @@
  session_start();
 //   include_once "./header.php";
   include_once "db/db_class.php";
-  if(isset($_COOKIE['uid'])){
-      $_SESSION['uid'] = $_COOKIE['uid'];
-  }
+  
   if(isset($_SESSION['login_user'])){
     $login_user = $_SESSION['login_user'];
     $u_no = $login_user['u_no'];
@@ -14,6 +12,22 @@
     $user_nm = $login_user['user_nm'];
     $class_no = $login_user['class_no'];
   }
+  echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
+  date_default_timezone_set('Asia/Seoul');
+  $att_container = get_att($login_user);
+   
+  $att_no = 0;
+  foreach($att_container as $item){
+    $current_time = date("H:i:s");
+      if($item['start_time'] <= $current_time &&
+      $current_time <= $item['end_time']){
+        $att_no = $item['att_no'];
+        break;
+      }
+  }
+  if($att_no === 0){
+      echo "현재 $class_no 번 수업 수강중. 현재 출석체크 시간이 아닙니다.<br>";
+  };
 //   else{
 //     echo 
 //     " <script>
@@ -55,30 +69,15 @@
             <img id="photo" alt="The screen capture will appear in this box.">
         </div>
         <form name="img" method="POST" action="imgFire.php">
-      <button class='buttons' id='sendbutton' type="submit" onclick="submitScore()">전송</button>
-      <input type="hidden" id="u_no" name="u_no">
-      <input type="hidden" id="imgsrc" name="imgsrc">
-    </form>
-    <br>
-    
-    <br>
-    <form name="showImage" method="POST" action="showImage.php">
-      <legend>조회할 이미지의 id를 입력하세요.</legend>
-      <input type="number" name="img_id">
-      <button type="submit">이미지 조회</button>
-    </form>
-    <!-- <form name="deleteImage" method="POST" action="deleteImage.php">
-      <legend>삭제할 이미지의 id를 입력하세요.</legend>
-      <input type="number" name="del_img_id">
-      <button type="submit">이미지 삭제</button> -->
-    </form>
+            <button class='buttons' id='sendbutton' type="submit" onclick="submitScore()">전송</button>
+            <input type="hidden" id="u_no" name="u_no">
+            <input type="hidden" id="imgsrc" name="imgsrc">
+            <input type="hidden" id="att_no" name="att_no">
+            <input type="hidden" id="class_no" name="class_no">
+        </form>
     </div>
-    
-    
-    
-
     <script>
-    document.queryS
+    //앞으로 더 추가될지도?
     var photoBase64 = 0;
 
     /* JS comes here */
@@ -162,6 +161,8 @@
             photoBase64 = data;
             document.getElementById('u_no').value = <?=$u_no?>;
             document.getElementById('imgsrc').value = data;
+            document.getElementById('att_no').value = <?=$att_no?>;
+            document.getElementById('class_no').value = <?=$class_no?>;
             console.log(data);
 
 

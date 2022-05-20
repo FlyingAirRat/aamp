@@ -8,9 +8,9 @@
 
     $sql =
     " INSERT INTO info_user
-      (u_lv, uid, upw, user_nm)
+      (u_lv, uid, upw, user_nm, class_no)
       VALUES
-      (2, '$uid', '$upw', '$nm')
+      (2, '$uid', '$upw', '$nm', 1)
     ";
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
@@ -20,10 +20,11 @@
 
   function sel_user(&$param){
     $uid = $param['uid'];
+    $upw = $param['upw'];
     $sql = 
     " SELECT u_no, u_lv, uid, upw, user_nm, class_no, class_no_alt
       FROM info_user
-      WHERE uid = '$uid'";
+      WHERE uid = '$uid' and upw = '$upw'";
 
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
