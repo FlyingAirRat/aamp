@@ -80,10 +80,9 @@
     //앞으로 더 추가될지도?
     var photoBase64 = 0;
 
-    /* JS comes here */
     (function() {
-        var width = document.body.clientWidth*0.7;
-        var height = 0; // This will be computed based on the input stream
+        var width = 320;
+        var height = 320; // This will be computed based on the input stream
 
         var streaming = false;
 
@@ -99,7 +98,7 @@
             startbutton = document.getElementById('startbutton');
 
             navigator.mediaDevices.getUserMedia({
-                    video: true,
+                    video: { width: 320, height: 320 },
                     audio: false
                 })
                 .then(function(stream) {
@@ -112,8 +111,8 @@
 
             video.addEventListener('canplay', function(ev) {
                 if (!streaming) {
-                    height = video.videoHeight / (video.videoWidth / width);
-
+                    // height = video.videoHeight / (video.videoWidth / width);
+                    var height = 320;
                     if (isNaN(height)) {
                         height = width / (4 / 3);
                     }
@@ -149,7 +148,7 @@
             if (width && height) {
                 canvas.width = width;
                 canvas.height = height;
-                context.drawImage(video, 0, 0, video.width, video.height);
+                context.drawImage(video, 0, 0, width, height);
 
                 var data = canvas.toDataURL('image/png');
                 photo.setAttribute('src', data);
