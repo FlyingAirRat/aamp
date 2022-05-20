@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="./header.css">
 <header>
   <div id="log">
-    <?=$user_nm?>(<?=$lv_nm?>), 안녕하세요.
-    <a href="logout.php" tabindex="-1"><button>로그아웃</button></a>
+    <span><?=$user_nm?>(<?=$lv_nm?>), 안녕하세요.
+    <a href="logout.php" tabindex="-1"><button>로그아웃</button></a><span>
   </div>
 </header>
