@@ -1,6 +1,5 @@
 <?php
- session_start();
-//   include_once "./header.php";
+    include_once "./header.php";
   include_once "db/db_class.php";
   
   if(isset($_SESSION['login_user'])){
@@ -12,6 +11,8 @@
     $user_nm = $login_user['user_nm'];
     $class_no = $login_user['class_no'];
   }
+    
+  //echo "u_no: $u_no, u_lv: $u_lv, uid: $uid, upw: $upw, user_nm: $user_nm";
   date_default_timezone_set('Asia/Seoul');
   $att_container = get_att($login_user);
    
@@ -47,15 +48,14 @@
   <head>
     <link rel="stylesheet" href="./photo.css">
 </head>
-
 <body>
     <div class="class">
     <div class='text'>
         <a href='./class_detail.php?class_no=$class_no'>
             <!--
             <span><?=$class_nm?><br></span>
-            <span class='text_s'><?=$teacher_nm?> 선생님<br></span> -->
-            <span>현재 교시 진행 중</span>
+            <span class='text_s'><?=$teacher_nm?> 선생님<br></span>
+            <span>현재 교시 진행 중</span> -->
         </a>
     </div>
     <div class="contentarea">
@@ -79,11 +79,9 @@
     //앞으로 더 추가될지도?
     var photoBase64 = 0;
 
-    /* JS comes here */
     (function() {
-
-        var width = 320; // We will scale the photo width to this
-        var height = 0; // This will be computed based on the input stream
+        var width = 320;
+        var height = 320; // This will be computed based on the input stream
 
         var streaming = false;
 
@@ -99,7 +97,7 @@
             startbutton = document.getElementById('startbutton');
 
             navigator.mediaDevices.getUserMedia({
-                    video: true,
+                    video: { width: 320, height: 320 },
                     audio: false
                 })
                 .then(function(stream) {
@@ -112,8 +110,8 @@
 
             video.addEventListener('canplay', function(ev) {
                 if (!streaming) {
-                    height = video.videoHeight / (video.videoWidth / width);
-
+                    // height = video.videoHeight / (video.videoWidth / width);
+                    var height = 320;
                     if (isNaN(height)) {
                         height = width / (4 / 3);
                     }

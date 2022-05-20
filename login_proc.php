@@ -31,8 +31,6 @@
     if($auto_login == "1"){
       setcookie('uid', $result['uid'], time() + 86400 * 30);
       setcookie('upw', $result['upw'], time() + 86400 * 30);
-      $_COOKIE['uid'] = $_SESSION['uid'];
-      $_COOKIE['upw'] = $_SESSION['upw'];
     }
    
     $_SESSION["login_user"] = $result;
@@ -44,7 +42,12 @@
         Header("Location: class.php");
         break;
       case 2:
-        Header("Location: photo.php");
+        if(is_null($result['class_no'])){
+          Header("Location: main.php");
+        }else{
+          Header("Location: photo.php");
+        }
+        
         break;
     }
   }else{
