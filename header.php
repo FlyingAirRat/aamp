@@ -28,10 +28,14 @@
   }
 
 ?>
+<!DOCTYPE html>
 <link rel="stylesheet" href="./header.css">
 <header>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <div id="log">
     <?=$user_nm?>(<?=$lv_nm?>), 안녕하세요.
-    <a href="logout.php" tabindex="-1"><button>로그아웃</button></a>
+    <a href="logout.php" tabindex="-1"><button id="bruh">로그아웃</button></a>
   </div>
 </header>

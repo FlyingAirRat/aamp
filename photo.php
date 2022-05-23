@@ -48,13 +48,15 @@
   ?>
   <head>
     <link rel="stylesheet" href="./photo.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="class">
     <div class='text'>
-            <h2>수강중인 강의</h2>
-            <span><?=$class_nm?><br></span>
-            <span class='text_s'><?=$teacher_nm?> 선생님<br></span>
+            <span>수업명: <?=$class_nm?><br></span>
+            <span class='text_s'>과목 담당: <?=$teacher_nm?> 선생님<br></span>
             <span><?=$att_time?></span>
     </div>
     <div class="contentarea">

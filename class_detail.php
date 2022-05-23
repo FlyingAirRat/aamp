@@ -46,13 +46,13 @@
                   <td>$att_no</td>
                   <td>$start_time ~ $end_time</td>
                   <td>
-                    출석한 인원/$people
+                    출석/$people
                     <form id='class' action='./list.php' method='POST'>
                       <input type='hidden' name='class_no' value='$class_no'>
                       <input type='hidden' name='att_no' value='$att_no'>
                       <input type='hidden' name='class_nm' value='$class_nm'>
                       <input type='hidden' name='people' value='$people'>
-                      <input type='submit' value='>'>
+                      <input type='submit' value='현황보기'>
                     </form>
                   </td>
                 </tr>

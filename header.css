@@ -7,6 +7,7 @@
 body, html{height: 100%; position: relative;}
 
 header {
+  width: 100%;
   margin-top: 20px;
   padding: 20px;
 }
