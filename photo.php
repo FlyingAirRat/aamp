@@ -60,12 +60,13 @@
             <span><?=$att_time?></span>
     </div>
     <div class="contentarea">
-        <div class="camera">
+        <div id="camera">
             <video id="video">Video stream not available.</video>
         </div>
         <div><button id="startbutton">사진 찍기</button></div>
+        
         <canvas id="canvas"></canvas>
-        <div class="output">
+        <div id="output">
             <img id="photo" alt="The screen capture will appear in this box.">
         </div>
         <form name="img" method="POST" action="imgFire.php">
@@ -75,6 +76,7 @@
             <input type="hidden" id="att_no" name="att_no">
             <input type="hidden" id="class_no" name="class_no">
         </form>
+        <div><button id="resetbutton">초기화</button></div>
     </div>
     <script>
     //앞으로 더 추가될지도?
@@ -85,6 +87,7 @@
         var height = 320; // This will be computed based on the input stream
 
         var streaming = false;
+        var photoTaken = false;
 
         var video = null;
         var canvas = null;
@@ -96,18 +99,12 @@
             canvas = document.getElementById('canvas');
             photo = document.getElementById('photo');
             startbutton = document.getElementById('startbutton');
-
-            navigator.mediaDevices.getUserMedia({
-                    video: { width: 320, height: 320 },
-                    audio: false
-                })
-                .then(function(stream) {
-                    video.srcObject = stream;
-                    video.play();
-                })
-                .catch(function(err) {
-                    console.log("에러가 발생했습니다: " + err);
-                });
+            sendbutton = document.getElementById('sendbutton');
+            
+            photoTaken = true;
+            switchStreamMode();
+            
+            videoStreamStart();
 
             video.addEventListener('canplay', function(ev) {
                 if (!streaming) {
@@ -127,6 +124,11 @@
 
             startbutton.addEventListener('click', function(ev) {
                 takepicture();
+                switchStreamMode();
+                ev.preventDefault();
+            }, false);
+            resetbutton.addEventListener('click', function(ev) {
+                switchStreamMode();
                 ev.preventDefault();
             }, false);
 
@@ -141,6 +143,7 @@
 
             var data = canvas.toDataURL('image/png');
             photo.setAttribute('src', data);
+            photo.style.display = 'none';
         }
 
         function takepicture() {
@@ -152,6 +155,7 @@
 
                 var data = canvas.toDataURL('image/png');
                 photo.setAttribute('src', data);
+                
                 
             } else {
                 clearphoto();
@@ -168,6 +172,51 @@
 
         function sendpicture(){
           
+        }
+
+        function switchStreamMode(){
+            if(!photoTaken){
+                photoTaken = true;
+                document.getElementById('camera').style.display = 'none';
+                startbutton.style.display = 'none';
+                sendbutton.style.display = 'inline-block';
+                photo.style.display = 'inline-block';
+                resetbutton.style.display = 'inline-block';
+                document.getElementById('output').style.display = 'inline-block';
+                stopStreamedVideo(video);
+            }
+            else{
+                document.getElementById('camera').style.display = 'inline-block';
+                startbutton.style.display = 'block';
+                sendbutton.style.display = 'none';
+                photo.style.display = 'none';
+                resetbutton.style.display = 'none';
+                document.getElementById('output').style.display = 'none';
+                photoTaken = false;
+                videoStreamStart();
+            }
+        }
+        function stopStreamedVideo(video) {
+            const stream = video.srcObject;
+            const tracks = stream.getTracks();
+            tracks.forEach(function(track) {
+                track.stop();
+            });
+            video.srcObject = null;
+        }
+
+        function videoStreamStart(){
+            navigator.mediaDevices.getUserMedia({
+                    video: { width: 320, height: 320 },
+                    audio: false
+                })
+                .then(function(stream) {
+                    video.srcObject = stream;
+                    video.play();
+                })
+                .catch(function(err) {
+                    console.log("에러가 발생했습니다: " + err);
+                });
         }
 
         window.addEventListener('load', startup, false);

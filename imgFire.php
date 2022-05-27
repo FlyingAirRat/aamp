@@ -39,5 +39,9 @@ function imgFire(&$param) {
 
     $result = imgFire($param);
     if($result) {
+        echo "<script>alert('삭제되었습니다');</script>";
+        Header("Location: photo.php");
+    }else{
+        echo "<script>alert('사진이 등록되지 않았습니다. 관리자에게 문의해주세요.');</script><br>";
         Header("Location: photo.php");
     }

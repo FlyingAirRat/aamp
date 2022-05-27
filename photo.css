@@ -7,26 +7,28 @@
 #video {
     height: 100%;
     border: 1px solid black;
+    display: inline-block;
 }
 
 #photo {
     object-fit: contain;
+    display: none;
 }
 
 #canvas {
     display: none;
 }
 
-.camera {
+#camera {
     display: inline-block;
 }
 
-.output {
+#output {
     width: 100%;
-    display: inline-block;
+    display: none;
 }
 
-#startbutton, #sendbutton {
+#startbutton, #sendbutton, #resetbutton {
     display: block;
     position: relative;
     margin-left: auto;
@@ -38,6 +40,15 @@
     font-size: 20px;
     color: rgba(255, 255, 255, 1.0);
     cursor: pointer;
+}
+
+#sendbutton{
+    display: none;
+}
+
+#resetbutton{
+    display: none;
+    bottom: 10px;
 }
 
 .contentarea {
