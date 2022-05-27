@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./index.css">
     <title>회원가입</title>
 </head>
+
 <body>
     <div class="login_wrap">
         <h1>자동 출결 확인 시스템</h1>
@@ -19,7 +21,7 @@
                     <label><input type="radio" name="u_lv" value="0"> 관리자</label>
                 </div> -->
                 <div class="uid">
-                    <h2>아이디</h2> 
+                    <h2>아이디</h2>
                     <input type="email" name="uid" maxlength="50" required>
                     <span>아이디는 이메일 형식으로 작성해주세요.</span>
                 </div>
@@ -43,4 +45,5 @@
     </div>
     <script src="./join_form.js"></script>
 </body>
+
 </html>
