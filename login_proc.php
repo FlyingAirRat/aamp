@@ -26,7 +26,8 @@ if (empty($result)) {
 }
 
 
-if ($result['upw'] === $upw) {
+// if ($upw === $result['upw']) {
+if (password_verify($upw, $result['upw'])) {
     if ($auto_login == "1") {
         setcookie('uid', $result['uid'], time() + 86400 * 30);
         setcookie('upw', $result['upw'], time() + 86400 * 30);

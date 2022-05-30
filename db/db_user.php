@@ -4,7 +4,7 @@ include_once "db.php";
 function ins_user(&$param)
 {
     $uid = $param['uid'];
-    $upw = $param['upw'];
+    $upw = password_hash($param['upw'], PASSWORD_BCRYPT);
     $nm = $param['nm'];
 
     $sql =
@@ -26,8 +26,8 @@ function sel_user(&$param)
     $sql =
         " SELECT u_no, u_lv, uid, upw, user_nm, class_no, class_no_alt
       FROM info_user
-      WHERE uid = '$uid' and upw = '$upw'";
-
+      WHERE uid = '$uid'";
+    //   WHERE uid = '$uid' and upw = '$upw'";
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
