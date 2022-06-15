@@ -1,5 +1,5 @@
 <?php
-
+include_once "/db/db.php";
 function del_img(&$param)
 {
     // $uuid = $param["uuid"];
@@ -14,7 +14,7 @@ function del_img(&$param)
     return $result;
 }
 
-include_once "db/db.php";
+
 session_start();
 $del_img_id = $_POST["del_img_id"];
 

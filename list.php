@@ -1,6 +1,6 @@
 <?php
 include_once "header.php";
-include_once "db/db_class.php";
+include_once "/db/db_class.php";
 
 $class_no = $_POST['class_no'];
 $class_nm = $_POST['class_nm'];
@@ -38,12 +38,12 @@ $list = sel_stu_list($param);
             $param['u_no'] = $item['u_no'];
             $att = sel_att_img($param);
             if (isset($att)) {
-                $imgsrc = $att["imgsrc"];
+                $imgsrc = "./userPic/".$class_no."/".date("Y-m-d", time())."/".$param['att_no']."/".$item['u_no'].".png";
                 $uploaded_time = $att["uploaded_time"];
             } else {
                 $imgsrc = "./img/profile.png";
                 $uploaded_time = '0000-00-00 00:00:00';
-            }
+            };
         ?>
             <div class="stuWrap">
                 <ul>

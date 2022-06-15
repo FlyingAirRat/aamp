@@ -86,8 +86,8 @@ function sel_stu_list(&$param)
 function sel_att_img(&$param)
 {
     $sql =
-        " SELECT imgsrc, uploaded_time
-      FROM stu_img 
+        " SELECT uploaded_time
+      FROM stu_attended
       WHERE class_no = {$param['class_no']} 
         AND att_no = {$param['att_no']}
         AND u_no = {$param['u_no']}
@@ -95,6 +95,7 @@ function sel_att_img(&$param)
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
+
     return mysqli_fetch_assoc($result);
 }
 

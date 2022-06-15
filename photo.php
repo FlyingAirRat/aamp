@@ -1,6 +1,6 @@
 <?php
-include_once "./header.php";
-include_once "db/db_class.php";
+include_once "/header.php";
+include_once "/db/db_class.php";
 include_once "photo_session_check.php";
 include_once "photo_capture_js.php";
 ?>
