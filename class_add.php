@@ -1,5 +1,5 @@
 <?php
-include_once "./db/db_user.php";
+include_once "/db/db_user.php";
 session_start();
 if (isset($_SESSION['login_user'])) {
     $login_user = $_SESSION['login_user'];

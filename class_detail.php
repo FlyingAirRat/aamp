@@ -1,6 +1,6 @@
 <?php
-include_once "./header.php";
-include_once "./db/db_class.php";
+include_once "/header.php";
+include_once "/db/db_class.php";
 if (isset($_GET['class_no'])) {
     $class_no = $_GET['class_no'];
 
