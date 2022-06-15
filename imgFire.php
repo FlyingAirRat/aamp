@@ -1,4 +1,5 @@
 <?php
+include_once "db/db.php";
 
 function imgFire(&$param)
 {
@@ -20,7 +21,6 @@ function imgFire(&$param)
     return $result;
 }
 
-include_once "db/db.php";
 session_start();
 $u_no = $_POST["u_no"];
 $imgsrc = $_POST["imgsrc"];

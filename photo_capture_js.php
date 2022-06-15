@@ -1,49 +1,11 @@
 <?php
-include_once "./header.php";
-include_once "db/db_class.php";
-include_once "photo_session_check.php";
-include_once "photo_capture_js.php";
-?>
-
-<head>
-    <link rel="stylesheet" href="./photo.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-    <div class="class">
-        <div class='text'>
-            <span>수업명: <?= CLASS_NM ?><br></span>
-            <span class='text_s'>과목 담당: <?= TEACHER_NM ?> 선생님<br></span>
-            <span><?= $att_time ?></span>
-        </div>
-        <div class="contentarea">
-            <div id="camera">
-                <video id="video">Video stream not available.</video>
-            </div>
-            <div><button id="startbutton">사진 찍기</button></div>
-
-            <canvas id="canvas"></canvas>
-            <div id="output">
-                <img id="photo" alt="The screen capture will appear in this box.">
-            </div>
-            <form name="img" method="POST" action="imgFire.php">
-                <button class='buttons' id='sendbutton' type="submit" onclick="submitScore()">전송</button>
-                <input type="hidden" id="u_no" name="u_no">
-                <input type="hidden" id="imgsrc" name="imgsrc">
-                <input type="hidden" id="att_no" name="att_no">
-                <input type="hidden" id="class_no" name="class_no">
-            </form>
-            <div><button id="resetbutton">초기화</button></div>
-        </div>
-        <!-- <script>
-            let photoBase64 = 0;
+echo("
+<script>
+let photoBase64 = 0;
 
 (function() {
     let width = 320;
-    let height = 320; // This will be computed based on the input stream
+    let height = 320;
 
     let streaming = false;
     let photoTaken = false;
@@ -93,7 +55,7 @@ include_once "photo_capture_js.php";
 
     function clearphoto() {
         let context = canvas.getContext('2d');
-        context.fillStyle = "#AAA";
+        context.fillStyle = '#AAA';
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         let data = canvas.toDataURL('image/png');
@@ -173,12 +135,12 @@ include_once "photo_capture_js.php";
                 video.play();
             })
             .catch(function(err) {
-                console.log("에러가 발생했습니다: " + err);
+                console.log('에러가 발생했습니다: ' + err);
             });
     }
 
     window.addEventListener('load', startup, false);
-    document.addEventListener("visibilitychange", handleVisibilityChange, false);
+    document.addEventListener('visibilitychange', handleVisibilityChange, false);
 
     function handleVisibilityChange() {
         if (document.hidden) {
@@ -186,7 +148,5 @@ include_once "photo_capture_js.php";
         }
     }
 })();
-        </script> -->
-</body>
-
-</html>
+</script>
+");
