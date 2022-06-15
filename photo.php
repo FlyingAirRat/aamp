@@ -32,161 +32,162 @@ include_once "photo_capture_js.php";
             <form name="img" method="POST" action="imgFire.php">
                 <button class='buttons' id='sendbutton' type="submit" onclick="submitScore()">전송</button>
                 <input type="hidden" id="u_no" name="u_no">
-                <input type="hidden" id="imgsrc" name="imgsrc">
+                <input type="hidden" id="img_base64" name="img_base64">
                 <input type="hidden" id="att_no" name="att_no">
                 <input type="hidden" id="class_no" name="class_no">
             </form>
             <div><button id="resetbutton">초기화</button></div>
         </div>
-        <!-- <script>
+
+        <script>
             let photoBase64 = 0;
 
-(function() {
-    let width = 320;
-    let height = 320; // This will be computed based on the input stream
-
-    let streaming = false;
-    let photoTaken = false;
-
-    let video = null;
-    let canvas = null;
-    let photo = null;
-    let startbutton = null;
-
-    function startup() {
-        video = document.getElementById('video');
-        canvas = document.getElementById('canvas');
-        photo = document.getElementById('photo');
-        startbutton = document.getElementById('startbutton');
-        sendbutton = document.getElementById('sendbutton');
-
-        photoTaken = true;
-        switchStreamMode();
-
-        videoStreamStart();
-
-        video.addEventListener('canplay', function(ev) {
-            if (!streaming) {
-                // height = video.videoHeight / (video.videoWidth / width);
+            (function() {
+                let width = 320;
                 let height = 320;
-                video.setAttribute('width', width);
-                video.setAttribute('height', height);
-                canvas.setAttribute('width', width);
-                canvas.setAttribute('height', height);
-                streaming = true;
-            }
-        }, false);
 
-        startbutton.addEventListener('click', function(ev) {
-            takepicture();
-            switchStreamMode();
-            ev.preventDefault();
-        }, false);
-        resetbutton.addEventListener('click', function(ev) {
-            switchStreamMode();
-            ev.preventDefault();
-        }, false);
+                let streaming = false;
+                let photoTaken = false;
 
-        clearphoto();
-    }
+                let video = null;
+                let canvas = null;
+                let photo = null;
+                let startbutton = null;
 
+                function startup() {
+                    video = document.getElementById('video');
+                    canvas = document.getElementById('canvas');
+                    photo = document.getElementById('photo');
+                    startbutton = document.getElementById('startbutton');
+                    sendbutton = document.getElementById('sendbutton');
 
-    function clearphoto() {
-        let context = canvas.getContext('2d');
-        context.fillStyle = "#AAA";
-        context.fillRect(0, 0, canvas.width, canvas.height);
+                    photoTaken = true;
+                    switchStreamMode();
 
-        let data = canvas.toDataURL('image/png');
-        photo.setAttribute('src', data);
-        photo.style.display = 'none';
-    }
+                    videoStreamStart();
 
-    function takepicture() {
-        let context = canvas.getContext('2d');
-        if (width && height) {
-            canvas.width = width;
-            canvas.height = height;
-            context.drawImage(video, 0, 0, width, height);
+                    video.addEventListener('canplay', function(ev) {
+                        if (!streaming) {
+                            // height = video.videoHeight / (video.videoWidth / width);
+                            let height = 320;
+                            video.setAttribute('width', width);
+                            video.setAttribute('height', height);
+                            canvas.setAttribute('width', width);
+                            canvas.setAttribute('height', height);
+                            streaming = true;
+                        }
+                    }, false);
 
-            let data = canvas.toDataURL('image/png');
-            photo.setAttribute('src', data);
+                    startbutton.addEventListener('click', function(ev) {
+                        takepicture();
+                        switchStreamMode();
+                        ev.preventDefault();
+                    }, false);
+                    resetbutton.addEventListener('click', function(ev) {
+                        switchStreamMode();
+                        ev.preventDefault();
+                    }, false);
 
-
-        } else {
-            clearphoto();
-        }
-        photoBase64 = data;
-        document.getElementById('u_no').value = <?= $u_no ?>;
-        document.getElementById('imgsrc').value = data;
-        document.getElementById('att_no').value = <?= $att_no ?>;
-        document.getElementById('class_no').value = <?= $class_no ?>;
-        console.log(data);
+                    clearphoto();
+                }
 
 
-    }
+                function clearphoto() {
+                    let context = canvas.getContext('2d');
+                    context.fillStyle = '#AAA';
+                    context.fillRect(0, 0, canvas.width, canvas.height);
 
-    function sendpicture() {
+                    let data = canvas.toDataURL('image/png');
+                    photo.setAttribute('src', data);
+                    photo.style.display = 'none';
+                }
 
-    }
+                function takepicture() {
+                    let context = canvas.getContext('2d');
+                    let data = "";
+                    // if문 안에서 let 선언해버려서, if문 밖의 photoBase64에 data값을 넣어주지 못했다. 바보같은 실수
 
-    function switchStreamMode() {
-        if (!photoTaken) {
-            photoTaken = true;
-            document.getElementById('camera').style.display = 'none';
-            startbutton.style.display = 'none';
-            sendbutton.style.display = 'inline-block';
-            photo.style.display = 'inline-block';
-            resetbutton.style.display = 'inline-block';
-            document.getElementById('output').style.display = 'inline-block';
-            stopStreamedVideo(video);
-        } else {
-            document.getElementById('camera').style.display = 'inline-block';
-            startbutton.style.display = 'block';
-            sendbutton.style.display = 'none';
-            photo.style.display = 'none';
-            resetbutton.style.display = 'none';
-            document.getElementById('output').style.display = 'none';
-            photoTaken = false;
-            videoStreamStart();
-        }
-    }
+                    if (width && height) {
+                        canvas.width = width;
+                        canvas.height = height;
+                        context.drawImage(video, 0, 0, width, height);
 
-    function stopStreamedVideo(video) {
-        const stream = video.srcObject;
-        const tracks = stream.getTracks();
-        tracks.forEach(function(track) {
-            track.stop();
-        });
-        video.srcObject = null;
-    }
+                        // let data = canvas.toDataURL('image/png');
+                        data = canvas.toDataURL('image/png');
+                        photo.setAttribute('src', data);
 
-    function videoStreamStart() {
-        navigator.mediaDevices.getUserMedia({
-                video: {
-                    width: 320,
-                    height: 320
-                },
-                audio: false
-            })
-            .then(function(stream) {
-                video.srcObject = stream;
-                video.play();
-            })
-            .catch(function(err) {
-                console.log("에러가 발생했습니다: " + err);
-            });
-    }
 
-    window.addEventListener('load', startup, false);
-    document.addEventListener("visibilitychange", handleVisibilityChange, false);
+                    } else {
+                        clearphoto();
+                    }
+                    photoBase64 = data;
+                    document.getElementById('u_no').value = <?= $u_no ?>;
+                    document.getElementById('img_base64').value = data;
+                    document.getElementById('att_no').value = <?= $att_no ?>;
+                    document.getElementById('class_no').value = <?= $class_no ?>;
+                    console.log(data);
 
-    function handleVisibilityChange() {
-        if (document.hidden) {
-            stopStreamedVideo(video);
-        }
-    }
-})();
-        </script> -->
+
+                }
+
+                function switchStreamMode() {
+                    if (!photoTaken) {
+                        photoTaken = true;
+                        document.getElementById('camera').style.display = 'none';
+                        startbutton.style.display = 'none';
+                        sendbutton.style.display = 'inline-block';
+                        photo.style.display = 'inline-block';
+                        resetbutton.style.display = 'inline-block';
+                        document.getElementById('output').style.display = 'inline-block';
+                        stopStreamedVideo(video);
+                    } else {
+                        document.getElementById('camera').style.display = 'inline-block';
+                        startbutton.style.display = 'block';
+                        sendbutton.style.display = 'none';
+                        photo.style.display = 'none';
+                        resetbutton.style.display = 'none';
+                        document.getElementById('output').style.display = 'none';
+                        photoTaken = false;
+                        videoStreamStart();
+                    }
+                }
+
+                function stopStreamedVideo(video) {
+                    const stream = video.srcObject;
+                    const tracks = stream.getTracks();
+                    tracks.forEach(function(track) {
+                        track.stop();
+                    });
+                    video.srcObject = null;
+                }
+
+                function videoStreamStart() {
+                    navigator.mediaDevices.getUserMedia({
+                            video: {
+                                width: 320,
+                                height: 320
+                            },
+                            audio: false
+                        })
+                        .then(function(stream) {
+                            video.srcObject = stream;
+                            video.play();
+                        })
+                        .catch(function(err) {
+                            console.log('에러가 발생했습니다: ' + err);
+                        });
+                }
+
+                window.addEventListener('load', startup, false);
+                document.addEventListener('visibilitychange', handleVisibilityChange, false);
+
+                function handleVisibilityChange() {
+                    if (document.hidden) {
+                        stopStreamedVideo(video);
+                    }
+                }
+            })();
+        </script>
 </body>
 
 </html>

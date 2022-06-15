@@ -1,19 +1,19 @@
 <?php
 echo("
 <script>
-let photoBase64 = 0;
+var photoBase64 = 0;
 
 (function() {
-    let width = 320;
-    let height = 320;
+    var width = 320;
+    var height = 320;
 
-    let streaming = false;
-    let photoTaken = false;
+    var streaming = false;
+    var photoTaken = false;
 
-    let video = null;
-    let canvas = null;
-    let photo = null;
-    let startbutton = null;
+    var video = null;
+    var canvas = null;
+    var photo = null;
+    var startbutton = null;
 
     function startup() {
         video = document.getElementById('video');
@@ -30,7 +30,7 @@ let photoBase64 = 0;
         video.addEventListener('canplay', function(ev) {
             if (!streaming) {
                 // height = video.videoHeight / (video.videoWidth / width);
-                let height = 320;
+                var height = 320;
                 video.setAttribute('width', width);
                 video.setAttribute('height', height);
                 canvas.setAttribute('width', width);
@@ -54,23 +54,23 @@ let photoBase64 = 0;
 
 
     function clearphoto() {
-        let context = canvas.getContext('2d');
+        var context = canvas.getContext('2d');
         context.fillStyle = '#AAA';
         context.fillRect(0, 0, canvas.width, canvas.height);
 
-        let data = canvas.toDataURL('image/png');
+        var data = canvas.toDataURL('image/png');
         photo.setAttribute('src', data);
         photo.style.display = 'none';
     }
 
     function takepicture() {
-        let context = canvas.getContext('2d');
+        var context = canvas.getContext('2d');
         if (width && height) {
             canvas.width = width;
             canvas.height = height;
             context.drawImage(video, 0, 0, width, height);
 
-            let data = canvas.toDataURL('image/png');
+            var data = canvas.toDataURL('image/png');
             photo.setAttribute('src', data);
 
 
@@ -79,7 +79,7 @@ let photoBase64 = 0;
         }
         photoBase64 = data;
         document.getElementById('u_no').value = <?= $u_no ?>;
-        document.getElementById('imgsrc').value = data;
+        document.getElementById('img_base64').value = data;
         document.getElementById('att_no').value = <?= $att_no ?>;
         document.getElementById('class_no').value = <?= $class_no ?>;
         console.log(data);
