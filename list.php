@@ -38,7 +38,7 @@ $list = sel_stu_list($param);
             $param['u_no'] = $item['u_no'];
             $att = sel_att_img($param);
             if (isset($att)) {
-                $imgsrc = "./userPic/".$class_no."/".date("Y-m-d", time())."/".$param['att_no']."/".$item['u_no'].".png";
+                $imgsrc = "./userPic/" . $class_no . "/" . date("Y-m-d", time()) . "/" . $param['att_no'] . "/" . $item['u_no'] . ".png";
                 $uploaded_time = $att["uploaded_time"];
             } else {
                 $imgsrc = "./img/profile.png";
@@ -54,6 +54,17 @@ $list = sel_stu_list($param);
             </div>
         <?php } ?>
     </div>
+    <!-- <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const app = require("express")();
+        const server = app.listen(8005, () => {});
+        const SocketIO = require('socket.io');
+
+        // 서버 연결, path는 프론트와 일치시켜준다.
+        const io = SocketIO(server, {
+            path: '/socket.io'
+        });
+    </script> -->
 </body>
 
 </html>
