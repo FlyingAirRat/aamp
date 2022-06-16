@@ -1,5 +1,5 @@
 <?php
-include_once "/db/db.php";
+include_once "db/db.php";
 
 function imgFire(&$param)
 {
@@ -9,8 +9,9 @@ function imgFire(&$param)
     $class_no = $param["class_no"];
 
     $savedir = "./userPic/".$class_no."/".date("Y-m-d", time())."/".$att_no."/";
-    mkdir($savedir,0777,true);
-
+    if(!file_exists($savedir)){
+        mkdir($savedir,0777,true);
+    }
     $src = explode(',',$img_base64);
     file_put_contents($savedir.$u_no.".png", base64_decode($src[1]));
 
@@ -46,9 +47,9 @@ $param = [
 
 $result = imgFire($param);
 if ($result) {
-    echo "<script>alert('삭제되었습니다');</script>";
-    // Header("Location: photo.php");
+    echo "<script>alert('등록되었습니다.');</script>";
 } else {
     echo "<script>alert('사진이 등록되지 않았습니다. 관리자에게 문의해주세요.');</script><br>";
-    // Header("Location: photo.php");
 }
+
+Header("Location: photo.php");

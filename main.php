@@ -1,6 +1,6 @@
 <?php
-include_once "/header.php";
-include_once "/db/db_class.php";
+include_once "header.php";
+include_once "db/db_class.php";
 $class_no = $login_user['class_no'];
 $param = [
     'class_no' => $class_no,

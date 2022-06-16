@@ -1,8 +1,7 @@
 <?php
-include_once "/header.php";
-include_once "/db/db_class.php";
+include_once "header.php";
+include_once "db/db_class.php";
 include_once "photo_session_check.php";
-include_once "photo_capture_js.php";
 ?>
 
 <head>
@@ -38,8 +37,8 @@ include_once "photo_capture_js.php";
             </form>
             <div><button id="resetbutton">초기화</button></div>
         </div>
-
         <script>
+            //webRTC 모듈
             let photoBase64 = 0;
 
             (function() {
@@ -68,7 +67,6 @@ include_once "photo_capture_js.php";
 
                     video.addEventListener('canplay', function(ev) {
                         if (!streaming) {
-                            // height = video.videoHeight / (video.videoWidth / width);
                             let height = 320;
                             video.setAttribute('width', width);
                             video.setAttribute('height', height);
@@ -104,8 +102,7 @@ include_once "photo_capture_js.php";
 
                 function takepicture() {
                     let context = canvas.getContext('2d');
-                    let data = "";
-                    // if문 안에서 let 선언해버려서, if문 밖의 photoBase64에 data값을 넣어주지 못했다. 바보같은 실수
+                    let data = ""; //추가함.
 
                     if (width && height) {
                         canvas.width = width;
@@ -115,12 +112,14 @@ include_once "photo_capture_js.php";
                         // let data = canvas.toDataURL('image/png');
                         data = canvas.toDataURL('image/png');
                         photo.setAttribute('src', data);
-
-
                     } else {
                         clearphoto();
                     }
                     photoBase64 = data;
+                    // var를 let으로 바꾸는 작업 중, 위의 if문 안에서 처음 선언된 var까지
+                    // let으로 바꿔버려서, if문 밖의 photoBase64에 data값을 넣어주지 못하는
+                    // 상황을 이해 못하고 몇 시간이고 삽질했었다. 지금보면 바보같은 실수.
+
                     document.getElementById('u_no').value = <?= $u_no ?>;
                     document.getElementById('img_base64').value = data;
                     document.getElementById('att_no').value = <?= $att_no ?>;

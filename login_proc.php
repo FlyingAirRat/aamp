@@ -1,5 +1,5 @@
 <?php
-include_once "/db/db_user.php";
+include_once "db/db_user.php";
 session_start();
 if (isset($_COOKIE['uid']) && isset($_COOKIE['upw'])) {
     $uid = $_COOKIE['uid'];
@@ -54,7 +54,7 @@ if (password_verify($upw, $result['upw'])) {
     echo
     " <script>
         alert('비밀번호가 다릅니다.');
-        history.back();
+        // history.back();
       </script>
     ";
 }
