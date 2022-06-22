@@ -21,6 +21,19 @@ $list = sel_stu_list($param);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./list.css">
     <title>목록</title>
+    <script src="https://js.pusher.com/7.1/pusher.min.js"></script>
+    <script>
+        Pusher.logToConsole = true;
+
+var pusher = new Pusher('7e35ec0a379bddf815bb', {
+  cluster: 'ap3'
+});
+        var stu_img_info = "stu_img_sent/'+<?=$class_no.'/'.date('Y-m-d', time()).'/'.$att_no?>"
+        var stu_img_sent = pusher.subscribe(stu_img_info);
+        stu_img_sent.bind(stu_img_info, function(data) {
+            //여기에 stu_img_info와 함께 받은 data를 어떻게 가공할 지 쓰자.
+        });
+    </script>
 </head>
 
 <body>
@@ -54,17 +67,6 @@ $list = sel_stu_list($param);
             </div>
         <?php } ?>
     </div>
-    <!-- <script src="/socket.io/socket.io.js"></script>
-    <script>
-        const app = require("express")();
-        const server = app.listen(8005, () => {});
-        const SocketIO = require('socket.io');
-
-        // 서버 연결, path는 프론트와 일치시켜준다.
-        const io = SocketIO(server, {
-            path: '/socket.io'
-        });
-    </script> -->
 </body>
 
 </html>
