@@ -2,6 +2,7 @@
 include_once "header.php";
 include_once "db/db_class.php";
 
+
 $class_no = $_POST['class_no'];
 $class_nm = $_POST['class_nm'];
 $people = $_POST['people'];
@@ -24,14 +25,14 @@ $list = sel_stu_list($param);
     <script src="https://js.pusher.com/7.1/pusher.min.js"></script>
     <script>
         Pusher.logToConsole = true;
-
-var pusher = new Pusher('7e35ec0a379bddf815bb', {
-  cluster: 'ap3'
-});
+        var pusher = new Pusher('7e35ec0a379bddf815bb', {
+            cluster: 'stu_img_fire'
+        });
         var stu_img_info = "stu_img_sent/'+<?=$class_no.'/'.date('Y-m-d', time()).'/'.$att_no?>"
-        var stu_img_sent = pusher.subscribe(stu_img_info);
-        stu_img_sent.bind(stu_img_info, function(data) {
-            //여기에 stu_img_info와 함께 받은 data를 어떻게 가공할 지 쓰자.
+        var stu_img_reciever = pusher.subscribe(stu_img_info);
+        stu_img_reciever.bind(stu_img_info, function(data) {
+            //여기에 stu_img_info와 함께 실시간으로 받은 data를 어떻게 가공할 지 쓰자.
+            
         });
     </script>
 </head>
@@ -60,7 +61,7 @@ var pusher = new Pusher('7e35ec0a379bddf815bb', {
         ?>
             <div class="stuWrap">
                 <ul>
-                    <li class="attImg"><img src="<?= $imgsrc ?>"></li>
+                    <li class="attImg"><img id="<?=$item['u_no']?>" src="<?= $imgsrc ?>"></li>
                     <li class="stuName"><?= $item['user_nm'] ?></li>
                     <li class="uploadTime"><?= $uploaded_time ?></li>
                 </ul>

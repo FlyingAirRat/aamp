@@ -1,5 +1,12 @@
 <?php
 include_once "db/db.php";
+require __DIR__ . '/vendor/autoload.php';
+
+
+
+
+
+
 
 function imgFire(&$param)
 {
@@ -8,12 +15,12 @@ function imgFire(&$param)
     $att_no = $param["att_no"];
     $class_no = $param["class_no"];
 
-    $savedir = "./userPic/".$class_no."/".date("Y-m-d", time())."/".$att_no."/";
-    if(!file_exists($savedir)){
-        mkdir($savedir,0777,true);
+    $savedir = "./userPic/" . $class_no . "/" . date("Y-m-d", time()) . "/" . $att_no . "/";
+    if (!file_exists($savedir)) {
+        mkdir($savedir, 0777, true);
     }
-    $src = explode(',',$img_base64);
-    file_put_contents($savedir.$u_no.".png", base64_decode($src[1]));
+    $src = explode(',', $img_base64);
+    file_put_contents($savedir . $u_no . ".png", base64_decode($src[1]));
 
     $conn = get_conn();
     $sql =
@@ -52,4 +59,16 @@ if ($result) {
     echo "<script>alert('사진이 등록되지 않았습니다. 관리자에게 문의해주세요.');</script><br>";
 }
 
+$options = array(
+    'cluster' => 'stu_img_fire',
+    'useTLS' => true
+);
+$pusher = new Pusher\Pusher(
+    '7e35ec0a379bddf815bb',
+    '7cc5d44fd41e08a19672',
+    '1427171',
+    $options
+);
+$data['message'] = $img_base64;
+$pusher->trigger("stu_img_sent/'+<?=$class_no.'/'.date('Y-m-d', time()).'/'.$att_no?>", 'imgSent', $data);
 Header("Location: photo.php");
