@@ -1,7 +1,7 @@
 <?php
 include_once "header.php";
 include_once "db/db_class.php";
-
+require __DIR__ . '/vendor/autoload.php';
 
 $class_no = $_POST['class_no'];
 $class_nm = $_POST['class_nm'];
@@ -20,18 +20,29 @@ $list = sel_stu_list($param);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <link rel="stylesheet" href="./list.css">
     <title>목록</title>
     <script src="https://js.pusher.com/7.1/pusher.min.js"></script>
     <script>
         Pusher.logToConsole = true;
         var pusher = new Pusher('7e35ec0a379bddf815bb', {
-            cluster: 'stu_img_fire'
+            cluster: 'ap3'
         });
-        var stu_img_info = "stu_img_sent/'+<?=$class_no.'/'.date('Y-m-d', time()).'/'.$att_no?>"
-        var stu_img_reciever = pusher.subscribe(stu_img_info);
-        stu_img_reciever.bind(stu_img_info, function(data) {
+        var stu_img_info = "stu_img_sent.<?= $class_no . '.'?>";
+        
+        var date = new Date();
+        const formatDate = (date) => {
+            let formatted_date =  date.getFullYear() + "-" + (date.getMonth()<10 ? "0" + (date.getMonth() + 1) : date.getMonth()+ 1) + "-" +date.getDate();
+            return formatted_date;
+        }
+        stu_img_info += formatDate(date) + '<?='.'.$param['att_no']?>';
+        var channel_stu_img_reciever = pusher.subscribe(stu_img_info);
+        channel_stu_img_reciever.bind('img_sent', function(data) {
             //여기에 stu_img_info와 함께 실시간으로 받은 data를 어떻게 가공할 지 쓰자.
+            var data_parsed = JSON.stringify(data);
+            data_parsed = JSON.parse(data_parsed);
+            document.getElementById(data_parsed.who).src = data_parsed.img_src+ "?a=" + Math.random();;
             
         });
     </script>
@@ -60,8 +71,8 @@ $list = sel_stu_list($param);
             };
         ?>
             <div class="stuWrap">
-                <ul>
-                    <li class="attImg"><img id="<?=$item['u_no']?>" src="<?= $imgsrc ?>"></li>
+                <ul id="">
+                    <li class="attImg"><img id="<?=$param['u_no']?>" src="<?= $imgsrc ?>" name="u_no"></li>
                     <li class="stuName"><?= $item['user_nm'] ?></li>
                     <li class="uploadTime"><?= $uploaded_time ?></li>
                 </ul>

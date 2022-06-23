@@ -2,12 +2,7 @@
 include_once "db/db.php";
 require __DIR__ . '/vendor/autoload.php';
 
-
-
-
-
-
-
+$savedir = "";
 function imgFire(&$param)
 {
     $img_base64 = $param["img_base64"];
@@ -60,7 +55,7 @@ if ($result) {
 }
 
 $options = array(
-    'cluster' => 'stu_img_fire',
+    'cluster' => 'ap3',
     'useTLS' => true
 );
 $pusher = new Pusher\Pusher(
@@ -69,6 +64,11 @@ $pusher = new Pusher\Pusher(
     '1427171',
     $options
 );
-$data['message'] = $img_base64;
-$pusher->trigger("stu_img_sent/'+<?=$class_no.'/'.date('Y-m-d', time()).'/'.$att_no?>", 'imgSent', $data);
+$data['img_src'] = './userPic/' .$class_no . '/' .date("Y-m-d", time()) .'/' . $att_no . '/'. $u_no . '.png';
+$data['who'] = $u_no;
+$data['when'] = date("Y-m-d H:m:s", time());
+$stu_img_info = 'stu_img_sent.'. $class_no.'.'. date('Y-m-d', time()).'.'.$att_no;
+print_r($data);
+echo $stu_img_info;
+$pusher->trigger($stu_img_info, 'img_sent', $data);
 Header("Location: photo.php");
