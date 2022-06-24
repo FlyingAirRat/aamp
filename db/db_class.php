@@ -160,6 +160,15 @@ function sel_every_class_info()
     return $result;
 }
 
-function count_att_students(&$param)
+function count_attended_students(&$param_att, &$param2_clsno)
 {
+    $sql = "SELECT count(*) as attstu
+    FROM stu_attended
+    WHERE att_no = $param_att and class_no = $param2_clsno";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);
+    //사진 안 올린 교시에 대한, 널 들어오면 어떻게 해야하는지를 구현하자.
+    mysqli_close($conn);
+    $return_value = json_encode(mysqli_fetch_assoc($result));
+    return $return_value;
 }

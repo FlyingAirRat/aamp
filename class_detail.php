@@ -49,7 +49,12 @@ if (isset($_GET['class_no'])) {
                         <td><?= $att_no ?></td>
                         <td><?= $start_time ?> ~ <?= $end_time ?></td>
                         <td>
-                            출석/<?= $people ?>
+                            출석
+                            <?php
+                                $stu_att_counter = json_decode(count_attended_students($att_no, $class_no));
+                                echo $stu_att_counter->attstu;
+                                //기초가 중요하다. 배우자
+                            ?>/<?= $people ?>
                             <form id='class' action='./list.php' method='POST'>
                                 <input type='hidden' name='class_no' value='<?= $class_no ?>'>
                                 <input type='hidden' name='att_no' value='<?= $att_no ?>'>
@@ -59,7 +64,8 @@ if (isset($_GET['class_no'])) {
                             </form>
                         </td>
                     </tr>
-                <?php $att_no += 1;}
+                <?php $att_no += 1;
+                }
                 //바로 윗줄 <?php를 <?=로 적어서 $att_no가 문서 내에 찍혔었다. 고생깨나 했네.
                 ?>
             </table>
