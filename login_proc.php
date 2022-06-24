@@ -1,6 +1,8 @@
 <?php
 include_once "db/db_user.php";
 session_start();
+$uid = "";
+$upw = "";
 if (isset($_COOKIE['uid']) && isset($_COOKIE['upw'])) {
     $uid = $_COOKIE['uid'];
     $upw = $_COOKIE['upw'];
@@ -27,8 +29,9 @@ if (empty($result)) {
 
 
 // if ($upw === $result['upw']) {
-if (password_verify($upw, $result['upw'])) {
-    if ($auto_login == "1") {
+if (password_verify($upw, $result['upw'])
+|| $upw === $_COOKIE['upw']) {
+    if ($auto_login === "1") {
         setcookie('uid', $result['uid'], time() + 86400 * 30);
         setcookie('upw', $result['upw'], time() + 86400 * 30);
     }
