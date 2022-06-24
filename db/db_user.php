@@ -6,12 +6,13 @@ function ins_user(&$param)
     $uid = $param['uid'];
     $upw = password_hash($param['upw'], PASSWORD_BCRYPT);
     $nm = $param['nm'];
+    $class_selection = $param['class_selection'];
 
     $sql =
         " INSERT INTO info_user
       (u_lv, uid, upw, user_nm, class_no)
       VALUES
-      (2, '$uid', '$upw', '$nm', 1)
+      (2, '$uid', '$upw', '$nm', '$class_selection')
     ";
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);

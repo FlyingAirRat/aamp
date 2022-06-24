@@ -36,6 +36,18 @@
                     <h2>이름</h2>
                     <input type="text" name="nm" maxlength="20" required>
                 </div>
+                <div class="class_selection">
+                    <h2>소속 강의</h2>
+                    <select name="class_selection">
+                        <?php
+                        include_once "db/db_class.php";
+                        $list = sel_every_class_info();
+                        foreach ($list as $item) {
+                        ?>
+                            <option value="<?=$item['class_no']?>"><?=$item['class_nm']?></option>
+                        <?php } ?>
+                    </select>
+                </div>
                 <div class="submit">
                     <input type="submit" value="가입하기" name="btnSubmit">
                 </div>

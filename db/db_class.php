@@ -143,3 +143,13 @@ function sel_class_info(&$param)
     mysqli_close($conn);
     return mysqli_fetch_assoc($result);
 }
+
+function sel_every_class_info()
+{
+    $sql = "SELECT class_no, class_nm, u_no, people, favor
+    FROM class";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    return $result;
+}
