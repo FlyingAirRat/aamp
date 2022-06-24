@@ -11,7 +11,7 @@ $param = [
     'people' => $people,
     'u_no' => $u_no
 ];
-ins_class($param);
+// ins_class($param);
 
 for ($i = 0; $i < $people; $i++) {
     upd_stu($stu_list[$i]);

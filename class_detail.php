@@ -43,24 +43,24 @@ if (isset($_GET['class_no'])) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     $start_time = $row['start_time'];
                     $end_time = $row['end_time'];
-                    echo
-                    " <tr>
-                  <td>$att_no</td>
-                  <td>$start_time ~ $end_time</td>
-                  <td>
-                    출석/$people
-                    <form id='class' action='./list.php' method='POST'>
-                      <input type='hidden' name='class_no' value='$class_no'>
-                      <input type='hidden' name='att_no' value='$att_no'>
-                      <input type='hidden' name='class_nm' value='$class_nm'>
-                      <input type='hidden' name='people' value='$people'>
-                      <input type='submit' value='현황보기'>
-                    </form>
-                  </td>
-                </tr>
-              ";
-                    $att_no++;
-                }
+                    // $att_no = $row['att_no'];
+                ?>
+                    <tr>
+                        <td><?= $att_no ?></td>
+                        <td><?= $start_time ?> ~ <?= $end_time ?></td>
+                        <td>
+                            출석/<?= $people ?>
+                            <form id='class' action='./list.php' method='POST'>
+                                <input type='hidden' name='class_no' value='<?= $class_no ?>'>
+                                <input type='hidden' name='att_no' value='<?= $att_no ?>'>
+                                <input type='hidden' name='class_nm' value='<?= $class_nm ?>'>
+                                <input type='hidden' name='people' value='<?= $people ?>'>
+                                <input type='submit' value='현황보기'>
+                            </form>
+                        </td>
+                    </tr>
+                <?php $att_no += 1;}
+                //바로 윗줄 <?php를 <?=로 적어서 $att_no가 문서 내에 찍혔었다. 고생깨나 했네.
                 ?>
             </table>
         </div>
