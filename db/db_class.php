@@ -135,10 +135,11 @@ function sel_class_info(&$param)
     $class_no = $param['class_no'];
     $sql =
         " SELECT A.class_nm, A.class_no, A.people, B.class_no, B.att_no
-      FROM class A INNER JOIN stu_attended B
+      FROM class A LEFT OUTER JOIN stu_attended B
       ON A.class_no = B.class_no
       WHERE A.class_no = $class_no
     ";
+    //stu_attended 테이블이 비어있을 때 INNER JOIN을 사용하면, class.people을 가져오지 못한다.
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
