@@ -134,16 +134,11 @@ function sel_class_info(&$param)
 {
     $class_no = $param['class_no'];
     $sql =
-        " SELECT A.class_nm, A.people, B.class_no, B.att_no
+        " SELECT A.class_nm, A.class_no, A.people, B.class_no, B.att_no
       FROM class A INNER JOIN stu_attended B
       ON A.class_no = B.class_no
       WHERE A.class_no = $class_no
     ";
-//     $sql =
-//         " SELECT class_nm, people, att_no
-//         FROM class
-//         WHERE class_no = $class_no
-// ";
     $conn = get_conn();
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
