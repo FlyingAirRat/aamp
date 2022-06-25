@@ -10,9 +10,14 @@ if (isset($_GET['class_no'])) {
     $result = sel_timetable($param);
 
     $class_info = sel_class_info($param);
-    $class_nm = $class_info['class_nm'];
-    $people = $class_info['people'];
-}
+    if(isset($class_info['class_nm'])&&isset($class_info['people'])){
+        $class_nm = $class_info['class_nm'];
+        $people = $class_info['people'];
+    }else{
+        $class_nm = 0;
+        $people = 0;
+    };
+};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +58,6 @@ if (isset($_GET['class_no'])) {
                             <?php
                                 $stu_att_counter = json_decode(count_attended_students($att_no, $class_no));
                                 echo $stu_att_counter->attstu;
-                                //기초가 중요하다. 배우자
                             ?>/<?= $people ?>
                             <form id='class' action='./list.php' method='POST'>
                                 <input type='hidden' name='class_no' value='<?= $class_no ?>'>
