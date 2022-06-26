@@ -77,7 +77,10 @@ if (isset($_GET['class_no'])) {
         </div>
         <div id="plus_btn">
             <span>알림 시간 추가</span>
-            <a href="./add_time.php?class_no=<?= $class_no ?>"><button>+</button></a>
+            <form action="./add_time.php" method="POST">
+            <input type='hidden' name='class_no' value='<?= $class_no ?>'>
+            <input type='submit' value='+'>
+            </form>
         </div>
     </main>
     <script type="text/javascript">

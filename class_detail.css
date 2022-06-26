@@ -82,7 +82,7 @@ main #plus_btn {
     font-size: large;
 }
 
-main #plus_btn button {
+main #plus_btn input {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -90,9 +90,11 @@ main #plus_btn button {
     font-size: xx-large;
     background-color: black;
     color: white;
+    display: inline;
+    float: right;
 }
 
 main #plus_btn span {
-    position: relative;
+    position: inline;
     bottom: 5px;
 }

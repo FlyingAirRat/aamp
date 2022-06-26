@@ -1,6 +1,6 @@
 <?php
-if (isset($_GET['class_no'])) {
-    $class_no = $_GET['class_no'];
+if (isset($_POST['class_no'])) {
+    $class_no = $_POST['class_no'];
 }
 ?>
 <!DOCTYPE html>
@@ -20,8 +20,9 @@ if (isset($_GET['class_no'])) {
             <h1>알림 시간 추가</h1>
             <form name="joinForm" action="add_time_proc.php" method="post">
                 <div class="time">
-                    <label>시작 시간<input type="time" name="start_time" value="00:00:00" step="2"></label>
-                    <label>종료 시간<input type="time" name="end_time" value="00:00:00" step="2"></label>
+                    <label>시작 시간<input type="time" name="start_time" value="00:00:00" step="1"></label>
+                    <br>
+                    <label>종료 시간<input type="time" name="end_time" value="00:00:00" step="1"></label>
                 </div>
                 <input type="hidden" name="class_no" value="<?= $class_no ?>">
                 <div class="submit">
