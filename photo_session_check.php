@@ -10,7 +10,6 @@ if (isset($_SESSION['login_user'])) {
 } else {
     echo
     " <script>
-        alert('로그인 해주세요.');
         location.href='index.php';
       </script>
     ";

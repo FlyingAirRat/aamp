@@ -20,7 +20,6 @@ if (isset($_SESSION['login_user'])) {
 } else {
     echo
     " <script>
-        alert('로그인 해주세요.');
         location.href='index.php';
       </script>
     ";
@@ -29,7 +28,7 @@ if (isset($_SESSION['login_user'])) {
 
 ?>
 <!DOCTYPE html>
-<link rel="stylesheet" href="./header.css">
+<link rel="stylesheet" href="css/header.css">
 <header>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

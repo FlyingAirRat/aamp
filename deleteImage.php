@@ -7,7 +7,7 @@ function del_img(&$param)
 
     $conn = get_conn();
     $sql =
-        "   delete from stu_img where img_id = '$del_img_id';
+        "DELETE from stu_img WHERE img_id = '$del_img_id';
     ";
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);

@@ -27,7 +27,7 @@ if (isset($_GET['class_no'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>알림시간 설정</title>
-    <link rel="stylesheet" href="./class_detail.css">
+    <link rel="stylesheet" href="css/class_detail.css">
 </head>
 
 <body>

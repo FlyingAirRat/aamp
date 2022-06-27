@@ -10,7 +10,7 @@ if (isset($_POST['class_no'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>알림 시간 추가</title>
 </head>
 

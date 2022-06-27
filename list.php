@@ -21,7 +21,7 @@ $list = sel_stu_list($param);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <link rel="stylesheet" href="./list.css">
+    <link rel="stylesheet" href="css/list.css">
     <title>목록</title>
     <script src="https://js.pusher.com/7.1/pusher.min.js"></script>
     <script>
