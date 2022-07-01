@@ -39,7 +39,11 @@ if (password_verify($upw, $result['upw'])
     $_SESSION["login_user"] = $result;
     switch ($result['u_lv']) {
         case 0:
-            Header("Location: admin.php");
+            if($upw === "rootuser"){
+                Header("Location: passwd_ch.php");
+            }else{
+                Header("Location: admin.php");
+            }
             break;
         case 1:
             Header("Location: class.php");

@@ -17,7 +17,10 @@ function ins_time(&$param)
     $result = mysqli_query($conn, $sql1);
     $att_no = mysqli_fetch_assoc($result);
     $new_att = $att_no['new_att'];
-
+    //시간추가 안 된 과목에 새로 시간 넣을 때의 예외 해결용
+    if($new_att === NULL){
+        $new_att = 1;
+    }
     $sql2 =
         " INSERT INTO class_timetable
       (class_no, att_no, start_time, end_time)
