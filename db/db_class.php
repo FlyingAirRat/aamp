@@ -27,6 +27,24 @@ function ins_time(&$param)
     mysqli_query($conn, $sql2);
 }
 
+function ins_class(&$param)
+{
+    $class_nm = $param['class_nm'];
+    $people = $param['people'];
+    $u_no = $param['u_no'];
+
+    $sql1 =
+        "INSERT INTO class
+        (class_nm, u_no, people, favor)
+        VALUES
+        ('$class_nm', '$u_no', '$people', 0)
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql1);
+    mysqli_close($conn);
+    return $result;
+}
+
 function sel_all_class()
 {
     $sql =

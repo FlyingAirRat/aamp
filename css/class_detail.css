@@ -23,12 +23,24 @@ header #cls_info {
     border-bottom: 1px solid gray;
 }
 
+header span{
+    font-size: 18px;
+    padding-bottom: 4px;
+    display: inline;
+}
+
 header #cls_info a {
-    display: flex;
+    display: inline;
     align-items: center;
     text-decoration: none;
     color: black;
+    height: 24px;
 }
+
+header #cls_info a:last-child {
+    float: right;
+}
+
 
 main #cls_box {
     width: 82%;

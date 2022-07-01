@@ -36,12 +36,13 @@ $result = sel_stu();
                 </div>
                 <div class="people">
                     <h2>수강 인원</h2>
+                    <input type="number" name="people" min="1" max="100">
                     <?php
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $u_no_stu = $row['u_no'];
-                        $user_nm = $row['user_nm'];
-                        print "<label><input type='checkbox' name='stu[]' value='$u_no_stu'>$user_nm($u_no_stu)</label> ";
-                    }
+                    // while ($row = mysqli_fetch_assoc($result)) {
+                    //     $u_no_stu = $row['u_no'];
+                    //     $user_nm = $row['user_nm'];
+                    //     print "<label><input type='checkbox' name='stu[]' value='$u_no_stu'>$user_nm($u_no_stu)</label> ";
+                    // }
                     ?>
                     <input type="hidden" name="u_no" value="<?= $u_no ?>">
                     <div class="submit">
