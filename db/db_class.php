@@ -48,6 +48,25 @@ function ins_class(&$param)
     return $result;
 }
 
+function del_class(&$param)
+{
+    $class_no = $param['class_no'];
+    
+    $sql =
+        "DELETE from class
+        WHERE class_no = '$class_no'
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);
+
+    $sql2 =
+    "DELETE FROM class_timetable
+    WHERE class_no = '$class_no'
+";
+    mysqli_query($conn, $sql2);
+    mysqli_close($conn);
+}
+
 function sel_all_class()
 {
     $sql =

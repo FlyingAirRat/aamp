@@ -10,10 +10,10 @@ if (isset($_GET['class_no'])) {
     $result = sel_timetable($param);
 
     $class_info = sel_class_info($param);
-    if(isset($class_info['class_nm'])&&isset($class_info['people'])){
+    if (isset($class_info['class_nm']) && isset($class_info['people'])) {
         $class_nm = $class_info['class_nm'];
         $people = $class_info['people'];
-    }else{
+    } else {
         $class_nm = 0;
         $people = 0;
     };
@@ -32,10 +32,15 @@ if (isset($_GET['class_no'])) {
 
 <body>
     <header>
+        <script src="./class_detail.js"></script>
         <div id="cls_info">
             <a href="./class.php" id="back"><img src="./img/left.png"><span>수업 정보</span></a>
-            <a href="./class_del.php" id="del"><img src="./img/right.png"><span>수업 정보</span></a>
+            <a href="#" id="classDel"><img src="./img/right.png"><span>삭제</span></a>
         </div>
+        <form action="./class_del.php" method="POST">
+            <input type='hidden' name='class_no' value='<?= $class_no ?>'>
+            <input type='submit' id='classDelSubmit' value=''>
+        </form>
     </header>
 
     <main>
@@ -59,8 +64,8 @@ if (isset($_GET['class_no'])) {
                         <td>
                             출석
                             <?php
-                                $stu_att_counter = json_decode(count_attended_students($att_no, $class_no));
-                                echo $stu_att_counter->attstu;
+                            $stu_att_counter = json_decode(count_attended_students($att_no, $class_no));
+                            echo $stu_att_counter->attstu;
                             ?>/<?= $people ?>
                             <form id='class' action='./list.php' method='POST'>
                                 <input type='hidden' name='class_no' value='<?= $class_no ?>'>
@@ -81,14 +86,11 @@ if (isset($_GET['class_no'])) {
         <div id="plus_btn">
             <span>알림 시간 추가</span>
             <form action="./add_time.php" method="POST">
-            <input type='hidden' name='class_no' value='<?= $class_no ?>'>
-            <input type='submit' value='+'>
+                <input type='hidden' name='class_no' value='<?= $class_no ?>'>
+                <input type='submit' value='+'>
             </form>
         </div>
     </main>
-    <script type="text/javascript">
-
-    </script>
 </body>
 
 </html>
