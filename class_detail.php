@@ -32,12 +32,13 @@ if (isset($_GET['class_no'])) {
 
 <body>
     <header>
-        <script src="./class_detail.js"></script>
+        <!-- async 추가 -->
+        <script src="./class_detail.js" async></script>
         <div id="cls_info">
             <a href="./class.php" id="back"><img src="./img/left.png"><span>수업 정보</span></a>
             <a href="#" id="classDel"><img src="./img/right.png"><span>삭제</span></a>
         </div>
-        <form action="./class_del.php" method="POST">
+        <form action="class_del.php" method="POST">
             <input type='hidden' name='class_no' value='<?= $class_no ?>'>
             <input type='submit' id='classDelSubmit' value=''>
         </form>
@@ -53,6 +54,7 @@ if (isset($_GET['class_no'])) {
                 </tr>
                 <?php
                 $att_no = 1;
+                if($result){
                 while ($row = mysqli_fetch_assoc($result)) {
                     $start_time = $row['start_time'];
                     $end_time = $row['end_time'];
@@ -77,6 +79,8 @@ if (isset($_GET['class_no'])) {
                         </td>
                     </tr>
                 <?php $att_no += 1;
+                }} else{
+                    echo "수업이 없습니다.";
                 }
                 //바로 윗줄 <?php를 <?=로 적어서 $att_no가 문서 내에 찍혔었다. 고생깨나 했네.
                 ?>
