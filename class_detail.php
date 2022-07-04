@@ -32,7 +32,7 @@ if (isset($_GET['class_no'])) {
 
 <body>
     <header>
-        <!-- async 추가 -->
+        <!-- async 추가. 없어서 addEventListener에 쓸 쿼리셀렉터가 제대로 작동하지 않았다. -->
         <script src="./class_detail.js" async></script>
         <div id="cls_info">
             <a href="./class.php" id="back"><img src="./img/left.png"><span>수업 정보</span></a>
