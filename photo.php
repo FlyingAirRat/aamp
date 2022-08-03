@@ -37,6 +37,7 @@ include_once "photo_session_check.php";
             </form>
             <div><button id="resetbutton">초기화</button></div>
         </div>
+        <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
         <script>
             //webRTC 소스
             let photoBase64 = 0;
