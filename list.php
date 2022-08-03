@@ -33,16 +33,20 @@ $list = sel_stu_list($param);
         
         var date = new Date();
         const formatDate = (date) => {
-            let formatted_date =  date.getFullYear() + "-" + (date.getMonth()<10 ? "0" + (date.getMonth() + 1) : date.getMonth()+ 1) + "-" +date.getDate();
+            let formatted_date =  date.getFullYear() + "-" + (date.getMonth()<10 ? "0" + (date.getMonth() + 1) : date.getMonth()+ 1) + "-" +(date.getDate()<10 ? "0" + (date.getDate()) : date.getDate());
+            console.log(formatted_date);
             return formatted_date;
         }
         stu_img_info += formatDate(date) + '<?='.'.$param['att_no']?>';
         var channel_stu_img_reciever = pusher.subscribe(stu_img_info);
+        console.log(stu_img_info);
         channel_stu_img_reciever.bind('img_sent', function(data) {
+            console.log('1');
             //여기에 stu_img_info와 함께 실시간으로 받은 data를 어떻게 가공할 지 쓰자.
             var data_parsed = JSON.stringify(data);
             data_parsed = JSON.parse(data_parsed);
-            document.getElementById(data_parsed.who).src = data_parsed.img_src+ "?a=" + Math.random();;
+            console.log(data);
+            document.getElementById(data_parsed.who).src = data_parsed.img_src+ "?" + Math.random();
             
         });
     </script>
@@ -54,7 +58,7 @@ $list = sel_stu_list($param);
             <a href="class_detail.php?class_no=<?= $class_no ?>&class_nm=<?= $class_nm ?>&people=<?= $people ?>"><img src="./img/left.png">알림목록</a>
         </div>
         <div class="modPushtime">
-            <a href="#"><img src="./img/editing.png">알림 시간 수정</a>
+            <!-- <a href="#"><img src="./img/editing.png">알림 시간 수정</a> -->
         </div>
     </div>
     <div class="container">
