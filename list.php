@@ -71,7 +71,7 @@ $list = sel_stu_list($param);
             };
         ?>
             <div class="stuWrap">
-                <ul id="">
+                <ul style="padding-left: 0px; padding-top: 25px;">
                     <li class="attImg"><img id="<?=$param['u_no']?>" src="<?= $imgsrc ?>" name="u_no"></li>
                     <li class="stuName"><?= $item['user_nm'] ?></li>
                     <li class="uploadTime"><?= $uploaded_time ?></li>
