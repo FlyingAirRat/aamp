@@ -29,6 +29,23 @@ function ins_time(&$param)
     ";
     mysqli_query($conn, $sql2);
 }
+function edit_time(&$param)
+{
+    $start_time = $param['start_time'];
+    $end_time = $param['end_time'];
+    $class_no = $param['class_no'];
+    $att_no = $param['att_no'];
+
+    $sql =
+        " UPDATE class_timetable
+        SET start_time = '$start_time', end_time = '$end_time'
+      WHERE class_no='$class_no' and att_no='$att_no'
+    ";
+   $conn = get_conn();
+   $result = mysqli_query($conn, $sql);
+   mysqli_close($conn);
+   return $result;
+}
 
 function ins_class(&$param)
 {
@@ -113,7 +130,7 @@ function sel_stu_list(&$param)
     $sql =
         " SELECT user_nm, u_no
       FROM info_user
-      WHERE class_no = {$param['class_no']}
+      WHERE class_no = {$param['class_no']} and u_lv = '2'
       ORDER BY user_nm
     ";
 
@@ -122,6 +139,22 @@ function sel_stu_list(&$param)
     mysqli_close($conn);
     return $result;
 }
+
+function sel_stu_peoplenum(&$param)
+{
+    $sql =
+        " SELECT count(*)
+        FROM info_user
+        WHERE class_no = {$param['class_no']} and u_lv = '2'
+        ORDER BY user_nm
+    ";
+
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    return $result;
+}
+
 
 function sel_att_img(&$param)
 {

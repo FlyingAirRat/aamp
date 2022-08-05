@@ -39,7 +39,7 @@ if (isset($_SESSION['login_user'])) {
               <div class='text'>
                 <a href='./class_detail.php?class_no=$class_no&class_nm=$class_nm&people=$people'>
                   <span>$class_nm<br></span>
-                  <span class='text_s'>총 인원수 ${people}명</span>
+                  <span class='text_s'>정원 ${people}명</span>
                 </a>
                 </div>
                 <img src='./img/star_b.png' class='star' onclick='chg_img()'>

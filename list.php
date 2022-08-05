@@ -58,7 +58,7 @@ $list = sel_stu_list($param);
             <a href="class_detail.php?class_no=<?= $class_no ?>&class_nm=<?= $class_nm ?>&people=<?= $people ?>"><img src="./img/left.png">알림목록</a>
         </div>
         <div class="modPushtime">
-            <!-- <a href="#"><img src="./img/editing.png">알림 시간 수정</a> -->
+            <a href="edit_time.php?class_no=<?=$param['class_no']?>&att_no=<?=$param['att_no']?>"><img src="./img/editing.png">알림 시간 수정</a>
         </div>
     </div>
     <div class="container">
