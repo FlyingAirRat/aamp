@@ -3,11 +3,11 @@
 > AAMP, 자율 출석 관리 플랫폼   
 출석 체크 시, 낭비되는 시간을 최소화하고자 제작되었습니다.
 
-#프로젝트 PPT: [https://airrat.xyz/aamp.pdf](https://airrat.xyz/aamp.pdf)
+##프로젝트 PPT: [https://airrat.xyz/aamp.pdf](https://airrat.xyz/aamp.pdf)
 
-## 프로젝트 계획 이유
+### 프로젝트 계획 이유
 
-### 현재의 출석 체크 과정
+#### 현재의 출석 체크 과정
 
 ![1](readme/img/1.png)
 
@@ -33,5 +33,3 @@
 
 이 문제를 보완하고자, 기존 시스템의 틀을 유지함과 동시에 시간 낭비를 최소화 할 수 있는 플랫폼을 제작하게 되었습니다.
 ------------
-
-#기능소개
