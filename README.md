@@ -2,6 +2,7 @@
 
 > AAMP, 자율 출석 관리 플랫폼   
 출석 체크 시, 낭비되는 시간을 최소화하고자 제작되었습니다.
+
 프로젝트 PPT: [https://airrat.xyz/aamp.pdf](https://airrat.xyz/aamp.pdf)
 > 
 
